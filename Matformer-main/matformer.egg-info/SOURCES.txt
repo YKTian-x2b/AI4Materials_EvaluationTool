@@ -6,6 +6,7 @@ matformer/config.py
 matformer/data.py
 matformer/features.py
 matformer/graphs.py
+matformer/kaiTest.py
 matformer/train.py
 matformer/train_props.py
 matformer/utils.py

@@ -456,6 +456,7 @@ def get_train_val_loaders(
     
     if mp_id_list is not None:
         if mp_id_list == 'bulk':
+            print(os.getpwd())
             print('using mp bulk dataset')
             with open('./data/bulk_megnet_train.pkl', 'rb') as f:
                 dataset_train = pk.load(f)
