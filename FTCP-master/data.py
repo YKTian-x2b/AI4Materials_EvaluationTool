@@ -8,7 +8,7 @@ tqdm = partial(tqdm, position=0, leave=True)
 
 from sklearn.preprocessing import OneHotEncoder
 
-from pymatgen import Structure
+from pymatgen.core  import Structure
 from matminer.data_retrieval.retrieve_MP import MPDataRetrieval
 
 def data_query(mp_api_key, max_elms=3, min_elms=3, max_sites=20, include_te=False):
@@ -49,12 +49,20 @@ def data_query(mp_api_key, max_elms=3, min_elms=3, max_sites=20, include_te=Fals
         'material_id',
         'formation_energy_per_atom',
         'band_gap',
-        'pretty_formula',
-        'e_above_hull',
-        'elements',
-        'cif',
-        'spacegroup.number'
+        'formula_pretty',
+        'energy_above_hull',
+        'nelements',
+        'structure',
+        'spacegroup'
         ]
+    # docs = self.mprester.summary.search(energy_above_hull=(None, 0.08),
+    #                                     num_elements=(3, 3),
+    #                                     num_sites=(0, 20),
+    #                                     fields=properties)
+    # for i in range(len(docs)):
+    #     structure = docs[i].structure
+    #  然后 spacegroup还找不到。。。
+
     # Obtain queried dataframe containing CIFs and groud-state property labels
     dataframe = mpdr.get_dataframe(
         criteria = query_criteria,

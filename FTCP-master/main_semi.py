@@ -18,7 +18,7 @@ max_elms = 4
 min_elms = 3
 max_sites = 40
 # Use your own API key to query Materials Project (https://materialsproject.org/open)
-mp_api_key = 'YourAPIKey'
+mp_api_key = '9D43ctxKS7yrtFRgGaVMkO18KZPa3aRC'
 dataframe = data_query(mp_api_key, max_elms, min_elms, max_sites, include_te=True)
 
 # Obtain FTCP representation

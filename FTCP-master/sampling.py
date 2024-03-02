@@ -3,7 +3,7 @@ import numpy as np
 from tqdm import tqdm
 from ase.io import write
 from ase import spacegroup
-from pymatgen import MPRester
+from pymatgen.ext.matproj import MPRester
 
 def get_info(ftcp_designs, 
              max_elms=3, 
