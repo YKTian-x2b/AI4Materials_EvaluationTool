@@ -213,12 +213,14 @@ class dist_emb(torch.nn.Module):
         self.cutoff = cutoff
         self.envelope = Envelope(envelope_exponent)
 
-        self.freq = torch.nn.Parameter(torch.Tensor(num_radial))
+        tmp_freq = torch.arange(1, num_radial+1).mul(PI)
+        self.freq = torch.nn.Parameter(tmp_freq)
 
-        self.reset_parameters()
+        # self.reset_parameters()
 
     def reset_parameters(self):
-        torch.arange(1, self.freq.numel() + 1, out=self.freq).mul_(PI)
+        pass
+        # torch.arange(1, self.freq.numel()+1, out=self.freq).mul_(PI)
 
     def forward(self, dist):
         dist = dist.unsqueeze(-1) / self.cutoff

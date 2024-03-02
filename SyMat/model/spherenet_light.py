@@ -15,13 +15,16 @@ class dist_emb(torch.nn.Module):
     def __init__(self, num_radial, cutoff=5.0):
         super(dist_emb, self).__init__()
         self.cutoff = cutoff
+        
+        tmp_freq = torch.arange(1, num_radial+1).mul(PI)
+        self.freq = torch.nn.Parameter(tmp_freq)
+        # self.freq = torch.nn.Parameter(torch.Tensor(num_radial))
 
-        self.freq = torch.nn.Parameter(torch.Tensor(num_radial))
-
-        self.reset_parameters()
+        # self.reset_parameters()
 
     def reset_parameters(self):
-        torch.arange(1, self.freq.numel() + 1, out=self.freq).mul_(PI)
+        pass
+        # torch.arange(1, self.freq.numel() + 1, out=self.freq).mul_(PI)
 
     def forward(self, dist):
         dist = dist.unsqueeze(-1) / self.cutoff
