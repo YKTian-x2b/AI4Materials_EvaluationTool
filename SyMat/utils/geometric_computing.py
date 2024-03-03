@@ -72,7 +72,8 @@ def xyz_to_dat(edge_index, num_nodes, num_edges, distance_vectors, use_torsion =
     # Edge indices (k->j, j->i) for triplets.
     idx_ji = adj_t_row.storage.row()
     idx_kj = adj_t_row.storage.value()
-    same_edge_diff = (num_edges // 2).repeat_interleave(num_triplets_per_graph, dim=0)
+    same_edge_diff = torch.div(num_edges, 2, rounding_mode='trunc').repeat_interleave(num_triplets_per_graph, dim=0)
+    # same_edge_diff = (num_edges // 2).repeat_interleave(num_triplets_per_graph, dim=0)
     mask = (idx_ji - idx_kj).abs() != same_edge_diff
     idx_i, idx_j, idx_k = idx_i[mask], idx_j[mask], idx_k[mask]
     idx_ji, idx_kj = idx_ji[mask], idx_kj[mask]

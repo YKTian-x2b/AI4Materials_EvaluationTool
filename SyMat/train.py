@@ -1,6 +1,7 @@
 import os
 import argparse
 from runner import Runner
+from datetime import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--result_path', type=str, default='result/', help='The directory for storing training outputs')
@@ -32,4 +33,7 @@ else:
     from config.mp_20_config_dict import conf
 
 runner = Runner(conf, score_norm_path)
+startTime = datetime.now()
 runner.train(train_data_path, val_data_path, result_path)
+endTime = datetime.now()
+print(f'cost: {endTime-startTime}')

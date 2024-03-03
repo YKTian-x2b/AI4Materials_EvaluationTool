@@ -222,8 +222,11 @@ def get_pbc_cutoff_graphs(cart_coords, lengths, angles, num_atoms, cutoff=7.0, m
 
     # Compute the indices for the pairs of atoms (using division and mod)
     # If the systems get too large this apporach could run into numerical precision issues
+    # index1 = (
+    #     (atom_count_sqr // num_atoms_per_image_expand)
+    # ).long() + index_offset_expand
     index1 = (
-        (atom_count_sqr // num_atoms_per_image_expand)
+            torch.div(atom_count_sqr, num_atoms_per_image_expand, rounding_mode='trunc')
     ).long() + index_offset_expand
     index2 = (
         atom_count_sqr % num_atoms_per_image_expand
