@@ -1,0 +1,12 @@
+tensorflow == 1.15.5
+keras == 2.3.1
+scikit-learn
+numpy
+matplotlib
+matminer == 0.6.2
+pymatgen == 2019.12.22
+pandas
+joblib == 1.0.1
+seaborn
+ase
+tqdm
