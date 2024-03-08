@@ -16,5 +16,5 @@ setup(
     package_dir={'': 'src'},
     license='MIT',
     description='SchNet - a deep learning architecture for quantum chemistry',
-    long_description=read('README.md')
+    long_description=read('README')
 )

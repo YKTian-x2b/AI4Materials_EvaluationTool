@@ -20,9 +20,11 @@ def run():
 
     time.sleep(5)
     GenericMetrics.getCPUInfo()
-    GenericMetrics.getProcessCPUInfo(process.pid)
+    GenericMetrics.getProcessGPUInfo(process.pid)
 
+    print("model is running...")
     process.wait()
+
     GenericMetrics.getProcessElapsedTime(process.pid)
     endTime = datetime.now()
     elapsedTime = endTime - startTime
