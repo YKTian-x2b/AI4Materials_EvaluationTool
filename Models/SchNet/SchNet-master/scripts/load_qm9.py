@@ -48,7 +48,7 @@ def load_atomrefs(at_path):
 
 
 def load_data(dbpath):
-    logging.info('Downloading GDB-9 data...')
+    logging.info('Downloading GDB-9 dataConfig...')
     tmpdir = tempfile.mkdtemp('gdb9')
     tar_path = os.path.join(tmpdir, 'gdb9.tar.gz')
     raw_path = os.path.join(tmpdir, 'gdb9_xyz')

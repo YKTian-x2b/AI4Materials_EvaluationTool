@@ -65,7 +65,7 @@ conf['lattice_weight'] = 10.0
 conf['coord_weight'] = 10.0
 conf['max_grad_value'] = 0.5
 
-conf['data'] = conf_data
+conf['dataConfig'] = conf_data
 conf['model'] = conf_model
 conf['optim'] = conf_optim
 conf['verbose'] = 1

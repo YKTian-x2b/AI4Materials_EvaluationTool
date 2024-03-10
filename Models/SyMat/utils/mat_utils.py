@@ -344,7 +344,7 @@ def get_pbc_cutoff_graphs(cart_coords, lengths, angles, num_atoms, cutoff=7.0, m
 def distance_matrix_pbc(cart_coords, lengths, angles):
     """Compute the pbc distance between atoms in cart_coords1 and cart_coords2.
     This function assumes that cart_coords1 and cart_coords2 have the same number of atoms
-    in each data point.
+    in each dataConfig point.
     returns:
         basic return:
             min_atom_distance_sqr: (N_atoms, )

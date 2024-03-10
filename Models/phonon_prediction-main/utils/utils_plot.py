@@ -332,7 +332,7 @@ def compare_corr(df1, df2, color1, color2, header, size=5, r2=False):
         color1 (str): Hex color for df1's correlation plot
         color2 (str): Hex color for df1's correlation plot
         header (str): header as the save dir and file name
-        size (int, optional): Size of the data points. Defaults to 5.
+        size (int, optional): Size of the dataConfig points. Defaults to 5.
     """
     re_out1 = np.concatenate([df1.iloc[i]['real_band'].flatten() for i in range(len(df1))])
     pr_out1 = np.concatenate([df1.iloc[i]['output_test'].flatten() for i in range(len(df1))])
@@ -419,7 +419,7 @@ def get_element_statistics(data_set):
     """_summary_
 
     Args:
-        data_set (torch.utils.data.dataset.Subset): tr_set or te_set
+        data_set (torch.utils.dataConfig.dataset.Subset): tr_set or te_set
 
     Returns:
         pandas.core.frame.DataFrame: Dataframe of the counts on how many mterials have each elememnt.
@@ -439,10 +439,10 @@ def get_element_statistics(data_set):
 
     # create dataframe of element statistics
     stats = pd.DataFrame({'symbol': species})
-    stats['data'] = stats['symbol'].astype('object')
+    stats['dataConfig'] = stats['symbol'].astype('object')
     for specie in species:
-        stats.at[stats.index[stats['symbol'] == specie].values[0], 'data'] = species_dict[specie]
-    stats['count'] = stats['data'].apply(len)
+        stats.at[stats.index[stats['symbol'] == specie].values[0], 'dataConfig'] = species_dict[specie]
+    stats['count'] = stats['dataConfig'].apply(len)
     return stats
 
 
@@ -451,8 +451,8 @@ def plot_element_count_stack(data_set1, data_set2, header=None, title=None,
     """_summary_
 
     Args:
-        data_set1 (torch.utils.data.dataset.Subset): tr_set or te_set
-        data_set2 (torch.utils.data.dataset.Subset): tr_set or te_set
+        data_set1 (torch.utils.dataConfig.dataset.Subset): tr_set or te_set
+        data_set2 (torch.utils.dataConfig.dataset.Subset): tr_set or te_set
         header (str): header as the save dir and file name Defaults to None.
         title (str, optional): Figure title. Defaults to None.
         bar_colors (list, optional): [color1, color2]. Defaults to ['#90BE6D', '#277DA1'].

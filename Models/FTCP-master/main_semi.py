@@ -39,7 +39,7 @@ scaler_y_semi = MinMaxScaler()
 Y[:, :prop_dim] = scaler_y.fit_transform(Y[:, :prop_dim])
 Y[:, prop_dim:prop_dim+semi_prop_dim] = scaler_y_semi.fit_transform(Y[:, prop_dim:prop_dim+semi_prop_dim])
 
-# Get training, and test data; feel free to have a validation set if you need to tune the hyperparameter
+# Get training, and test dataConfig; feel free to have a validation set if you need to tune the hyperparameter
 ind_train, ind_test = train_test_split(np.arange(len(Y)), test_size=0.2, random_state=21)
 X_train, X_test = X[ind_train], X[ind_test]
 y_train, y_test = Y[ind_train], Y[ind_test]

@@ -15,15 +15,15 @@ if not os.path.isdir(result_path):
 
 assert args.dataset in ['perov_5', 'carbon_24', 'mp_20'], "Not supported dataset"
 
-train_data_path = os.path.join('data', args.dataset, 'train.pt')
+train_data_path = os.path.join('dataConfig', args.dataset, 'train.pt')
 if not os.path.isfile(train_data_path):
-    train_data_path = os.path.join('data', args.dataset, 'train.csv')
+    train_data_path = os.path.join('dataConfig', args.dataset, 'train.csv')
 
-val_data_path = os.path.join('data', args.dataset, 'val.pt')
+val_data_path = os.path.join('dataConfig', args.dataset, 'val.pt')
 if not os.path.isfile(val_data_path):
-    val_data_path = os.path.join('data', args.dataset, 'val.csv')
+    val_data_path = os.path.join('dataConfig', args.dataset, 'val.csv')
 
-score_norm_path = os.path.join('data', args.dataset, 'score_norm.txt')
+score_norm_path = os.path.join('dataConfig', args.dataset, 'score_norm.txt')
 
 if args.dataset == 'perov_5':
     from config.perov_5_config_dict import conf

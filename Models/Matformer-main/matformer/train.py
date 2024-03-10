@@ -64,7 +64,7 @@ def activated_output_transform(output):
 
 
 def make_standard_scalar_and_pca(output):
-    """Use standard scalar and PCS for multi-output data."""
+    """Use standard scalar and PCS for multi-output dataConfig."""
     sc = pk.load(open(os.path.join(tmp_output_dir, "sc.pkl"), "rb"))
     y_pred, y = output
     y_pred = torch.tensor(sc.transform(y_pred.cpu().numpy()), device=device)
@@ -312,7 +312,7 @@ def train_dgl(
                     out_data = net([g.to(device), lg.to(device), _.to(device)])
                     success_flag=1
                 except: # just in case
-                    print('error for this data')
+                    print('error for this dataConfig')
                     print(g)
                     success_flag=0
                 if success_flag > 0:

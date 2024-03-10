@@ -40,7 +40,7 @@ tr_ratio = 0.6
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -124,7 +124,7 @@ for i in range(len(anharmonic)):
 keys = anharmonic.keys()
 
 #%%
-# data = load_band_structure_data(data_dir, raw_dir, data_file)
+# dataConfig = load_band_structure_data(data_dir, raw_dir, data_file)
 data_dict = generate_kappa_data_dict(data_dir, run_name, anharmonic, r_max, factor, kappa_normalize)
 
 #%%
@@ -140,8 +140,8 @@ with open(f'./data/idx_{run_name}_te.txt', 'w') as f:
 #%%
 # activate this tab to load train/valid/test indices
 # run_name_idx = "221226-011042"
-# with open(f'./data/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
-# with open(f'./data/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
+# with open(f'./dataConfig/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
+# with open(f'./dataConfig/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
 
 
 #%%
@@ -193,10 +193,10 @@ te1_loader = DataLoader(te_set, batch_size = batch_size)
 df_tr = generate_dafaframe(model, tr_loader, loss_fn, device, factor)
 df_te = generate_dafaframe(model, te1_loader, loss_fn, device, factor)
 
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_kappa(df_tr, header='./models/' + model_name, title='TRAIN', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_kappa(df_te, header='./models/' + model_name, title='TEST', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 
 

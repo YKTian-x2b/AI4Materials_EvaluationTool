@@ -37,7 +37,7 @@ data_file = 'DFPT_band_structure.pkl'
 
 print('torch device: ', device)
 print('run name: ', run_name)
-print('run name (indices to split train/test data): ', run_name_idx)
+print('run name (indices to split train/test dataConfig): ', run_name_idx)
 print('model name: ', model_name)
 print('data_file: ', data_file)
 
@@ -45,7 +45,7 @@ tr_ratio = 0.9
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -116,22 +116,22 @@ te_num = num - sum(tr_nums)
 if run_name_idx is not None:
     with open(f'./data/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
     with open(f'./data/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
-    print(f'./data/idx_{run_name_idx}_tr.txt')
-    print(f'./data/idx_{run_name_idx}_te.txt')
+    print(f'./dataConfig/idx_{run_name_idx}_tr.txt')
+    print(f'./dataConfig/idx_{run_name_idx}_te.txt')
 else:
     idx_tr, idx_te = train_test_split(range(num), test_size=te_num, random_state=seed)
     with open(f'./data/idx_{run_name}_tr.txt', 'w') as f: 
         for idx in idx_tr: f.write(f"{idx}\n")
     with open(f'./data/idx_{run_name}_te.txt', 'w') as f: 
         for idx in idx_te: f.write(f"{idx}\n")
-    print(f'./data/idx_{run_name}_tr.txt')
-    print(f'./data/idx_{run_name}_te.txt')
+    print(f'./dataConfig/idx_{run_name}_tr.txt')
+    print(f'./dataConfig/idx_{run_name}_te.txt')
 
 #%%
 # activate this tab to load train/valid/test indices
 # run_name_idx = "221226-011042"
-# with open(f'./data/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
-# with open(f'./data/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
+# with open(f'./dataConfig/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
+# with open(f'./dataConfig/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
 
 
 #%%
@@ -186,9 +186,9 @@ df_tr = generate_dafaframe(model, tr_loader, loss_fn, device)
 df_te = generate_dafaframe(model, te1_loader, loss_fn, device)
 
 #%%
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_bands(df_tr, header='./models/' + model_name, title='TRAIN', n=6, m=2, palette=palette)
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_bands(df_te, header='./models/' + model_name, title='TEST', n=6, m=2, palette=palette)
 
 # %%

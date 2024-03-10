@@ -85,12 +85,12 @@ class Runner():
         torch.nn.init.constant_(self.model.fc_lattice_log_var[-1].weight, 1e-10)
         torch.nn.init.constant_(self.model.fc_lattice_log_var[-1].bias, 0.)
 
-        dataset = MatDataset(data_path, **self.conf['data'])
+        dataset = MatDataset(data_path, **self.conf['dataConfig'])
         loader = DataLoader(dataset, batch_size=self.conf['batch_size'], shuffle=True)
         normalizer = self._get_normalizer(dataset)
         self.model.lattice_normalizer = normalizer
 
-        val_dataset = MatDataset(val_data_path, **self.conf['data'])
+        val_dataset = MatDataset(val_data_path, **self.conf['dataConfig'])
         val_loader = DataLoader(val_dataset, batch_size=self.conf['batch_size'], shuffle=False)
         
         print("---kai: before loop---")
@@ -216,7 +216,7 @@ class Runner():
 
 
     def generate(self, num_gen, data_path, coord_num_langevin_steps=100, coord_step_rate=1e-4):
-        dataset = MatDataset(data_path, **self.conf['data'])
+        dataset = MatDataset(data_path, **self.conf['dataConfig'])
         normalizer = self._get_normalizer(dataset)
         self.model.lattice_normalizer = normalizer
         
