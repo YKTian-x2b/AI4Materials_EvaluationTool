@@ -1,11 +1,15 @@
 from nvitop import Device, GpuProcess, NA, colored, HostProcess
 from thop import profile
 import time
+import os
+from nvitop import select_devices
 
 # Device.gpu_utilization()  Device.memory_utilization() Device.temperature()
 # GpuProcess.gpu_memory_utilization()  gpu_sm_utilization()
 # GpuProcess.elapsed_time() GpuProcess.elapsed_time_in_seconds()
 # GpuProcess.cpu_percent() GpuProcess.memory_percent() GpuProcess.host_memory_percent()
+
+# os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(select_devices(devices=0, format="index"))
 
 
 # Device就是指GPU
@@ -29,7 +33,7 @@ def getDeviceInfo():
         print('-' * 120)
 
 
-def getCPUInfo():
+def getInfo():
     print(colored(time.strftime('%a %b %d %H:%M:%S %Y'), color='red', attrs=('bold',)))
 
     devices = Device.cuda.all()  # or `Device.all()` to use NVML ordinal instead
