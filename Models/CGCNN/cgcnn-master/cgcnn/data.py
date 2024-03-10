@@ -35,18 +35,18 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
     test_ratio: float
     return_test: bool
       Whether to return the test dataset loader. If False, the last test_size
-      data will be hidden.
+      dataConfig will be hidden.
     num_workers: int
     pin_memory: bool
 
     Returns
     -------
     train_loader: torch.utils.data.DataLoader
-      DataLoader that random samples the training data.
+      DataLoader that random samples the training dataConfig.
     val_loader: torch.utils.data.DataLoader
-      DataLoader that random samples the validation data.
-    (test_loader): torch.utils.data.DataLoader
-      DataLoader that random samples the test data, returns if
+      DataLoader that random samples the validation dataConfig.
+    (test_loader): torch.utils.dataConfig.DataLoader
+      DataLoader that random samples the test dataConfig, returns if
         return_test=True.
     """
     total_size = len(dataset)
@@ -55,7 +55,7 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
             assert val_ratio + test_ratio < 1
             train_ratio = 1 - val_ratio - test_ratio
             print(f'[Warning] train_ratio is None, using 1 - val_ratio - '
-                  f'test_ratio = {train_ratio} as training data.')
+                  f'test_ratio = {train_ratio} as training dataConfig.')
         else:
             assert train_ratio + val_ratio + test_ratio <= 1
     indices = list(range(total_size))
@@ -97,13 +97,13 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
 
 def collate_pool(dataset_list):
     """
-    Collate a list of data and return a batch for predicting crystal
+    Collate a list of dataConfig and return a batch for predicting crystal
     properties.
 
     Parameters
     ----------
 
-    dataset_list: list of tuples for each data point.
+    dataset_list: list of tuples for each dataConfig point.
       (atom_fea, nbr_fea, nbr_fea_idx, target)
 
       atom_fea: torch.Tensor shape (n_i, atom_fea_len)

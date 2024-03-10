@@ -28,7 +28,7 @@ parser.add_argument('--task', choices=['regression', 'classification'],
 parser.add_argument('--disable-cuda', action='store_true',
                     help='Disable CUDA')
 parser.add_argument('-j', '--workers', default=0, type=int, metavar='N',
-                    help='number of data loading workers (default: 0)')
+                    help='number of dataConfig loading workers (default: 0)')
 parser.add_argument('--epochs', default=30, type=int, metavar='N',
                     help='number of total epochs to run (default: 30)')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
@@ -51,21 +51,21 @@ parser.add_argument('--resume', default='', type=str, metavar='PATH',
                     help='path to latest checkpoint (default: none)')
 train_group = parser.add_mutually_exclusive_group()
 train_group.add_argument('--train-ratio', default=None, type=float, metavar='N',
-                    help='number of training data to be loaded (default none)')
+                    help='number of training dataConfig to be loaded (default none)')
 train_group.add_argument('--train-size', default=None, type=int, metavar='N',
-                         help='number of training data to be loaded (default none)')
+                         help='number of training dataConfig to be loaded (default none)')
 valid_group = parser.add_mutually_exclusive_group()
 valid_group.add_argument('--val-ratio', default=0.1, type=float, metavar='N',
-                    help='percentage of validation data to be loaded (default '
+                    help='percentage of validation dataConfig to be loaded (default '
                          '0.1)')
 valid_group.add_argument('--val-size', default=None, type=int, metavar='N',
-                         help='number of validation data to be loaded (default '
+                         help='number of validation dataConfig to be loaded (default '
                               '1000)')
 test_group = parser.add_mutually_exclusive_group()
 test_group.add_argument('--test-ratio', default=0.1, type=float, metavar='N',
-                    help='percentage of test data to be loaded (default 0.1)')
+                    help='percentage of test dataConfig to be loaded (default 0.1)')
 test_group.add_argument('--test-size', default=None, type=int, metavar='N',
-                        help='number of test data to be loaded (default 1000)')
+                        help='number of test dataConfig to be loaded (default 1000)')
 
 parser.add_argument('--optim', default='SGD', type=str, metavar='SGD',
                     help='choose an optimizer, SGD or Adam, (default: SGD)')
@@ -91,7 +91,7 @@ else:
 def main():
     global args, best_mae_error
 
-    # load data
+    # load dataConfig
     dataset = CIFData(*args.data_options)
     collate_fn = collate_pool
     train_loader, val_loader, test_loader = get_train_val_test_loader(
@@ -114,7 +114,7 @@ def main():
         normalizer.load_state_dict({'mean': 0., 'std': 1.})
     else:
         if len(dataset) < 500:
-            warnings.warn('Dataset has less than 500 data points. '
+            warnings.warn('Dataset has less than 500 dataConfig points. '
                           'Lower accuracy is expected. ')
             sample_data_list = [dataset[i] for i in range(len(dataset))]
         else:
@@ -224,7 +224,7 @@ def train(train_loader, model, criterion, optimizer, epoch, normalizer):
 
     end = time.time()
     for i, (input, target, _) in enumerate(train_loader):
-        # measure data loading time
+        # measure dataConfig loading time
         data_time.update(time.time() - end)
 
         if args.cuda:

@@ -43,7 +43,7 @@ tr_ratio = 0.9
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -93,7 +93,7 @@ print('learning rate scheduler: exponentialLR')
 print('schedule factor: ', schedule_gamma)
 
 #%%
-# load zeolite data 
+# load zeolite dataConfig
 import glob
 from os.path import join as opj
 zeo_dir = '/data1/rokabe/zeolite'   #!
@@ -324,12 +324,12 @@ print('df_te: ', lent)
 for i in range(lent):
     df_te['loss'][i] = np.random.randn()
 #%%
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 zpalette = ['#43AA8B' for _ in range(3)]
 # plot_bands(df_te, header='./models/' + model_name, title='TEST', n=1, m=1, palette=zpalette, gtruth=False)
 # plot_bands_qlabels(df_te, header='./models/' + model_name + '_zeolite', 
 #            title='TEST', n=1, m=2, windowsize=(4,3), palette=zpalette, 
-#            gtruth=False, datadf=data)
+#            gtruth=False, datadf=dataConfig)
 invcm2thz = 0.030  # https://www.home.uni-osnabrueck.de/apostnik/Notes/Phonon_freq_units.pdf
 
 fig, axs = plt.subplots(1,2, figsize=(11, 5))

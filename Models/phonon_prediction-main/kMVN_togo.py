@@ -47,7 +47,7 @@ tr_ratio = 0.9
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -114,9 +114,9 @@ num0 = len(data_dict)
 tr_nums0 = [int((num0 * tr_ratio)//k_fold)] * k_fold
 te_num0 = num0 - sum(tr_nums0)
 # idx_tr, idx_te = train_test_split(range(num), test_size=te_num, random_state=seed)
-# with open(f'./data/idx_{run_name}_tr.txt', 'w') as f: 
+# with open(f'./dataConfig/idx_{run_name}_tr.txt', 'w') as f:
 #     for idx in idx_tr: f.write(f"{idx}\n")
-# with open(f'./data/idx_{run_name}_te.txt', 'w') as f: 
+# with open(f'./dataConfig/idx_{run_name}_te.txt', 'w') as f:
 #     for idx in idx_te: f.write(f"{idx}\n")
 
 # activate this tab to load train/valid/test indices
@@ -174,7 +174,7 @@ model0 = GraphNetwork(mul,  # original
                      node_embed_dim,
                      input_dim,
                      input_embed_dim)
-model = GraphNetwork(mul,   # with kkyoto data
+model = GraphNetwork(mul,   # with kkyoto dataConfig
                      irreps_out,
                      lmax,
                      nlayers,
@@ -222,12 +222,12 @@ te1_loader0 = DataLoader(te_set0, batch_size = batch_size)
 df_tr0 = generate_dafaframe(model0, tr_loader0, loss_fn, device)
 df_te0 = generate_dafaframe(model0, te1_loader0, loss_fn, device)
 
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_bands(df_tr0, header='./models/' + model_name0, title='TRAIN_KY', n=6, m=2, palette=palette)
 plot_bands(df_te0, header='./models/' + model_name0, title='TEST_KY', n=6, m=2, palette=palette)
 
 #%%
-# with kyoto data
+# with kyoto dataConfig
 model_name = run_name #'230628-215029'       # pre-trained model. Rename if you want to use the model you trained in the tabs above. 
 model_file = f'./models/{model_name}.torch'
 model.load_state_dict(torch.load(model_file)['state'])
@@ -241,7 +241,7 @@ te1_loader = DataLoader(te_set, batch_size = batch_size)
 df_tr = generate_dafaframe(model, tr_loader, loss_fn, device)
 df_te = generate_dafaframe(model, te1_loader, loss_fn, device)
 
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_bands(df_tr, header='./models/' + model_name, title='TRAIN_add', n=6, m=2, palette=palette)
 plot_bands(df_te, header='./models/' + model_name, title='TEST_add', n=6, m=2, palette=palette)
 
@@ -261,7 +261,7 @@ df_target = df_te[df_te['name'].apply(lambda x: any([t in x for t in target]))]
 # bcat = np.concatenate([rband, band0, band])
 # bmin, bmax = np.min(bcat), np.max(bcat)
 # height = bmax - bmin
-# formula = data[data['id']==mpid_test]['structure'].item().symbols
+# formula = dataConfig[dataConfig['id']==mpid_test]['structure'].item().symbols
 # fig, axs = plt.subplots(1,2, figsize=(12, 6))
 # ax0, ax1 = axs[0], axs[1]
 # ax0.plot(range(nqpts), rband, color='k', linewidth=1.2)

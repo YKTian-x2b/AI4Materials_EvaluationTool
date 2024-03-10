@@ -13,7 +13,7 @@ def generate_neighbor_dataset(asedb, nbhdb, cutoff):
     '''
     Generates an ASE DB with neighborhood information from an ASE DB without it.
 
-    :param str asedb: path to original data
+    :param str asedb: path to original dataConfig
     :param str nbhdb: destination
     :param float cutoff: neighborhood cutoff radius
     '''
@@ -53,7 +53,7 @@ class ASEReader:
       A reader for a dataset in ASE DB format containing neighborhood
       information and respecting periodic boundary conditions.
 
-      Batches of data can be accessed via indexing.
+      Batches of dataConfig can be accessed via indexing.
 
       Important: Since key_value_pairs are always scalars, their corresponding
                  shape is always be (None, 1), where a batch dimension is added
@@ -62,11 +62,11 @@ class ASEReader:
                  the ASE DB, if needed.
 
       Args:
-          asedb (str): path to data with neighborhood information
+          asedb (str): path to dataConfig with neighborhood information
           properties (dict): dict from prop names to shape tuples
                               (None for variable dim)
-          preload (bool): Preload data to memory, if True (default: False)
-          subset (numpy.ndarray): Restricts data to subset specified by indices.
+          preload (bool): Preload dataConfig to memory, if True (default: False)
+          subset (numpy.ndarray): Restricts dataConfig to subset specified by indices.
                                   Later indexing is within this subset.
     '''
 

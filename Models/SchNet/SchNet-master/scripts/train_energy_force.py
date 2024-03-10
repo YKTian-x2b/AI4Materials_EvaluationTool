@@ -38,15 +38,15 @@ def train(args):
     args_log = os.path.join(outdir, 'args.npy')
     np.save(args_log, args)
 
-    # setup data pipeline
-    logging.info('Setup data reader')
+    # setup dataConfig pipeline
+    logging.info('Setup dataConfig reader')
     forces = [args.forces] if args.forces != 'none' else []
     data_reader = ASEReader(args.data,
                             [args.energy],
                             forces, [(None, 3)])
 
     if not os.path.exists(splitpath):
-        logging.info('Create data splits')
+        logging.info('Create dataConfig splits')
         if args.ntrain < 0 and args.nval < 0:
             logging.error('If `splits` does not exist, arguments ' +
                           '`ntrain` and `nval` have to be specified!')
@@ -60,7 +60,7 @@ def train(args):
         np.savez(splitpath, train_idx=train_idx,
                  val_idx=val_idx, test_idx=test_idx)
     else:
-        logging.info('Load existing data splits')
+        logging.info('Load existing dataConfig splits')
         S = np.load(splitpath)
         train_idx = S['train_idx']
         val_idx = S['val_idx']
@@ -81,14 +81,14 @@ def train(args):
     except Exception as e:
         print(e)
 
-    logging.info('Setup train/validation data providers')
+    logging.info('Setup train/validation dataConfig providers')
     train_provider = DataProvider(data_reader, args.batch_size,
                                   train_idx)
     train_data = train_provider.get_batch()
     val_provider = DataProvider(data_reader, args.valbatch, val_idx)
     val_data = val_provider.get_batch()
 
-    logging.info('Collect train data statistics')
+    logging.info('Collect train dataConfig statistics')
     E = data_reader.get_property(args.energy, train_idx)
     Z = data_reader.get_atomic_numbers(train_idx)
     mean_energy_per_atom, stddev_energy_per_atom = \
@@ -148,12 +148,12 @@ def train(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('data',
-                        help='Path to training data (ASE DB)')
+    parser.add_argument('dataConfig',
+                        help='Path to training dataConfig (ASE DB)')
     parser.add_argument('output_dir',
                         help='Output directory for model and training log.')
     parser.add_argument('splits',
-                        help='Path to data splits (is created, if not existing)')
+                        help='Path to dataConfig splits (is created, if not existing)')
     parser.add_argument('--ntrain', help='Number of training examples',
                         type=int, default=-1)
     parser.add_argument('--nval', help='Number of validation examples',

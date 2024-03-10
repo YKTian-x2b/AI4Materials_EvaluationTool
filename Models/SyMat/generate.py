@@ -15,15 +15,15 @@ args = parser.parse_args()
 
 assert args.dataset in ['perov_5', 'carbon_24', 'mp_20'], "Not supported dataset"
 
-train_data_path = os.path.join('data', args.dataset, 'train.pt')
+train_data_path = os.path.join('dataConfig', args.dataset, 'train.pt')
 if not os.path.isfile(train_data_path):
-    train_data_path = os.path.join('data', args.dataset, 'train.csv')
+    train_data_path = os.path.join('dataConfig', args.dataset, 'train.csv')
 
-test_data_path = os.path.join('data', args.dataset, 'test.pt')
+test_data_path = os.path.join('dataConfig', args.dataset, 'test.pt')
 if not os.path.isfile(test_data_path):
-    train_data_path = os.path.join('data', args.dataset, 'test.csv')
+    train_data_path = os.path.join('dataConfig', args.dataset, 'test.csv')
 
-score_norm_path = os.path.join('data', args.dataset, 'score_norm.txt')
+score_norm_path = os.path.join('dataConfig', args.dataset, 'score_norm.txt')
 
 if args.dataset == 'perov_5':
     from config import perov_5_conf as conf
@@ -32,7 +32,7 @@ elif args.dataset == 'carbon_24':
 else:
     from config import mp_20_config_dict as conf
 
-dataset = MatDataset(test_data_path, prop_name=conf['data']['prop_name'])
+dataset = MatDataset(test_data_path, prop_name=conf['dataConfig']['prop_name'])
 loader = DataLoader(dataset, batch_size=1, shuffle=False)
 
 gt_atom_types_list, gt_lengths_list, gt_angles_list, gt_frac_coords_list = [], [], [], []

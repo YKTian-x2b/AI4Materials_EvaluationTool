@@ -155,7 +155,7 @@ class StandardScaler:
 
     def fit(self, X):
         """
-        Learns means and standard deviations across the 0th axis of the data :code:`X`.
+        Learns means and standard deviations across the 0th axis of the dataConfig :code:`X`.
         :param X: A list of lists of floats (or None).
         :return: The fitted :class:`StandardScaler` (self).
         """
@@ -173,9 +173,9 @@ class StandardScaler:
 
     def transform(self, X):
         """
-        Transforms the data by subtracting the means and dividing by the standard deviations.
+        Transforms the dataConfig by subtracting the means and dividing by the standard deviations.
         :param X: A list of lists of floats (or None).
-        :return: The transformed data with NaNs replaced by :code:`self.replace_nan_token`.
+        :return: The transformed dataConfig with NaNs replaced by :code:`self.replace_nan_token`.
         """
         X = np.array(X).astype(float)
         transformed_with_nan = (X - self.means) / self.stds
@@ -188,7 +188,7 @@ class StandardScaler:
         """
         Performs the inverse transformation by multiplying by the standard deviations and adding the means.
         :param X: A list of lists of floats.
-        :return: The inverse transformed data with NaNs replaced by :code:`self.replace_nan_token`.
+        :return: The inverse transformed dataConfig with NaNs replaced by :code:`self.replace_nan_token`.
         """
         X = np.array(X).astype(float)
         transformed_with_nan = X * self.stds + self.means

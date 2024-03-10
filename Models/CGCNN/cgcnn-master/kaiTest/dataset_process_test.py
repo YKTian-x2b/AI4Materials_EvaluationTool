@@ -30,9 +30,9 @@ def MP_download():
 
     materials_id = []
     # get cif
-    get_cif(projectPath + '/data/material-data/mp-ids-3402.csv', materials_id, mpr)
-    get_cif(projectPath + '/data/material-data/mp-ids-27430.csv', materials_id, mpr)
-    get_cif(projectPath + '/data/material-data/mp-ids-46744.csv', materials_id, mpr)
+    get_cif(projectPath + '/dataConfig/material-dataConfig/mp-ids-3402.csv', materials_id, mpr)
+    get_cif(projectPath + '/dataConfig/material-dataConfig/mp-ids-27430.csv', materials_id, mpr)
+    get_cif(projectPath + '/dataConfig/material-dataConfig/mp-ids-46744.csv', materials_id, mpr)
 
     # get id_prop.csv
     with open(projectPath + '/root_dir/id_prop.csv', 'w') as id_prop_file:
@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
     # visualize(datasetPath)
 
-    # dataset = data.CIFData(projectPath + "root_dir")
+    # dataset = dataConfig.CIFData(projectPath + "root_dir")
     # structures, _, _ = dataset[0]
     # orig_atom_fea_len = structures[0].shape[-1]
     # nbr_fea_len = structures[1].shape[-1]

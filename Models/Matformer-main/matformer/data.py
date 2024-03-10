@@ -35,7 +35,7 @@ def load_dataset(
     limit: Optional[int] = None,
     classification_threshold: Optional[float] = None,
 ):
-    """Load jarvis data."""
+    """Load jarvis dataConfig."""
     d = jdata(name)
     data = []
     for i in d:
@@ -47,7 +47,7 @@ def load_dataset(
                     i[target] = 1
                 else:
                     raise ValueError(
-                        "Check classification data type.",
+                        "Check classification dataConfig type.",
                         i[target],
                         type(i[target]),
                     )
@@ -179,8 +179,8 @@ def get_torch_dataset(
     if target == "shear modulus" or target == "bulk modulus":
         val_list = [vals[i].item() for i in range(len(vals))]
         vals = val_list
-    print("data range", np.max(vals), np.min(vals))
-    print("data mean and std", np.mean(vals), np.std(vals))
+    print("dataConfig range", np.max(vals), np.min(vals))
+    print("dataConfig mean and std", np.mean(vals), np.std(vals))
     f = open(os.path.join(output_dir, tmp_name + "_data_range"), "w")
     line = "Max=" + str(np.max(vals)) + "\n"
     f.write(line)
@@ -240,7 +240,7 @@ def get_pyg_dataset(
         val_list = [vals[i].item() for i in range(len(vals))]
         vals = val_list
     output_dir = "./saved_data/" + tmp_name + "test_graph_angle.pkl" # for fast test use
-    print("data range", np.max(vals), np.min(vals))
+    print("dataConfig range", np.max(vals), np.min(vals))
     print(output_dir)
     if now:
         if not os.path.exists(output_dir):
@@ -342,14 +342,14 @@ def get_train_val_loaders(
     mp_id_list=None,
 ):
     """Help function to set up JARVIS train and val dataloaders."""
-    # data loading
+    # dataConfig loading
     mean_train=None
     std_train=None
     assert (matrix_input and pyg_input) == False
     
-    train_sample = filename + "_train.data"
-    val_sample = filename + "_val.data"
-    test_sample = filename + "_test.data"
+    train_sample = filename + "_train.dataConfig"
+    val_sample = filename + "_val.dataConfig"
+    test_sample = filename + "_test.dataConfig"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     if (
@@ -400,9 +400,9 @@ def get_train_val_loaders(
                 classification_threshold,
                 " for classifying ",
                 target,
-                " data.",
+                " dataConfig.",
             )
-            print("Converting target data into 1 and 0.")
+            print("Converting target dataConfig into 1 and 0.")
         all_targets = []
 
         # TODO:make an all key in qm9_dgl
@@ -446,7 +446,7 @@ def get_train_val_loaders(
                         i[target] = 1
                     else:
                         raise ValueError(
-                            "Check classification data type.",
+                            "Check classification dataConfig type.",
                             i[target],
                             type(i[target]),
                         )

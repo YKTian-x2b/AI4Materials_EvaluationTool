@@ -26,7 +26,7 @@ sub = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
 
 #%%
 
-folder = './data/230404-150605_FC_Test'
+folder = './dataConfig/230404-150605_FC_Test'
 te_file = '230404-150605_te_set.pkl'
 file_path = os.path.join(folder, te_file)
 

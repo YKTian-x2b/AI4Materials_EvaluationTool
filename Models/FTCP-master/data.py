@@ -13,7 +13,7 @@ from matminer.data_retrieval.retrieve_MP import MPDataRetrieval
 
 def data_query(mp_api_key, max_elms=3, min_elms=3, max_sites=20, include_te=False):
     """
-    The function queries data from Materials Project.
+    The function queries dataConfig from Materials Project.
 
     Parameters
     ----------
@@ -131,7 +131,7 @@ def FTCP_represent(dataframe, max_elms=3, max_sites=20, return_Nsites=False):
     # Represent dataframe
     op = tqdm(dataframe.index)
     for idx in op:
-        op.set_description('representing data as FTCP ...')
+        op.set_description('representing dataConfig as FTCP ...')
         
         crystal = Structure.from_str(dataframe['cif'][idx],fmt="cif")
         

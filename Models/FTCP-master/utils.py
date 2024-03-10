@@ -26,7 +26,7 @@ def pad(FTCP, pad_width):
 
 def minmax(FTCP):
     '''
-    This function performs data normalization for FTCP representation along the second dimension
+    This function performs dataConfig normalization for FTCP representation along the second dimension
 
     Parameters
     ----------

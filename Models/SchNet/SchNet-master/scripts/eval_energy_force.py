@@ -39,8 +39,8 @@ def eval(model_path, data_path, indices, energy, forces, name, batch_size=100, a
     except Exception as e:
         print(e)
 
-    # setup data pipeline
-    logging.info('Setup data reader')
+    # setup dataConfig pipeline
+    logging.info('Setup dataConfig reader')
     fforces = [forces] if forces != 'none' else []
     data_reader = ASEReader(data_path,
                             [energy],
@@ -112,8 +112,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('path',
                         help='Path to directory with models')
-    parser.add_argument('data', help='Path to data')
-    parser.add_argument('splitdir', help='directory with data splits')
+    parser.add_argument('dataConfig', help='Path to dataConfig')
+    parser.add_argument('splitdir', help='directory with dataConfig splits')
     parser.add_argument('split', help='train / val / test')
     parser.add_argument('--energy', help='Name of run',
                         default='energy_U0')
@@ -121,7 +121,7 @@ if __name__ == '__main__':
                         default='none')
     parser.add_argument('--atomref', help='Atom reference file (NPZ)',
                         default=None)
-    parser.add_argument('--splitname', help='Name of data split',
+    parser.add_argument('--splitname', help='Name of dataConfig split',
                         default=None)
     args = parser.parse_args()
 

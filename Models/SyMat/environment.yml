@@ -452,7 +452,7 @@ dependencies:
     - streamlit==0.79.0
     - subprocess32==3.5.4
     - tensorboard==2.5.0
-    - tensorboard-data-server==0.6.1
+    - tensorboard-dataConfig-server==0.6.1
     - tensorboard-logger==0.1.0
     - tensorboard-plugin-wit==1.8.0
     - tensorboardx==2.0

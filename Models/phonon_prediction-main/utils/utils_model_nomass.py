@@ -244,7 +244,7 @@ class GraphNetwork(torch.nn.Module):
         edge_sh = spherical_harmonics(self.irreps_edge_attr, edge_vec, True, normalization = 'component')
         edge_attr = edge_sh
         numb = data['numb']
-        # x = torch.relu(self.emx(torch.relu(data['x'])))
+        # x = torch.relu(self.emx(torch.relu(dataConfig['x'])))
         x = torch.relu(self.emz(torch.relu(data['z'])))
         z = torch.relu(self.emz(torch.relu(data['z'])))
         node_deg = data['node_deg']

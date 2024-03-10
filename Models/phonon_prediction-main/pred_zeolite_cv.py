@@ -43,7 +43,7 @@ tr_ratio = 0.9
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -93,13 +93,13 @@ print('learning rate scheduler: exponentialLR')
 print('schedule factor: ', schedule_gamma)
 
 #%%
-# load zeolite data 
+# load zeolite dataConfig
 import glob
 from os.path import join
 # zeo_dir = '/data1/rokabe/zeolite'   #!
 # NPZPATH = opj(zeo_dir, 'npz')
 # files = glob.glob(opj(NPZPATH, '*.npz'))
-zeo_dir = '/home/rokabe/data1/phonon/phonon_prediction/data/zeo_DFT_calculations'
+zeo_dir = '/home/rokabe/data1/phonon/phonon_prediction/dataConfig/zeo_DFT_calculations'
 dos_dir = join(zeo_dir, 'DFT_dos')
 struct_dir = join(zeo_dir, 'DFT_structures')
 cp_file = join(zeo_dir, 'DFT_site_projected_cp.csv')
@@ -219,7 +219,7 @@ lent = len(df_te)
 for i in range(lent):
     df_te['loss'][i] = np.random.randn()
 #%%
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 zpalette = ['#43AA8B' for _ in range(3)]
 # plot_bands(df_te, header='./models/' + model_name, title='TEST', n=1, m=1, palette=zpalette, gtruth=False)
 plot_bands_qlabels(df_te, header='./models/' + model_name + '_zeo', 
@@ -228,7 +228,7 @@ plot_bands_qlabels(df_te, header='./models/' + model_name + '_zeo',
 
 # %%
 
-# Plot the heat capacity of TEST data
+# Plot the heat capacity of TEST dataConfig
 zpalette = ['#43AA8B' for _ in range(3)]
 T_lst = temps
 plot_cv_gt(df_te, T_lst, data, header='./models/' + model_name + '_zeo', 

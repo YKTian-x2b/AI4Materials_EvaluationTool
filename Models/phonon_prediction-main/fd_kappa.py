@@ -47,7 +47,7 @@ tr_ratio = 1.0
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -160,7 +160,7 @@ if download_data:
     os.system(f'rm -r {data_dir}/9850858*')
 data = load_band_structure_data(data_dir, raw_dir, data_file)
 
-# load anharmonic phonon data from abinit calculation
+# load anharmonic phonon dataConfig from abinit calculation
 file = './data/anharmonic_fc_2.pkl'
 anharmonic = pkl.load(open(file, 'rb'))
 anharmonic['mpid'] = anharmonic['mpid'].map(lambda x: 'mp-' + str(x))
@@ -182,7 +182,7 @@ keys = anharmonic.keys()
 
 #%%
 # load material structures from MP
-mp_data = pkl_load('./data/mp_full.pkl')
+mp_data = pkl_load('./dataConfig/mp_full.pkl')
 mpids = sorted(list(mp_data.keys()))
 
 df = pd.DataFrame({})
@@ -202,7 +202,7 @@ for i, mpid in enumerate(mpids[:200] + ['mp-1639', 'mp-66']):
 
 df['gru']=df['kappa'].map(lambda x: np.max(np.sum(x[:, :3], axis=-1)/3))
 
-# data = load_band_structure_data(data_dir, raw_dir, data_file)
+# dataConfig = load_band_structure_data(data_dir, raw_dir, data_file)
 mpdata_dict = generate_kappa_data_dict(data_dir, run_name, df, r_max, factor, kappa_normalize)
 mpdata_dict1 = generate_gru_data_dict(data_dir, run_name, df, r_max, factor1)
 
@@ -263,7 +263,7 @@ df_te = generate_dafaframe(model, te_loader, loss_fn, device, factor)
 lent = len(df_te)
 for i in range(lent):
     df_te['loss'][i] = np.random.randn()
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_kappa(df_te, header='./models/' + model_name, title='TEST_FD', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 #%%
 model_name1 =run_name+'max'
@@ -279,7 +279,7 @@ df_te1 = generate_dafaframe_scalar(model1, te_loader1, loss_fn, device, factor1)
 lent1 = len(df_te1)
 for i in range(lent1):
     df_te1['loss'][i] = np.random.randn()
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_scalar(df_te1, color=palette[0], header='./models/' + model_name1, title='TEST_FD', name='kmax', size=15, r2=True, log=False)
 # %%
 # combine the result
@@ -293,7 +293,7 @@ for i in range(lent2):
 #%%
 # plot the absolute curve 
 model_name2 =run_name+'total'
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_kappa(df_te2, header='./models/' + model_name2, title='TEST_FD', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 plt.close()
 
@@ -311,8 +311,8 @@ for index, row0 in df_te.iterrows():
     df_save = pd.concat([df_save, dfn], ignore_index = True)
 df_save = df_save.sort_values(by='k300', ascending=True).reset_index(drop=True)
 print(df_save)
-df_save.to_csv(f'./data/rokabe/kappa{len(df_save)}.csv', index=False)
-# df_save2 = pd.read_csv(f'./data/rokabe/gruneisen{len(df_save)}.csv')
+df_save.to_csv(f'./dataConfig/rokabe/kappa{len(df_save)}.csv', index=False)
+# df_save2 = pd.read_csv(f'./dataConfig/rokabe/gruneisen{len(df_save)}.csv')
 
 plt.hist(df_save['k300'], bins=len(df_save)//10)
 plt.xlabel('kappa at 300K (W/(m K))')

@@ -43,7 +43,7 @@ class PygStructureDataset(torch.utils.data.Dataset):
     ):
         """Pytorch Dataset for atomistic graphs.
 
-        `df`: pandas dataframe from e.g. jarvis.db.figshare.data
+        `df`: pandas dataframe from e.g. jarvis.db.figshare.dataConfig
         `graphs`: DGLGraph representations corresponding to rows in `df`
         `target`: key for label column in `df`
         """
@@ -350,7 +350,7 @@ def build_undirected_edgedata(
     atoms=None,
     edges={},
 ):
-    """Build undirected graph data from edge set.
+    """Build undirected graph dataConfig from edge set.
 
     edges: dictionary mapping (src_id, dst_id) to set of dst_image
     r: cartesian displacement vector from src -> dst

@@ -45,7 +45,7 @@ tr_ratio = 1.0
 batch_size = 1
 k_fold = 5
 
-print('\ndata parameters')
+print('\ndataConfig parameters')
 print('method: ', k_fold, '-fold cross validation')
 print('training ratio: ', tr_ratio)
 print('batch size: ', batch_size)
@@ -156,7 +156,7 @@ if download_data:
     os.system(f'cd {data_dir}; tar -xf 9850858')
     os.system(f'rm -r {data_dir}/9850858*')
 data = load_band_structure_data(data_dir, raw_dir, data_file)
-files = ['./data/anharmonic_fc_2.pkl', './data/anharmonic_fc_3.pkl']
+files = ['./dataConfig/anharmonic_fc_2.pkl', './dataConfig/anharmonic_fc_3.pkl']
 anharmonic_dfs  = [pkl.load(open(file, 'rb')) for file in files]
 anharmonic = pd.concat(anharmonic_dfs, ignore_index=True)
 anharmonic['mpid'] = anharmonic['mpid'].map(lambda x: 'mp-' + str(x))
@@ -183,7 +183,7 @@ if remove_above_factor1:
 keys = anharmonic.keys()
 
 #%%
-# data = load_band_structure_data(data_dir, raw_dir, data_file)
+# dataConfig = load_band_structure_data(data_dir, raw_dir, data_file)
 data_dict = generate_kappa_data_dict(data_dir, run_name, anharmonic, r_max, factor, kappa_normalize)
 data_dict1 = generate_gru_data_dict(data_dir, run_name, anharmonic, r_max, factor1)
 
@@ -192,9 +192,9 @@ num = len(data_dict)
 tr_nums = [int((num * tr_ratio)//k_fold)] * k_fold
 te_num = num - sum(tr_nums)
 # idx_tr, idx_te = train_test_split(range(num), test_size=te_num, random_state=seed)
-# with open(f'./data/idx_{run_name}_tr.txt', 'w') as f: 
+# with open(f'./dataConfig/idx_{run_name}_tr.txt', 'w') as f:
 #     for idx in idx_tr: f.write(f"{idx}\n")
-# with open(f'./data/idx_{run_name}_te.txt', 'w') as f: 
+# with open(f'./dataConfig/idx_{run_name}_te.txt', 'w') as f:
 #     for idx in idx_te: f.write(f"{idx}\n")
 idx_tr = list(range(sum(tr_nums)))
 # idx_tr.remove(anharmonic[anharmonic['gru']==anharmonic['gru'].max()].index.item())
@@ -203,8 +203,8 @@ idx_te = list(range(num))
 #%%
 # activate this tab to load train/valid/test indices
 # run_name_idx = "221226-011042"
-# with open(f'./data/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
-# with open(f'./data/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
+# with open(f'./dataConfig/idx_{run_name_idx}_tr.txt', 'r') as f: idx_tr = [int(i.split('\n')[0]) for i in f.readlines()]
+# with open(f'./dataConfig/idx_{run_name_idx}_te.txt', 'r') as f: idx_te = [int(i.split('\n')[0]) for i in f.readlines()]
 
 
 #%%
@@ -294,10 +294,10 @@ te1_loader = DataLoader(te_set, batch_size = batch_size)
 df_tr = generate_dafaframe(model, tr_loader, loss_fn, device, factor)
 df_te = generate_dafaframe(model, te1_loader, loss_fn, device, factor)
 
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_kappa(df_tr, header='./models/' + model_name, title='TRAIN', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_kappa(df_te, header='./models/' + model_name, title='TEST', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 
 #%%
@@ -311,10 +311,10 @@ te1_loader1 = DataLoader(te_set1, batch_size = batch_size)
 df_tr1 = generate_dafaframe_scalar(model1, tr_loader1, loss_fn, device, factor1)
 df_te1 = generate_dafaframe_scalar(model1, te1_loader1, loss_fn, device, factor1)
 
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_scalar(df_tr1, color=palette[0], header='./models/' + model_name1, title='TRAIN', name='kmax', size=15, r2=True, log=False)
 
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_scalar(df_te1, color=palette[0], header='./models/' + model_name1, title='TEST', name='kmax', size=15, r2=True, log=False)
 # %%
 # combine the result
@@ -334,10 +334,10 @@ df_te2['loss'] = df_te2.apply(lambda row: np.array(loss_fn(torch.tensor(row['out
 #%%
 # plot the absolute curve 
 model_name2 =run_name+'total'
-# Plot the bands of TRAIN data
+# Plot the bands of TRAIN dataConfig
 plot_kappa(df_tr2, header='./models/' + model_name2, title='TRAIN', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 
-# Plot the bands of TEST data
+# Plot the bands of TEST dataConfig
 plot_kappa(df_te2, header='./models/' + model_name2, title='TEST', n=4, m=1, lwidth=0.6, windowsize=(3, 2.5), palette=palette, formula=True)
 
 

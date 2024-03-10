@@ -67,7 +67,7 @@ def smact_validity(atom_types_list,
                     try:
                         electroneg_OK = pauling_test(ox_states, electronegs)
                     except TypeError:
-                        # if no electronegativity data, assume it is okay
+                        # if no electronegativity dataConfig, assume it is okay
                         electroneg_OK = True
                 else:
                     electroneg_OK = True
