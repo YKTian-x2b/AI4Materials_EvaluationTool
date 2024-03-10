@@ -69,8 +69,8 @@ def run():
     resPath = 'result/'
     dataset = 'perov_5'
     logFile = dataset + '_res_log.txt'
-    command = 'python' + pyFile + '--result_path' + resPath + \
-               '--dataset' + dataset + '| tee' + logFile
+    command = 'python ' + pyFile + ' --result_path ' + resPath + \
+               ' --dataset ' + dataset + ' | tee ' + logFile
 
     process = subprocess.Popen(command, shell=True)
     print("running...")
