@@ -4,12 +4,13 @@ import time
 import os
 from nvitop import select_devices
 
+# os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(select_devices(devices=0, format="index"))
+
+
 # Device.gpu_utilization()  Device.memory_utilization() Device.temperature()
 # GpuProcess.gpu_memory_utilization()  gpu_sm_utilization()
 # GpuProcess.elapsed_time() GpuProcess.elapsed_time_in_seconds()
 # GpuProcess.cpu_percent() GpuProcess.memory_percent() GpuProcess.host_memory_percent()
-
-# os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(select_devices(devices=0, format="index"))
 
 
 # Device就是指GPU
