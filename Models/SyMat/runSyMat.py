@@ -8,7 +8,7 @@ from Utils import GenericMetrics
 from Utils import MetricsForPrediction
 import os
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
+current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 def run2():
     pyFile = 'train.py'
@@ -65,10 +65,10 @@ def run3():
 
 
 def run():
-    pyFile = 'train.py'
-    resPath = 'result/'
+    pyFile = current_dir + 'train.py'
+    resPath = current_dir + 'result/'
     dataset = 'perov_5'
-    logFile = dataset + '_res_log.txt'
+    logFile = current_dir + dataset + '_res_log.txt'
     command = 'python ' + pyFile + ' --result_path ' + resPath + \
                ' --dataset ' + dataset + ' | tee ' + logFile
 
