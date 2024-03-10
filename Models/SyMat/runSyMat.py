@@ -43,12 +43,13 @@ def run():
     command = ['python', pyFile,
                '--result_path', resPath,
                '--dataset', dataset,
-               '>', logFile, '2>&1']
+               '| tee', logFile]
 
     df = pd.DataFrame()
     collector = ResourceMetricCollector(root_pids={1}, interval=2.0)
     with collector(tag='resources'):
         process = subprocess.Popen(command, shell=True)
+        print("running...")
         process.wait()
         metrics = collector.collect()
         df_metrics = pd.DataFrame.from_records(metrics, index=[len(df)])
