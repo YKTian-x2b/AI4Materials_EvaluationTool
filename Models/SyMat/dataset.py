@@ -20,7 +20,6 @@ class MatDataset(Dataset):
             self._preprocess(data_path[:-4] + '.pt')
         else:
             raise NotImplementedError
-    
 
     def _preprocess(self, preprocessed_file_path):
         data_dict_list = []
@@ -31,7 +30,6 @@ class MatDataset(Dataset):
         
         self.data_dict_list = data_dict_list
         torch.save(self.data_dict_list, preprocessed_file_path)
-        
 
     def _get_mat_data(self, index):
         if hasattr(self, 'data_dict_list'):
@@ -39,6 +37,7 @@ class MatDataset(Dataset):
 
         row = self.df.iloc[index]
         crystal_str = row['cif']
+        # 重构晶体坐标
         crystal = build_crystal(crystal_str, niggli=True, primitive=False)
         graph_arrays = build_crystal_graph(crystal, self.graph_method)
 
@@ -53,13 +52,6 @@ class MatDataset(Dataset):
         
         return data_dict
 
-    
-    def __len__(self):
-        if hasattr(self, 'data_dict_list'):
-            return len(self.data_dict_list)
-        return len(self.df)
-    
-    
     def __getitem__(self, index):
         data_dict = self._get_mat_data(index)
         prop = torch.tensor(data_dict[self.prop_name])
@@ -78,6 +70,9 @@ class MatDataset(Dataset):
             num_nodes=num_atoms,  # special attribute used for batching in pytorch geometric
             y=prop.view(1, -1),
         )
-
         return data
-            
+
+    def __len__(self):
+        if hasattr(self, 'data_dict_list'):
+            return len(self.data_dict_list)
+        return len(self.df)

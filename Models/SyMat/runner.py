@@ -92,8 +92,7 @@ class Runner():
 
         val_dataset = MatDataset(val_data_path, **self.conf['dataConfig'])
         val_loader = DataLoader(val_dataset, batch_size=self.conf['batch_size'], shuffle=False)
-        
-        print("---kai: before loop---")
+
         end_epoch = self.conf['end_epoch']
         for epoch in range(self.conf['start_epoch'], end_epoch+1):
             if epoch == self.conf['start_epoch']:
@@ -106,8 +105,7 @@ class Runner():
                 last_model_dict = self.model.state_dict().copy()
 
             train_returns = self._train_epoch(loader, epoch)
-            
-            print(f"epoch{epoch}: after _train_epoch")
+
             retry_num = 0
             while train_returns is None and retry_num <= 3:
                 retry_num += 1
@@ -126,8 +124,7 @@ class Runner():
                     exit()
 
             avg_loss, avg_kld_loss, avg_kld_loss1, avg_kld_loss2, avg_kld_loss3, avg_elem_type_num_loss, avg_elem_type_loss, avg_elem_num_loss, avg_lattice_loss, avg_coord_loss = train_returns
-            
-            print(f"epoch{epoch}: before valid")
+
             _, _, _, _, _, _, _, _, _, _, elem_type_num_acc, elem_type_acc, elem_type_recall, elem_num_acc, elem_type_match, elem_num_match, comp_match = self.valid(loader)
 
             avg_val_loss, avg_val_kld_loss, avg_val_kld_loss1, avg_val_kld_loss2, avg_val_kld_loss3, avg_val_elem_type_num_loss, avg_val_elem_type_loss, avg_val_elem_num_loss, avg_val_lattice_loss,\

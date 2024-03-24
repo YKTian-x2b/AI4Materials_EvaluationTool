@@ -1,0 +1,167 @@
+name='matformer' conv_layers=5 edge_layers=0 atom_input_features=92 edge_features=128 triplet_input_features=40 node_features=128 fc_layers=1 fc_features=128 output_features=1 node_layer_head=4 edge_layer_head=4 nn_based=False link='identity' zero_inflated=False use_angle=False angle_lattice=False classification=False
+{'dataset': 'megnet', 'target': 'bulk modulus', 'epochs': 20, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'matformer_mp_bulk', 'id_tag': 'id', 'n_train': 4664, 'n_val': 393, 'n_test': 393}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'megnet',
+ 'distributed': False,
+ 'epochs': 20,
+ 'filename': 'sample',
+ 'id_tag': 'id',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': 393,
+ 'n_train': 4664,
+ 'n_val': 393,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'matformer_mp_bulk',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'bulk modulus',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '825401c11d4a21d0926204461bfda7cb4d2aa9d2',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining MEGNET-3D CFID dataset 69k...
+Reference:https://pubs.acs.org/doi/10.1021/acs.chemmater.9b01294
+Loading the zipfile...
+Loading completed.
+using mp bulk dataset
+MAX val: 7960.0
+MIN val: -21843.0
+MAD: 66.05500882806524
+Baseline MAE: 0.29028882743862783
+dataConfig range 2.639486489268586 0.6020599913279624
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 1.935231 std 0.364286
+normalize using training mean 1.935231 and std 0.364247
+warning: could not load CGCNN features for 103
+Setting it to max atomic number available here, 103
+warning: could not load CGCNN features for 101
+Setting it to max atomic number available here, 103
+warning: could not load CGCNN features for 102
+Setting it to max atomic number available here, 103
+building line graphs
+dataConfig range 2.639486489268586 0.6020599913279624
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 1.972748 std 0.361506
+normalize using training mean 1.935231 and std 0.364247
+building line graphs
+dataConfig range 2.639486489268586 0.47712125471966244
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 1.922417 std 0.363745
+normalize using training mean 1.935231 and std 0.364247
+building line graphs
+n_train: 4664
+n_val: 393
+n_test: 393
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}
+Val_MAE: 0.0974
+Train_MAE: -1.0000
+Val_MAE: 0.0946
+Train_MAE: -1.0000
+Val_MAE: 0.1858
+Train_MAE: -1.0000
+Val_MAE: 0.6795
+Train_MAE: -1.0000
+Val_MAE: 0.1099
+Train_MAE: -1.0000
+Val_MAE: 0.1047
+Train_MAE: -1.0000
+Val_MAE: 0.1634
+Train_MAE: -1.0000
+Val_MAE: 0.0930
+Train_MAE: -1.0000
+Val_MAE: 0.1204
+Train_MAE: -1.0000
+Val_MAE: 0.0808
+Train_MAE: -1.0000
+Val_MAE: 0.1917
+Train_MAE: -1.0000
+Val_MAE: 0.1090
+Train_MAE: -1.0000
+Val_MAE: 0.0900
+Train_MAE: -1.0000
+Val_MAE: 0.1004
+Train_MAE: -1.0000
+Val_MAE: 0.0816
+Train_MAE: -1.0000
+Val_MAE: 0.0592
+Train_MAE: -1.0000
+Val_MAE: 0.0582
+Train_MAE: -1.0000
+Val_MAE: 0.0579
+Train_MAE: -1.0000
+Val_MAE: 0.0538
+Train_MAE: -1.0000
+Val_MAE: 0.0543
+Train_MAE: 0.0527
+Test MAE: 0.06256827796939542
+train= {'loss': [0.05084562301635742], 'mae': [0.05273715467368338], 'neg_mae': [-0.05273715467368338]}
+validation= {'loss': [0.1826858123143514, 0.1623093287150065, 0.50333305199941, 4.128769874572754, 0.21390575170516968, 0.18374508619308472, 0.295573612054189, 0.12349184354146321, 0.17008642355600992, 0.11529287695884705, 0.42370227972666424, 0.147090345621109, 0.11813149849573772, 0.16526536146799722, 0.10689048965771993, 0.063212717572848, 0.06469607353210449, 0.0663338452577591, 0.057407562931378685, 0.05958518385887146], 'mae': [0.09738170658377236, 0.09457985263357237, 0.18584796542502593, 0.6794695279319889, 0.10991325094527128, 0.10466452945866715, 0.16337714885039478, 0.09298933952371313, 0.1203563734418027, 0.0808190777143939, 0.1917056175735727, 0.10901107944733804, 0.09001127330511396, 0.10042832110440762, 0.08158308154103563, 0.059214501227264266, 0.05824017743084076, 0.057910784457728015, 0.053779377859796154, 0.054278422814589763], 'neg_mae': [-0.09738170658377236, -0.09457985263357237, -0.18584796542502593, -0.6794695279319889, -0.10991325094527128, -0.10466452945866715, -0.16337714885039478, -0.09298933952371313, -0.1203563734418027, -0.0808190777143939, -0.1917056175735727, -0.10901107944733804, -0.09001127330511396, -0.10042832110440762, -0.08158308154103563, -0.059214501227264266, -0.05824017743084076, -0.057910784457728015, -0.053779377859796154, -0.054278422814589763]}
+Toal time: 276.826762676239
+
+
+

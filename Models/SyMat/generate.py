@@ -21,7 +21,7 @@ if not os.path.isfile(train_data_path):
 
 test_data_path = os.path.join('dataConfig', args.dataset, 'test.pt')
 if not os.path.isfile(test_data_path):
-    train_data_path = os.path.join('dataConfig', args.dataset, 'test.csv')
+    test_data_path = os.path.join('dataConfig', args.dataset, 'test.csv')
 
 score_norm_path = os.path.join('dataConfig', args.dataset, 'score_norm.txt')
 

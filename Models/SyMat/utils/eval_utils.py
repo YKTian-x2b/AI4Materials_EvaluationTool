@@ -17,6 +17,7 @@ from .constants import CompScalerMeans, CompScalerStds, chemical_symbols
 from .data_utils import StandardScaler
 from .mat_utils import frac_to_cart_coords, distance_matrix_pbc
 
+
 CrystalNNFP = CrystalNNFingerprint.from_preset("ops")
 CompFP = ElementProperty.from_preset('magpie')
 
