@@ -2,15 +2,17 @@ import os
 import sys
 import argparse
 
-from Models.SyMat import runSyMat
+# from Models.SyMat import runSyMat
+from Models.Matformer.matformer import runMatformer
 
 
 def runModel(modelName):
     if modelName == 'SyMat':
         print('SyMat')
-        runSyMat.run()
+        # runSyMat.run()
     elif modelName == 'Matformer':
         print('Matformer')
+        runMatformer.run()
     elif modelName == 'PDos':
         print('PDos')
     else:
@@ -27,4 +29,4 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     runModel(args.modelName)
-
+    # python main.py --modelName Matformer

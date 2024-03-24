@@ -3,3 +3,9 @@ datasets
 .idea
 
 data
+
+*.pt
+*.egg
+*.egg-info/
+__pycache__/
+MANIFEST

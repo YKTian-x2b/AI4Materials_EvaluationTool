@@ -1,0 +1,149 @@
+---kai: before loop---
+Training iteration 0 | loss kld 29.3569 kld1 12.9583 kld2 14.1649 kld3 2.2337 elem_type_num 1.5698 elem_type 0.7013 elem_num 1.5680 lattice 0.5773 coord 1.5963
+Training iteration 1 | loss kld 71.4081 kld1 20.3052 kld2 48.7721 kld3 2.3308 elem_type_num 1.5880 elem_type 0.6578 elem_num 1.4635 lattice 0.4890 coord 0.7141
+Training iteration 2 | loss kld 86.3943 kld1 30.5242 kld2 53.0894 kld3 2.7807 elem_type_num 1.4056 elem_type 0.5939 elem_num 1.3786 lattice 0.4147 coord 0.7016
+Training iteration 3 | loss kld 114.7953 kld1 65.3724 kld2 46.2447 kld3 3.1783 elem_type_num 1.2279 elem_type 0.4986 elem_num 1.2275 lattice 0.3063 coord 0.6994
+Training iteration 4 | loss kld 543.9769 kld1 374.1733 kld2 165.2865 kld3 4.5172 elem_type_num 1.3144 elem_type 0.2849 elem_num 0.9352 lattice 0.2899 coord 1.7526
+Training iteration 5 | loss kld 175.4692 kld1 128.8963 kld2 40.9739 kld3 5.5991 elem_type_num 1.0763 elem_type 0.3212 elem_num 0.9228 lattice 0.2050 coord 0.7631
+Training iteration 6 | loss kld 117.1441 kld1 82.8386 kld2 26.8190 kld3 7.4864 elem_type_num 1.1238 elem_type 0.3085 elem_num 0.9161 lattice 0.1391 coord 0.9472
+Training iteration 7 | loss kld 144.1960 kld1 101.9825 kld2 32.7490 kld3 9.4646 elem_type_num 1.0670 elem_type 0.2396 elem_num 0.7833 lattice 0.0721 coord 0.8872
+Training iteration 8 | loss kld 240.4379 kld1 177.2633 kld2 53.1843 kld3 9.9902 elem_type_num 0.9533 elem_type 0.1580 elem_num 0.6616 lattice 0.0529 coord 0.6783
+Training iteration 9 | loss kld 403.9863 kld1 300.8203 kld2 90.2126 kld3 12.9534 elem_type_num 0.9782 elem_type 0.1321 elem_num 0.5564 lattice 0.0681 coord 0.6567
+Training iteration 10 | loss kld 313.2745 kld1 231.9596 kld2 68.3698 kld3 12.9450 elem_type_num 0.9749 elem_type 0.1272 elem_num 0.5235 lattice 0.0835 coord 0.7020
+Training iteration 11 | loss kld 161.8091 kld1 111.6514 kld2 33.4752 kld3 16.6825 elem_type_num 0.9965 elem_type 0.1302 elem_num 0.5923 lattice 0.1278 coord 0.6569
+Training iteration 12 | loss kld 94.6946 kld1 57.3345 kld2 19.3140 kld3 18.0461 elem_type_num 1.0043 elem_type 0.1494 elem_num 0.6723 lattice 0.1073 coord 0.6255
+Training iteration 13 | loss kld 76.1705 kld1 44.8815 kld2 14.4298 kld3 16.8591 elem_type_num 1.0200 elem_type 0.1525 elem_num 0.6839 lattice 0.0797 coord 0.6868
+Training iteration 14 | loss kld 87.5877 kld1 58.0833 kld2 14.7282 kld3 14.7762 elem_type_num 1.0116 elem_type 0.1271 elem_num 0.6113 lattice 0.0514 coord 0.6289
+Training iteration 15 | loss kld 112.2940 kld1 81.5628 kld2 16.7296 kld3 14.0016 elem_type_num 0.9909 elem_type 0.1188 elem_num 0.5367 lattice 0.0376 coord 0.6414
+Training iteration 16 | loss kld 128.4727 kld1 97.6969 kld2 18.0565 kld3 12.7193 elem_type_num 0.9860 elem_type 0.1200 elem_num 0.5085 lattice 0.0380 coord 0.6986
+Training iteration 17 | loss kld 116.2255 kld1 86.1956 kld2 16.1068 kld3 13.9231 elem_type_num 1.0055 elem_type 0.1202 elem_num 0.4988 lattice 0.0426 coord 0.6021
+Training iteration 18 | loss kld 91.1672 kld1 63.5735 kld2 13.3586 kld3 14.2352 elem_type_num 0.9089 elem_type 0.1163 elem_num 0.5099 lattice 0.0469 coord 0.6156
+Training iteration 19 | loss kld 63.5823 kld1 40.8058 kld2 10.2805 kld3 12.4959 elem_type_num 0.9004 elem_type 0.1168 elem_num 0.5413 lattice 0.0440 coord 0.6869
+Training iteration 20 | loss kld 52.2670 kld1 28.8226 kld2 8.3055 kld3 15.1388 elem_type_num 0.9304 elem_type 0.1262 elem_num 0.5787 lattice 0.0588 coord 0.5674
+Training iteration 21 | loss kld 51.0659 kld1 27.8514 kld2 7.5226 kld3 15.6918 elem_type_num 0.9755 elem_type 0.1230 elem_num 0.5429 lattice 0.0608 coord 0.6148
+Training iteration 22 | loss kld 53.4185 kld1 32.3833 kld2 7.1407 kld3 13.8945 elem_type_num 0.9419 elem_type 0.1153 elem_num 0.5181 lattice 0.0508 coord 0.6120
+Training iteration 23 | loss kld 63.2974 kld1 40.5904 kld2 7.5850 kld3 15.1220 elem_type_num 0.9255 elem_type 0.1119 elem_num 0.4817 lattice 0.0409 coord 0.5954
+Training iteration 24 | loss kld 71.3311 kld1 47.4592 kld2 7.9472 kld3 15.9247 elem_type_num 1.0010 elem_type 0.1112 elem_num 0.5153 lattice 0.0378 coord 0.6207
+Training iteration 25 | loss kld 70.1555 kld1 45.7901 kld2 7.5195 kld3 16.8459 elem_type_num 0.9545 elem_type 0.1127 elem_num 0.4895 lattice 0.0331 coord 0.6078
+Training iteration 26 | loss kld 64.0137 kld1 40.0379 kld2 6.7403 kld3 17.2355 elem_type_num 0.9211 elem_type 0.1112 elem_num 0.4573 lattice 0.0261 coord 0.6325
+Training iteration 27 | loss kld 54.4753 kld1 32.4574 kld2 5.7381 kld3 16.2798 elem_type_num 0.9745 elem_type 0.1099 elem_num 0.4866 lattice 0.0235 coord 0.5620
+Training iteration 28 | loss kld 51.3621 kld1 27.0867 kld2 5.0279 kld3 19.2475 elem_type_num 0.9094 elem_type 0.1127 elem_num 0.4936 lattice 0.0231 coord 0.5960
+Training iteration 29 | loss kld 46.3382 kld1 23.8442 kld2 4.6278 kld3 17.8661 elem_type_num 0.9404 elem_type 0.1128 elem_num 0.4953 lattice 0.0259 coord 0.6562
+Training iteration 30 | loss kld 49.2881 kld1 24.3565 kld2 4.6218 kld3 20.3098 elem_type_num 0.9358 elem_type 0.1129 elem_num 0.4813 lattice 0.0283 coord 0.6293
+Training iteration 31 | loss kld 51.8108 kld1 28.1263 kld2 4.9984 kld3 18.6861 elem_type_num 0.9019 elem_type 0.1082 elem_num 0.4584 lattice 0.0254 coord 0.6389
+Training iteration 32 | loss kld 56.3985 kld1 32.7901 kld2 5.3199 kld3 18.2885 elem_type_num 0.9218 elem_type 0.1064 elem_num 0.4241 lattice 0.0300 coord 0.5787
+Training iteration 33 | loss kld 58.4369 kld1 35.7257 kld2 5.4460 kld3 17.2652 elem_type_num 0.8794 elem_type 0.1060 elem_num 0.4270 lattice 0.0280 coord 0.5632
+Training iteration 34 | loss kld 61.2115 kld1 36.1436 kld2 5.5236 kld3 19.5443 elem_type_num 0.8574 elem_type 0.1056 elem_num 0.4332 lattice 0.0246 coord 0.5524
+Training iteration 35 | loss kld 60.0844 kld1 35.3294 kld2 5.5119 kld3 19.2432 elem_type_num 0.8306 elem_type 0.1052 elem_num 0.3866 lattice 0.0230 coord 0.5452
+Training iteration 36 | loss kld 55.0472 kld1 32.2314 kld2 5.1258 kld3 17.6900 elem_type_num 0.8187 elem_type 0.1051 elem_num 0.3731 lattice 0.0191 coord 0.5788
+Training iteration 37 | loss kld 53.6390 kld1 29.9898 kld2 5.0104 kld3 18.6388 elem_type_num 0.8498 elem_type 0.1060 elem_num 0.3625 lattice 0.0203 coord 0.5693
+Training iteration 38 | loss kld 51.6922 kld1 29.9513 kld2 4.9817 kld3 16.7592 elem_type_num 0.8560 elem_type 0.1061 elem_num 0.3666 lattice 0.0201 coord 0.5899
+Training iteration 39 | loss kld 48.1156 kld1 29.2837 kld2 4.7819 kld3 14.0499 elem_type_num 0.7940 elem_type 0.1042 elem_num 0.3476 lattice 0.0207 coord 0.5328
+Training iteration 40 | loss kld 53.8195 kld1 31.9322 kld2 5.0094 kld3 16.8779 elem_type_num 0.7876 elem_type 0.1031 elem_num 0.3491 lattice 0.0222 coord 0.5366
+Training iteration 41 | loss kld 56.6936 kld1 34.6333 kld2 5.2711 kld3 16.7892 elem_type_num 0.8019 elem_type 0.1011 elem_num 0.3715 lattice 0.0223 coord 0.5481
+Training iteration 42 | loss kld 59.2367 kld1 37.0234 kld2 5.4060 kld3 16.8073 elem_type_num 0.7579 elem_type 0.1006 elem_num 0.3697 lattice 0.0239 coord 0.5135
+Training iteration 43 | loss kld 58.9958 kld1 37.3448 kld2 5.5278 kld3 16.1232 elem_type_num 0.7626 elem_type 0.1003 elem_num 0.3348 lattice 0.0201 coord 0.5530
+Training iteration 44 | loss kld 63.7910 kld1 38.2192 kld2 5.5511 kld3 20.0207 elem_type_num 0.6892 elem_type 0.1000 elem_num 0.3026 lattice 0.0243 coord 0.4736
+epoch0: after _train_epoch
+epoch0: before valid
+Training | Average loss 15.5057 kld 101.9651 kld1 66.8507 kld2 20.9464 kld3 14.1680 elem_type_num 0.9783 elem_type 0.1754 elem_num 0.5986 lattice 0.0890 coord 0.6758                 elem_type_num_acc 0.6324, elem_type_acc 0.9610 elem_type_recall 0.4894 elem_num_acc 0.8902 elem_type_match 0.0001 elem_num_match 0.6080 comp_match 0.0000
+Validation | Average loss 10.2390 kld 60.9819 kld1 38.7040 kld2 5.6947 kld3 16.5832 elem_type_num 0.6920 elem_type 0.0992 elem_num 0.3175 lattice 0.0197 coord 0.5446                 elem_type_num_acc 0.6483, elem_type_acc 0.9609 elem_type_recall 0.4870 elem_num_acc 0.8906 elem_type_match 0.0000 elem_num_match 0.6132 comp_match 0.0000
+Training iteration 0 | loss kld 60.1792 kld1 37.5525 kld2 5.6099 kld3 17.0168 elem_type_num 0.7765 elem_type 0.0969 elem_num 0.3646 lattice 0.0198 coord 0.5490
+Training iteration 1 | loss kld 58.8945 kld1 37.3434 kld2 5.6902 kld3 15.8609 elem_type_num 0.7101 elem_type 0.0983 elem_num 0.3376 lattice 0.0192 coord 0.5445
+Training iteration 2 | loss kld 60.8727 kld1 38.0523 kld2 5.6882 kld3 17.1322 elem_type_num 0.6873 elem_type 0.0982 elem_num 0.2975 lattice 0.0186 coord 0.5180
+Training iteration 3 | loss kld 63.9549 kld1 39.0983 kld2 5.6957 kld3 19.1609 elem_type_num 0.6562 elem_type 0.0987 elem_num 0.2798 lattice 0.0165 coord 0.5412
+Training iteration 4 | loss kld 63.0041 kld1 38.8770 kld2 5.5427 kld3 18.5845 elem_type_num 0.6311 elem_type 0.0978 elem_num 0.2616 lattice 0.0182 coord 0.5396
+Training iteration 5 | loss kld 62.0661 kld1 39.1287 kld2 5.3969 kld3 17.5404 elem_type_num 0.6582 elem_type 0.0970 elem_num 0.2954 lattice 0.0180 coord 0.5410
+Training iteration 6 | loss kld 66.0582 kld1 42.5805 kld2 5.8372 kld3 17.6405 elem_type_num 0.6909 elem_type 0.0967 elem_num 0.2614 lattice 0.0185 coord 0.5280
+Training iteration 7 | loss kld 63.4041 kld1 42.6427 kld2 5.4395 kld3 15.3219 elem_type_num 0.6447 elem_type 0.0946 elem_num 0.2894 lattice 0.0180 coord 0.5407
+Training iteration 8 | loss kld 65.9217 kld1 43.4256 kld2 5.5453 kld3 16.9508 elem_type_num 0.5906 elem_type 0.0956 elem_num 0.2371 lattice 0.0192 coord 0.5182
+Training iteration 9 | loss kld 64.2128 kld1 41.3882 kld2 5.0266 kld3 17.7980 elem_type_num 0.5842 elem_type 0.0952 elem_num 0.2501 lattice 0.0172 coord 0.4925
+Training iteration 10 | loss kld 63.3685 kld1 41.4062 kld2 5.0167 kld3 16.9455 elem_type_num 0.6157 elem_type 0.0952 elem_num 0.2515 lattice 0.0164 coord 0.5552
+Training iteration 11 | loss kld 61.3236 kld1 39.5958 kld2 4.8565 kld3 16.8713 elem_type_num 0.5857 elem_type 0.0958 elem_num 0.2628 lattice 0.0161 coord 0.5324
+Training iteration 12 | loss kld 62.2485 kld1 39.2769 kld2 4.7850 kld3 18.1866 elem_type_num 0.5409 elem_type 0.0955 elem_num 0.1947 lattice 0.0182 coord 0.5038
+Training iteration 13 | loss kld 60.8151 kld1 40.4396 kld2 4.8076 kld3 15.5678 elem_type_num 0.5323 elem_type 0.0942 elem_num 0.2396 lattice 0.0175 coord 0.5275
+Training iteration 14 | loss kld 59.0940 kld1 39.0844 kld2 4.5981 kld3 15.4116 elem_type_num 0.5415 elem_type 0.0947 elem_num 0.2223 lattice 0.0185 coord 0.5157
+Training iteration 15 | loss kld 63.0054 kld1 40.3976 kld2 4.7193 kld3 17.8885 elem_type_num 0.5463 elem_type 0.0930 elem_num 0.2411 lattice 0.0163 coord 0.5029
+Training iteration 16 | loss kld 60.8822 kld1 41.1580 kld2 4.8072 kld3 14.9170 elem_type_num 0.5536 elem_type 0.0936 elem_num 0.2100 lattice 0.0177 coord 0.5033
+Training iteration 17 | loss kld 62.1101 kld1 41.8217 kld2 4.7554 kld3 15.5329 elem_type_num 0.4369 elem_type 0.0931 elem_num 0.1656 lattice 0.0171 coord 0.4889
+Training iteration 18 | loss kld 61.6674 kld1 40.8359 kld2 4.5025 kld3 16.3290 elem_type_num 0.5250 elem_type 0.0932 elem_num 0.2110 lattice 0.0173 coord 0.5049
+Training iteration 19 | loss kld 61.9714 kld1 42.5731 kld2 4.6563 kld3 14.7419 elem_type_num 0.4243 elem_type 0.0922 elem_num 0.1818 lattice 0.0162 coord 0.4950
+Training iteration 20 | loss kld 58.4748 kld1 39.5865 kld2 4.2769 kld3 14.6113 elem_type_num 0.4338 elem_type 0.0932 elem_num 0.1964 lattice 0.0163 coord 0.5546
+Training iteration 21 | loss kld 61.0155 kld1 40.5596 kld2 4.3297 kld3 16.1261 elem_type_num 0.3601 elem_type 0.0930 elem_num 0.1659 lattice 0.0147 coord 0.5056
+Training iteration 22 | loss kld 63.8348 kld1 41.4264 kld2 4.3552 kld3 18.0532 elem_type_num 0.3780 elem_type 0.0928 elem_num 0.1449 lattice 0.0164 coord 0.5056
+Training iteration 23 | loss kld 63.0474 kld1 41.6374 kld2 4.3377 kld3 17.0724 elem_type_num 0.3875 elem_type 0.0927 elem_num 0.1649 lattice 0.0152 coord 0.4919
+Training iteration 24 | loss kld 63.3992 kld1 42.4317 kld2 4.3227 kld3 16.6447 elem_type_num 0.3203 elem_type 0.0923 elem_num 0.1620 lattice 0.0180 coord 0.5429
+Training iteration 25 | loss kld 65.3830 kld1 43.6219 kld2 4.3670 kld3 17.3941 elem_type_num 0.2958 elem_type 0.0922 elem_num 0.1474 lattice 0.0175 coord 0.5105
+Training iteration 26 | loss kld 62.5170 kld1 42.3802 kld2 4.3669 kld3 15.7699 elem_type_num 0.3544 elem_type 0.0916 elem_num 0.1751 lattice 0.0148 coord 0.5074
+Training iteration 27 | loss kld 65.3854 kld1 43.4755 kld2 4.3714 kld3 17.5385 elem_type_num 0.2674 elem_type 0.0921 elem_num 0.1331 lattice 0.0166 coord 0.4748
+Training iteration 28 | loss kld 65.2760 kld1 43.6885 kld2 4.4161 kld3 17.1714 elem_type_num 0.2861 elem_type 0.0916 elem_num 0.1458 lattice 0.0177 coord 0.5076
+Training iteration 29 | loss kld 61.2628 kld1 42.2071 kld2 4.3865 kld3 14.6692 elem_type_num 0.2037 elem_type 0.0927 elem_num 0.1201 lattice 0.0169 coord 0.4858
+Training iteration 30 | loss kld 62.6604 kld1 43.2511 kld2 4.5833 kld3 14.8260 elem_type_num 0.2280 elem_type 0.0913 elem_num 0.1253 lattice 0.0163 coord 0.4822
+Training iteration 31 | loss kld 62.6872 kld1 43.7505 kld2 4.6552 kld3 14.2814 elem_type_num 0.2188 elem_type 0.0907 elem_num 0.1315 lattice 0.0167 coord 0.4806
+Training iteration 32 | loss kld 61.5949 kld1 42.1287 kld2 4.3629 kld3 15.1033 elem_type_num 0.2302 elem_type 0.0919 elem_num 0.1409 lattice 0.0173 coord 0.5078
+Training iteration 33 | loss kld 64.2739 kld1 46.1860 kld2 4.6629 kld3 13.4251 elem_type_num 0.1406 elem_type 0.0912 elem_num 0.0994 lattice 0.0177 coord 0.4464
+Training iteration 34 | loss kld 61.0723 kld1 43.8826 kld2 4.2365 kld3 12.9532 elem_type_num 0.3439 elem_type 0.0898 elem_num 0.1788 lattice 0.0155 coord 0.4629
+Training iteration 35 | loss kld 60.6959 kld1 41.3187 kld2 4.0000 kld3 15.3772 elem_type_num 0.1970 elem_type 0.0907 elem_num 0.1469 lattice 0.0207 coord 0.5026
+Training iteration 36 | loss kld 58.6899 kld1 38.7986 kld2 3.7069 kld3 16.1844 elem_type_num 0.2230 elem_type 0.0910 elem_num 0.1403 lattice 0.0187 coord 0.4288
+Training iteration 37 | loss kld 57.4015 kld1 38.3631 kld2 3.6625 kld3 15.3759 elem_type_num 0.1318 elem_type 0.0912 elem_num 0.1122 lattice 0.0173 coord 0.4727
+Training iteration 38 | loss kld 58.3504 kld1 38.2447 kld2 3.7044 kld3 16.4013 elem_type_num 0.2474 elem_type 0.0897 elem_num 0.1642 lattice 0.0137 coord 0.4361
+Training iteration 39 | loss kld 55.0443 kld1 38.0620 kld2 3.5103 kld3 13.4721 elem_type_num 0.2037 elem_type 0.0899 elem_num 0.1446 lattice 0.0171 coord 0.4586
+Training iteration 40 | loss kld 55.8683 kld1 37.9955 kld2 3.4300 kld3 14.4428 elem_type_num 0.1631 elem_type 0.0897 elem_num 0.1251 lattice 0.0162 coord 0.4426
+Training iteration 41 | loss kld 59.5621 kld1 39.6355 kld2 3.4527 kld3 16.4739 elem_type_num 0.1511 elem_type 0.0891 elem_num 0.1148 lattice 0.0159 coord 0.4705
+Training iteration 42 | loss kld 59.5869 kld1 40.3862 kld2 3.4462 kld3 15.7545 elem_type_num 0.3431 elem_type 0.0881 elem_num 0.1550 lattice 0.0154 coord 0.4913
+Training iteration 43 | loss kld 60.0337 kld1 39.1658 kld2 3.4172 kld3 17.4507 elem_type_num 0.1930 elem_type 0.0887 elem_num 0.1241 lattice 0.0144 coord 0.5103
+Training iteration 44 | loss kld 52.8800 kld1 36.9009 kld2 3.2854 kld3 12.6937 elem_type_num 0.1195 elem_type 0.0893 elem_num 0.0747 lattice 0.0135 coord 0.4635
+epoch1: after _train_epoch
+epoch1: before valid
+Training | Average loss 9.1932 kld 61.4456 kld1 40.7947 kld2 4.5472 kld3 16.1037 elem_type_num 0.4078 elem_type 0.0930 elem_num 0.1909 lattice 0.0170 coord 0.5019                 elem_type_num_acc 0.9699, elem_type_acc 0.9634 elem_type_recall 0.5249 elem_num_acc 0.9786 elem_type_match 0.0023 elem_num_match 0.9230 comp_match 0.0021
+Validation | Average loss 8.4170 kld 56.1186 kld1 37.7419 kld2 3.3882 kld3 14.9885 elem_type_num 0.1782 elem_type 0.0897 elem_num 0.1199 lattice 0.0165 coord 0.4703                 elem_type_num_acc 0.9717, elem_type_acc 0.9634 elem_type_recall 0.5237 elem_num_acc 0.9794 elem_type_match 0.0026 elem_num_match 0.9250 comp_match 0.0026
+Training iteration 0 | loss kld 55.9532 kld1 36.5370 kld2 3.3758 kld3 16.0403 elem_type_num 0.2351 elem_type 0.0896 elem_num 0.1459 lattice 0.0146 coord 0.5024
+Training iteration 1 | loss kld 55.8863 kld1 37.8948 kld2 3.4042 kld3 14.5873 elem_type_num 0.1261 elem_type 0.0885 elem_num 0.0937 lattice 0.0140 coord 0.4784
+Training iteration 2 | loss kld 58.4524 kld1 38.5701 kld2 3.5146 kld3 16.3677 elem_type_num 0.2005 elem_type 0.0876 elem_num 0.1220 lattice 0.0144 coord 0.4559
+Training iteration 3 | loss kld 56.5140 kld1 37.0137 kld2 3.2634 kld3 16.2369 elem_type_num 0.1615 elem_type 0.0883 elem_num 0.1101 lattice 0.0174 coord 0.4795
+Training iteration 4 | loss kld 57.5771 kld1 37.4552 kld2 3.3694 kld3 16.7525 elem_type_num 0.1259 elem_type 0.0886 elem_num 0.0891 lattice 0.0152 coord 0.4263
+Training iteration 5 | loss kld 56.6401 kld1 37.9271 kld2 3.3830 kld3 15.3299 elem_type_num 0.1364 elem_type 0.0876 elem_num 0.1123 lattice 0.0150 coord 0.4646
+Training iteration 6 | loss kld 54.1003 kld1 38.1931 kld2 3.3522 kld3 12.5551 elem_type_num 0.1528 elem_type 0.0884 elem_num 0.1070 lattice 0.0170 coord 0.5011
+Training iteration 7 | loss kld 54.1618 kld1 36.1694 kld2 3.2927 kld3 14.6997 elem_type_num 0.1303 elem_type 0.0875 elem_num 0.0997 lattice 0.0179 coord 0.4800
+Training iteration 8 | loss kld 57.6665 kld1 37.9219 kld2 3.4926 kld3 16.2520 elem_type_num 0.1411 elem_type 0.0874 elem_num 0.1041 lattice 0.0154 coord 0.4518
+Training iteration 9 | loss kld 59.9157 kld1 39.5131 kld2 3.6332 kld3 16.7694 elem_type_num 0.1441 elem_type 0.0872 elem_num 0.0958 lattice 0.0182 coord 0.4689
+Training iteration 10 | loss kld 56.4980 kld1 39.2783 kld2 3.7114 kld3 13.5083 elem_type_num 0.2118 elem_type 0.0867 elem_num 0.1329 lattice 0.0188 coord 0.4623
+Training iteration 11 | loss kld 60.4199 kld1 38.2191 kld2 3.7342 kld3 18.4666 elem_type_num 0.1066 elem_type 0.0881 elem_num 0.0777 lattice 0.0173 coord 0.4547
+Training iteration 12 | loss kld 57.8066 kld1 37.2423 kld2 3.6219 kld3 16.9424 elem_type_num 0.1120 elem_type 0.0877 elem_num 0.0862 lattice 0.0133 coord 0.4467
+Training iteration 13 | loss kld 54.2839 kld1 36.2409 kld2 3.5197 kld3 14.5233 elem_type_num 0.2492 elem_type 0.0865 elem_num 0.1429 lattice 0.0155 coord 0.4843
+Training iteration 14 | loss kld 53.7229 kld1 35.2162 kld2 3.5088 kld3 14.9979 elem_type_num 0.1292 elem_type 0.0871 elem_num 0.0961 lattice 0.0142 coord 0.4593
+Training iteration 15 | loss kld 55.3456 kld1 36.2167 kld2 3.4952 kld3 15.6337 elem_type_num 0.1535 elem_type 0.0867 elem_num 0.1146 lattice 0.0146 coord 0.4367
+Training iteration 16 | loss kld 51.8761 kld1 35.4237 kld2 3.3761 kld3 13.0763 elem_type_num 0.1599 elem_type 0.0858 elem_num 0.1198 lattice 0.0151 coord 0.4390
+Training iteration 17 | loss kld 55.2270 kld1 35.9319 kld2 3.3094 kld3 15.9857 elem_type_num 0.1556 elem_type 0.0868 elem_num 0.1112 lattice 0.0154 coord 0.4340
+Training iteration 18 | loss kld 54.0988 kld1 36.9779 kld2 3.3343 kld3 13.7867 elem_type_num 0.0956 elem_type 0.0862 elem_num 0.0836 lattice 0.0161 coord 0.4740
+Training iteration 19 | loss kld 56.1277 kld1 36.8445 kld2 3.4908 kld3 15.7924 elem_type_num 0.1775 elem_type 0.0869 elem_num 0.1146 lattice 0.0165 coord 0.4570
+Training iteration 20 | loss kld 53.5830 kld1 35.9452 kld2 3.4354 kld3 14.2025 elem_type_num 0.2178 elem_type 0.0854 elem_num 0.1143 lattice 0.0144 coord 0.4841
+Training iteration 21 | loss kld 54.2948 kld1 35.0823 kld2 3.3477 kld3 15.8648 elem_type_num 0.1817 elem_type 0.0847 elem_num 0.1339 lattice 0.0162 coord 0.4172
+Training iteration 22 | loss kld 50.5609 kld1 35.5859 kld2 3.3380 kld3 11.6370 elem_type_num 0.1886 elem_type 0.0847 elem_num 0.1191 lattice 0.0149 coord 0.4450
+Training iteration 23 | loss kld 56.8862 kld1 35.4188 kld2 3.3928 kld3 18.0746 elem_type_num 0.1410 elem_type 0.0853 elem_num 0.1033 lattice 0.0153 coord 0.4841
+Training iteration 24 | loss kld 54.5167 kld1 36.5946 kld2 3.3454 kld3 14.5767 elem_type_num 0.1686 elem_type 0.0847 elem_num 0.1100 lattice 0.0154 coord 0.4657
+Training iteration 25 | loss kld 59.1130 kld1 37.3141 kld2 3.4004 kld3 18.3985 elem_type_num 0.0993 elem_type 0.0856 elem_num 0.0700 lattice 0.0162 coord 0.4523
+Training iteration 26 | loss kld 56.8765 kld1 36.4559 kld2 3.2921 kld3 17.1285 elem_type_num 0.1195 elem_type 0.0851 elem_num 0.0803 lattice 0.0155 coord 0.4583
+Training iteration 27 | loss kld 54.2610 kld1 33.2252 kld2 3.1909 kld3 17.8448 elem_type_num 0.1905 elem_type 0.0839 elem_num 0.1336 lattice 0.0158 coord 0.4973
+Training iteration 28 | loss kld 52.3760 kld1 34.2822 kld2 3.1914 kld3 14.9023 elem_type_num 0.1731 elem_type 0.0859 elem_num 0.1164 lattice 0.0154 coord 0.4535
+Training iteration 29 | loss kld 51.6569 kld1 34.6644 kld2 3.1256 kld3 13.8669 elem_type_num 0.1362 elem_type 0.0845 elem_num 0.0976 lattice 0.0166 coord 0.4473
+Training iteration 30 | loss kld 56.5511 kld1 36.4373 kld2 3.3660 kld3 16.7479 elem_type_num 0.1523 elem_type 0.0858 elem_num 0.0984 lattice 0.0124 coord 0.4670
+Training iteration 31 | loss kld 55.4413 kld1 39.3806 kld2 3.4759 kld3 12.5849 elem_type_num 0.1314 elem_type 0.0832 elem_num 0.0900 lattice 0.0138 coord 0.4104
+Training iteration 32 | loss kld 58.9559 kld1 39.2969 kld2 3.4206 kld3 16.2384 elem_type_num 0.1224 elem_type 0.0839 elem_num 0.0891 lattice 0.0153 coord 0.4210
+Training iteration 33 | loss kld 57.4689 kld1 39.0725 kld2 3.4662 kld3 14.9301 elem_type_num 0.1061 elem_type 0.0838 elem_num 0.0724 lattice 0.0163 coord 0.4351
+Training iteration 34 | loss kld 55.2896 kld1 36.1031 kld2 3.4889 kld3 15.6976 elem_type_num 0.1739 elem_type 0.0834 elem_num 0.1161 lattice 0.0143 coord 0.4132
+Training iteration 35 | loss kld 54.8690 kld1 34.9306 kld2 3.3619 kld3 16.5766 elem_type_num 0.2404 elem_type 0.0837 elem_num 0.1158 lattice 0.0149 coord 0.4265
+Training iteration 36 | loss kld 52.7719 kld1 34.6317 kld2 3.4056 kld3 14.7345 elem_type_num 0.1076 elem_type 0.0842 elem_num 0.0873 lattice 0.0131 coord 0.4626
+Training iteration 37 | loss kld 54.4381 kld1 35.2773 kld2 3.5937 kld3 15.5670 elem_type_num 0.2041 elem_type 0.0822 elem_num 0.1269 lattice 0.0160 coord 0.4289
+Training iteration 38 | loss kld 56.8154 kld1 38.2882 kld2 3.6360 kld3 14.8911 elem_type_num 0.1262 elem_type 0.0820 elem_num 0.0747 lattice 0.0132 coord 0.4759
+Training iteration 39 | loss kld 56.5336 kld1 38.2331 kld2 3.6246 kld3 14.6759 elem_type_num 0.1390 elem_type 0.0820 elem_num 0.0786 lattice 0.0162 coord 0.4464
+Training iteration 40 | loss kld 58.2693 kld1 37.7203 kld2 3.6998 kld3 16.8492 elem_type_num 0.1388 elem_type 0.0815 elem_num 0.0998 lattice 0.0159 coord 0.4378
+Training iteration 41 | loss kld 56.9815 kld1 35.7496 kld2 3.4808 kld3 17.7511 elem_type_num 0.1354 elem_type 0.0814 elem_num 0.0910 lattice 0.0128 coord 0.4715
+Training iteration 42 | loss kld 52.1070 kld1 34.9374 kld2 3.5029 kld3 13.6667 elem_type_num 0.1336 elem_type 0.0807 elem_num 0.0802 lattice 0.0137 coord 0.4440
+Training iteration 43 | loss kld 51.5124 kld1 33.5366 kld2 3.3695 kld3 14.6064 elem_type_num 0.1404 elem_type 0.0822 elem_num 0.0659 lattice 0.0135 coord 0.4466
+Training iteration 44 | loss kld 55.3121 kld1 34.6104 kld2 3.3984 kld3 17.3034 elem_type_num 0.1056 elem_type 0.0833 elem_num 0.0612 lattice 0.0138 coord 0.5239
+epoch2: after _train_epoch
+epoch2: before valid
+Training | Average loss 8.0962 kld 55.5492 kld1 36.6125 kld2 3.4341 kld3 15.5027 elem_type_num 0.1528 elem_type 0.0854 elem_num 0.1019 lattice 0.0153 coord 0.4572                 elem_type_num_acc 0.9735, elem_type_acc 0.9698 elem_type_recall 0.6081 elem_num_acc 0.9829 elem_type_match 0.0300 elem_num_match 0.9379 comp_match 0.0285
+Validation | Average loss 7.8118 kld 54.3277 kld1 35.8889 kld2 3.5678 kld3 14.8710 elem_type_num 0.1337 elem_type 0.0812 elem_num 0.0949 lattice 0.0141 coord 0.4464                 elem_type_num_acc 0.9760, elem_type_acc 0.9694 elem_type_recall 0.6016 elem_num_acc 0.9821 elem_type_match 0.0288 elem_num_match 0.9366 comp_match 0.0267
+cost: 0:00:28.701456

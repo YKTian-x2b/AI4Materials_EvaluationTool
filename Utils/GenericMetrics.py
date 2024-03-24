@@ -122,4 +122,5 @@ def getProcessElapsedTime(HostPid):
 def getFLOPSandParams(model, data_input):
     flops, params = profile(model, (data_input,))
     print('flops: %.2f M, params: %.2f M' % (flops/1000000.0, params/1000000.0))
+    return flops, params
 

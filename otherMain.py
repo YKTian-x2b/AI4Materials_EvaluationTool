@@ -4,5 +4,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 if __name__ == '__main__':
-    filePath = os.path.join(current_dir, "Models", "SyMat", "metrics.csv")
+    innerPath = 'matformer/matformer_mp_bulk'
+    filePath = os.path.join(current_dir, "Models", "Matformer",
+                            innerPath, "metrics.csv")
     readCSV(filePath)

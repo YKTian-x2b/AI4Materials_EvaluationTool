@@ -21,26 +21,32 @@
 
 - 目前希望支持材料表示学习/材料表征/声子计算/材料生成领域的部分模型：
 
-  - FTCP, SyMat, PDos, Matformer
+  - SyMat, PDos, Matformer
 
   
 
 ### Demo结果
 
-| Metrics/Model                         | **SyMat**          | FTCP | PDos | Matformer | Other |
+| Metrics/Model                         | **SyMat**          | Matformer | PDos |  | Other |
 | ------------------------------------- | ------------------ | ---- | ---- | --------- | ----- |
-| **duration (s)**                      | 59.766264567151666 |      |      |           |       |
-| **gpu:0/gpu_utilization (%)/mean**    | 44.72449783248215  |      |      |           |       |
-| **gpu:0/memory_utilization (%)/mean** | 20.88040779519485  |      |      |           |       |
-| **gpu:0/power_usage (W)/mean**        | 59.759263886971425 |      |      |           |       |
-| **host/cpu_percent (%)/mean**         | 11.093333485733483 |      |      |           |       |
-| **host/memory_percent (%)/mean**      | 61.39133474256576  |      |      |           |       |
+| **duration (s)**                      | 59.766264567151666 | 279.6747203390005 |      |           |       |
+| **gpu:0/gpu_utilization (%)/mean**    | 44.72449783248215  | 57.34024483103515 |      |           |       |
+| **gpu:0/memory_utilization (%)/mean** | 20.88040779519485  | 52.77920022097266 |      |           |       |
+| **gpu:0/power_usage (W)/mean**        | 59.759263886971425 | 137.61544282401448 |      |           |       |
+| **host/cpu_percent (%)/mean**         | 11.093333485733483 | 10.778991993015806 |      |           |       |
+| **host/memory_percent (%)/mean**      | 61.39133474256576  | 57.97314795422511 |      |           |       |
+| Params |  | | | | |
+| FLOPs |  | | | | |
+| **MAE** |  | 0.0625682767954642 | | | |
+| **MSE** |  | 0.00973441919158266 | | | |
+| **RMSE** |  | 0.09866316025539959 | | | |
 
 
 
 ### 运行
 
 ~~~bash
+# [SyMat, Matformer, PDos]
 python main.py --modelName SyMat
 ~~~
 
@@ -51,8 +57,9 @@ python main.py --modelName SyMat
 ~~~bash
 ### nvitop/thop/psutil
 # nvitop
-pip3 install --upgrade nvitop
-conda install -c conda-forge nvitop
+pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 # thop
 pip install thop
+
+# 除此之外，你还需要安装对应模型运行所需的包。如 Models/{modelName}/README 所示。
 ~~~
