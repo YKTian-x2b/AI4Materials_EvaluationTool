@@ -155,11 +155,11 @@ class Matformer(nn.Module):
             self.link = torch.sigmoid
 
     def forward(self, data) -> torch.Tensor:
-        data, ldata, lattice = data
+        vdata, ldata, lattice, *_ = data
         # initial node features: atom feature network...
-            
-        node_features = self.atom_embedding(data.x)
-        edge_feat = torch.norm(data.edge_attr, dim=1)
+
+        node_features = self.atom_embedding(vdata.x)
+        edge_feat = torch.norm(vdata.edge_attr, dim=1)
         
         edge_features = self.rbf(edge_feat)
         if self.angle_lattice: ## module not used
@@ -169,17 +169,17 @@ class Matformer(nn.Module):
             cos2 = self.lattice_angle(torch.clamp(torch.sum(lattice[:,0,:] * lattice[:,2,:], dim=-1) / (torch.norm(lattice[:,0,:], dim=-1) * torch.norm(lattice[:,2,:], dim=-1)), -1, 1).unsqueeze(-1)).view(-1, 128)
             cos3 = self.lattice_angle(torch.clamp(torch.sum(lattice[:,1,:] * lattice[:,2,:], dim=-1) / (torch.norm(lattice[:,1,:], dim=-1) * torch.norm(lattice[:,2,:], dim=-1)), -1, 1).unsqueeze(-1)).view(-1, 128)
             lattice_emb = self.lattice_emb(torch.cat((lattice_edge, cos1, cos2, cos3), dim=-1))
-            node_features = self.lattice_atom_emb(torch.cat((node_features, lattice_emb[data.batch]), dim=-1))
+            node_features = self.lattice_atom_emb(torch.cat((node_features, lattice_emb[vdata.batch]), dim=-1))
         
-        node_features = self.att_layers[0](node_features, data.edge_index, edge_features)
-        node_features = self.att_layers[1](node_features, data.edge_index, edge_features)
-        node_features = self.att_layers[2](node_features, data.edge_index, edge_features)
-        node_features = self.att_layers[3](node_features, data.edge_index, edge_features)
-        node_features = self.att_layers[4](node_features, data.edge_index, edge_features)
+        node_features = self.att_layers[0](node_features, vdata.edge_index, edge_features)
+        node_features = self.att_layers[1](node_features, vdata.edge_index, edge_features)
+        node_features = self.att_layers[2](node_features, vdata.edge_index, edge_features)
+        node_features = self.att_layers[3](node_features, vdata.edge_index, edge_features)
+        node_features = self.att_layers[4](node_features, vdata.edge_index, edge_features)
 
 
         # crystal-level readout
-        features = scatter(node_features, data.batch, dim=0, reduce="mean")
+        features = scatter(node_features, vdata.batch, dim=0, reduce="mean")
 
         if self.angle_lattice:
             # features *= F.sigmoid(lattice_emb)

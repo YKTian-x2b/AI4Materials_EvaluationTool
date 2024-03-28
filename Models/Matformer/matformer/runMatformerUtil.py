@@ -190,7 +190,7 @@ def get_prop_model_config(
     return config
 
 
-def getDataLoader(config, use_save, mp_id_list, line_graph):
+def get_train_val_loaders_kai(config, use_save, mp_id_list, line_graph):
     return get_train_val_loaders(
         dataset=config.dataset,
         target=config.target,
@@ -224,5 +224,5 @@ def getDataLoader(config, use_save, mp_id_list, line_graph):
         use_lattice=config.use_lattice,
         use_angle=config.use_angle,
         use_save=use_save,
-        mp_id_list=mp_id_list
+        mp_id_list=mp_id_list,
     )

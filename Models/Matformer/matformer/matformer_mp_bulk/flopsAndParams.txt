@@ -1,0 +1,1 @@
+total_flops: 4839960784896.0, total_params: 200365128.0

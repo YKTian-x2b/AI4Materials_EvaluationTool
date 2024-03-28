@@ -8,3 +8,4 @@ if __name__ == '__main__':
     filePath = os.path.join(current_dir, "Models", "Matformer",
                             innerPath, "metrics.csv")
     readCSV(filePath)
+    # total_flops: 4839960784896.0, total_params: 200365128.0
