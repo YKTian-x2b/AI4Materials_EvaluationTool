@@ -5,15 +5,14 @@ from scipy.spatial.distance import pdist, cdist
 from scipy.stats import wasserstein_distance
 import itertools
 import torch
-
 from matminer.featurizers.site.fingerprint import CrystalNNFingerprint
 from matminer.featurizers.composition.composite import ElementProperty
 from pymatgen.core.composition import Composition
 import smact
 from smact.screening import pauling_test
 
-from utils import StandardScaler, frac_to_cart_coords, distance_matrix_pbc
-from GenerationModelConstants import CompScalerMeans, CompScalerStds, chemical_symbols
+from Utils.utils import StandardScaler, frac_to_cart_coords, distance_matrix_pbc
+from Utils.GenerationModelConstants import CompScalerMeans, CompScalerStds, chemical_symbols
 
 
 CrystalNNFP = CrystalNNFingerprint.from_preset("ops")

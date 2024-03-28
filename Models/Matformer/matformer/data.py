@@ -351,6 +351,7 @@ def get_train_val_loaders(
     train_sample = filename + "_train.dataConfig"
     val_sample = filename + "_val.dataConfig"
     test_sample = filename + "_test.dataConfig"
+    print("output_dir", output_dir)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     if (

@@ -1,7 +1,7 @@
 import sys
 import os
 current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
-os.environ['CUBLAS_WORKSPACE_CONFIG']=':16:8'
+os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':16:8'
 import pandas as pd
 import subprocess
 import torch
@@ -10,34 +10,45 @@ from Utils import GenericMetrics
 from Utils import MetricsForPrediction
 from nvitop import ResourceMetricCollector
 
+# 调整工作目录
+os.chdir(current_dir)
+sys.path.insert(0, current_dir)
+from runMatformerUtil import get_prop_model_config, get_train_val_loaders_kai
+from pyg_att import Matformer
+from train import train_dgl
+from config import TrainingConfig
+
 
 def run():
-    # 调整工作目录
-    os.chdir(current_dir)
-    sys.path.insert(0, current_dir)
     device = torch.device("cuda")
-
     pyFile = 'train_mp.py'
     command = 'python ' + pyFile
-
     output_dir_ = current_dir + "matformer_mp_bulk"
     if not os.path.exists(output_dir_):
         os.makedirs(output_dir_)
     # getxPUInfo(command, output_dir_)
 
-    from runMatformerUtil import get_prop_model_config
-    # ["mu_b", "elastic anisotropy"]
-    props = ["e_form", "gap pbe", "bulk modulus", "shear modulus"]
+    props = ["e_form", "gap pbe", "bulk modulus", "shear modulus"]      # ["mu_b", "elastic anisotropy"]
     mp_id_list_ = "bulk"
     use_save_ = True
     line_graph = True
+    classification = False
     config = get_prop_model_config(learning_rate=0.001, name="matformer", dataset="megnet",
                                    prop=props[2], pyg_input=True, n_epochs=2, batch_size=64,
                                    use_lattice=True, output_dir=output_dir_, use_angle=False,
                                    save_dataloader=False, use_save=use_save_, mp_id_list=mp_id_list_)
-    # getFLOPSandParams(device, config, use_save_, mp_id_list_, line_graph)
+    print(config)
+    if type(config) is dict:
+        try:
+            config = TrainingConfig(**config)
+        except Exception as exp:
+            print("Check", exp)
+            print('error in converting to training config!')
+    getFLOPSandParams(device, config, use_save_, mp_id_list_, line_graph, output_dir_, classification)
 
-    getEvalMetrics(config, use_save_, mp_id_list_)
+    # if config["classification_threshold"] is not None:
+    #     classification = True
+    # getEvalMetrics(config, use_save_, mp_id_list_, classification)
 
 
 def getxPUInfo(command, output_dir):
@@ -61,31 +72,40 @@ def getxPUInfo(command, output_dir):
     df.to_csv(output_dir + '/metrics.csv', index=False)
 
 
-def getFLOPSandParams(device, config, use_save, mp_id_list, line_graph):
-    from runMatformerUtil import get_train_val_loaders
-    from pyg_att import Matformer
-
-    (train_loader, _, _, _, _, _) = get_train_val_loaders(config, use_save, mp_id_list, line_graph)
-    model = Matformer(config)
+def getFLOPSandParams(device, config, use_save, mp_id_list, line_graph, output_dir, classification):
+    (train_loader, _, _, _, _, _) = get_train_val_loaders_kai(config, use_save, mp_id_list, line_graph)
+    if classification:
+        config.model.classification = True
+    model = Matformer(config.model)
     model.to(device)
     total_flops = 0
     total_params = 0
     for iter_num, data_batch in enumerate(train_loader):
-        data_batch = data_batch.to("cuda")
-        flops, params = GenericMetrics.getFLOPSandParams(model, data_batch)
+        data_batch_device = tuple(item.to(device) for item in data_batch)
+        flops, params = GenericMetrics.getFLOPSandParams(model, data_batch_device)
         total_flops += flops
         total_params += params
-    print(f'total_flops: {total_flops}, total_params: {total_params}')
+    msg = f'total_flops: {total_flops}, total_params: {total_params}'
+    print(msg)
+    with open(output_dir + '/flopsAndParams.txt', 'w') as paramsFile:
+        paramsFile.write(msg)
 
 
-def getEvalMetrics(config, use_save, mp_id_list):
-    from train import train_dgl
-
+def getEvalMetrics(config, use_save, mp_id_list, classification):
     _, targets, predictions = train_dgl(config, test_only=True,
-                                             use_save=use_save,
-                                             mp_id_list=mp_id_list)
-    testMAE = MetricsForPrediction.getMAE(targets, predictions)
-    testMSE = MetricsForPrediction.getMSE(targets, predictions)
-    testRMSE = MetricsForPrediction.getRMSE(targets, predictions)
-    print("testMAE=", testMAE, "; testMSE=", testMSE, "; testRMSE=", testRMSE)
+                                        use_save=use_save,
+                                        mp_id_list=mp_id_list)
 
+    if not classification:
+        testMAE = MetricsForPrediction.getMAE(targets, predictions)
+        testMSE = MetricsForPrediction.getMSE(targets, predictions)
+        testRMSE = MetricsForPrediction.getRMSE(targets, predictions)
+        print("testMAE=", testMAE, "; testMSE=", testMSE, "; testRMSE=", testRMSE)
+    else:
+        testAccuracy = MetricsForPrediction.getAccuracy(targets, predictions)
+        testRecall = MetricsForPrediction.getRecall(targets, predictions)
+        testPrecision = MetricsForPrediction.getPrecision(targets, predictions)
+        testF1Score = MetricsForPrediction.getF1Score(targets, predictions)
+        testROCandAUC = MetricsForPrediction.getROCandAUC(targets, predictions)
+        print("testAccuracy=", testAccuracy, "; testRecall=", testRecall, "; testPrecision=", testPrecision)
+        print("testF1Score=", testF1Score, "; testROCandAUC=", testROCandAUC)

@@ -1,24 +1,25 @@
-import os
 import subprocess
-import sys
 import pandas as pd
 import numpy as np
 import torch
 from datetime import datetime
 from nvitop import ResourceMetricCollector
 from torch_geometric.data import DataLoader
-from Utils import GenericMetrics
+
 from Utils import MetricsForGeneration
+from Utils import GenericMetrics
+import os
+import sys
+# 调整工作目录
+current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
+os.chdir(current_dir)
+sys.path.insert(0, current_dir)
 from runner import Runner
 from utils import get_structure
-
-current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
-
+from dataset import MatDataset
+from model import MatGen
 
 def run(datasetName='perov_5'):
-    # 调整工作目录
-    os.chdir(current_dir)
-    sys.path.insert(0, current_dir)
 
     # getxPUInfo
     pyFile = 'train.py'
@@ -26,10 +27,7 @@ def run(datasetName='perov_5'):
     dataset = datasetName
     command = 'python ' + pyFile + ' --result_path ' + resPath + \
               ' --dataset ' + dataset
-    getxPUInfo(command, dataset)
-
-    #
-    from model import MatGen
+    # getxPUInfo(command, dataset)
 
     train_data_path = os.path.join('dataConfig', dataset, 'train.pt')
     if not os.path.isfile(train_data_path):
@@ -56,12 +54,12 @@ def run(datasetName='perov_5'):
     print("executing getFLOPSandParams ...")
     getFLOPSandParams(model, train_data_path, conf)
 
-    print("executing generate and eval...")
-    model_path = 'result/model_699.pth'
-    num_gen = 10
-    if not os.path.isfile(model_path):
-        raise Exception("Model path is not exist!")
-    generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
+    # print("executing generate and eval...")
+    # model_path = 'result/model_699.pth'
+    # num_gen = 10
+    # if not os.path.isfile(model_path):
+    #     raise Exception("Model path is not exist!")
+    # generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
 
 
 def getxPUInfo(command, dataset):
@@ -86,7 +84,6 @@ def getxPUInfo(command, dataset):
 
 
 def getFLOPSandParams(model, train_data_path, conf):
-    from dataset import MatDataset
     dataset = MatDataset(train_data_path, **conf['dataConfig'])
     loader = DataLoader(dataset, batch_size=conf['batch_size'], shuffle=True)
     total_flops = 0
@@ -96,7 +93,10 @@ def getFLOPSandParams(model, train_data_path, conf):
         flops, params = GenericMetrics.getFLOPSandParams(model, data_batch)
         total_flops += flops
         total_params += params
-    print(f'total_flops: {total_flops}, total_params: {total_params}')
+    msg = f'total_flops: {total_flops}, total_params: {total_params}'
+    print(msg)
+    with open('result/flopsAndParams.txt', 'w') as paramsFile:
+        paramsFile.write(msg)
 
 
 def generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen):
@@ -108,7 +108,6 @@ def generate(model_path, test_data_path, train_data_path, conf, score_norm_path,
     # command = 'python ' + pyFile + ' --model_path ' + modelPath + \
     #           ' --dataset ' + dataset + '--num_gen' + numGen
 
-    from dataset import MatDataset
     dataset = MatDataset(test_data_path, prop_name=conf['dataConfig']['prop_name'])
     loader = DataLoader(dataset, batch_size=1, shuffle=False)
 
