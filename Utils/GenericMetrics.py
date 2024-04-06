@@ -1,8 +1,10 @@
-from nvitop import Device, GpuProcess, NA, colored, HostProcess
+from nvitop import Device, GpuProcess, NA, colored, HostProcess, ResourceMetricCollector
 from thop import profile
 import time
 import os
+import logging
 from nvitop import select_devices
+
 
 # os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(select_devices(devices=0, format="index"))
 
@@ -117,6 +119,27 @@ def getProcessElapsedTime(HostPid):
             print(snapshot.running_time_human)
             if snapshot.pid == HostPid:
                 print("snapshot.pid == HostPid")
+
+
+def getMetricsList():
+
+    logger = logging.getLogger('MetricsLogger')
+
+    def on_collect(metrics):  # will be called periodically
+        logger.info(metrics)
+        return True
+
+    def on_stop(collector):  # will be called only once at stop
+        print('collect end!')
+
+    # Record metrics to the logger in the background every 5 seconds.
+    # It will collect 5-second mean/min/max for each metric.
+    ResourceMetricCollector(Device.cuda.all()).daemonize(
+        on_collect,
+        ResourceMetricCollector(Device.cuda.all()),
+        interval=5.0,
+        on_stop=on_stop,
+    )
 
 
 def getFLOPSandParams(model, data_input):
