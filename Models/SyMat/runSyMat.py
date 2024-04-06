@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import torch
 from datetime import datetime
-from nvitop import ResourceMetricCollector
+from nvitop import ResourceMetricCollector, collect_in_background
 from torch_geometric.data import DataLoader
 
 from Utils import MetricsForGeneration
@@ -19,8 +19,8 @@ from utils import get_structure
 from dataset import MatDataset
 from model import MatGen
 
-def run(datasetName='perov_5'):
 
+def run(datasetName='perov_5'):
     # getxPUInfo
     pyFile = 'train.py'
     resPath = 'result/'
@@ -28,18 +28,17 @@ def run(datasetName='perov_5'):
     command = 'python ' + pyFile + ' --result_path ' + resPath + \
               ' --dataset ' + dataset
     # getxPUInfo(command, dataset)
+    # getxPUInfoList(command, dataset)
 
     train_data_path = os.path.join('dataConfig', dataset, 'train.pt')
     if not os.path.isfile(train_data_path):
         train_data_path = os.path.join('dataConfig', dataset, 'train.csv')
-
-    val_data_path = os.path.join('dataConfig', dataset, 'val.pt')
-    if not os.path.isfile(val_data_path):
-        val_data_path = os.path.join('dataConfig', dataset, 'val.csv')
-
     test_data_path = os.path.join('dataConfig', dataset, 'test.pt')
     if not os.path.isfile(test_data_path):
         test_data_path = os.path.join('dataConfig', dataset, 'test.csv')
+    # val_data_path = os.path.join('dataConfig', dataset, 'val.pt')
+    # if not os.path.isfile(val_data_path):
+    #     val_data_path = os.path.join('dataConfig', dataset, 'val.csv')
 
     score_norm_path = os.path.join('dataConfig', dataset, 'score_norm.txt')
     os.chdir(current_dir)
@@ -51,20 +50,21 @@ def run(datasetName='perov_5'):
         from config.mp_20_config_dict import conf
 
     model = MatGen(**conf['model'], score_norm=np.loadtxt(score_norm_path))
-    print("executing getFLOPSandParams ...")
-    getFLOPSandParams(model, train_data_path, conf)
+    # print("executing getFLOPSandParams ...")
+    # getFLOPSandParams(model, train_data_path, conf)
 
-    # print("executing generate and eval...")
-    # model_path = 'result/model_699.pth'
-    # num_gen = 10
-    # if not os.path.isfile(model_path):
-    #     raise Exception("Model path is not exist!")
-    # generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
+    print("executing generate and eval...")
+    model_path = 'result/model_699.pth'
+    num_gen = 10
+    if not os.path.isfile(model_path):
+        raise Exception("Model path is not exist!")
+    generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
 
 
 def getxPUInfo(command, dataset):
-    logFile = dataset + '_res_log.txt'
-    errFile = dataset + '_err_log.txt'
+    resDir = 'tmpRes/'
+    logFile = resDir + dataset + '_res_log.txt'
+    errFile = resDir + dataset + '_err_log.txt'
     df = pd.DataFrame()
     collector = ResourceMetricCollector(root_pids={1}, interval=2.0)
     with collector(tag='resources'):
@@ -80,7 +80,45 @@ def getxPUInfo(command, dataset):
         err.close()
     print("end...")
     df.insert(0, 'time', df['resources/timestamp'].map(datetime.fromtimestamp))
-    df.to_csv('metrics.csv', index=False)
+    df.to_csv(resDir + 'metrics.csv', index=False)
+
+
+def getxPUInfoList(command, dataset):
+    resDir = 'tmpRes/'
+    resFile = resDir + dataset + '_res_log.txt'
+    errFile = resDir + dataset + '_err_log.txt'
+    res = open(current_dir + resFile, 'w')
+    err = open(current_dir + errFile, 'w')
+
+    def on_collect(metrics):
+        if res.closed:
+            return False
+        with open(resDir + 'metrics.csv', 'a', newline='') as file:
+            df_metrics = pd.DataFrame.from_dict(metrics, orient='index').T
+            csv_string = df_metrics.to_csv(index=False, header=False)
+            if os.path.getsize(resDir + 'metrics.csv') == 0:
+                csv_string = df_metrics.to_csv(index=False)
+            file.write(csv_string)
+        return True
+
+    def on_stop(collector):
+        if not res.closed:
+            res.close()
+        print('collection end!')
+
+    collect_in_background(
+        on_collect,
+        ResourceMetricCollector(root_pids={1}),
+        interval=2.0,
+        on_stop=on_stop,
+    )
+    process = subprocess.Popen(command, shell=True, stdout=res, stderr=err)
+    print("running...")
+    process.wait()
+    res.close()
+    err.close()
+    print("end...")
+
 
 
 def getFLOPSandParams(model, train_data_path, conf):

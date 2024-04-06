@@ -1,0 +1,11 @@
+/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/runner.py:20: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
+  lengths = torch.tensor([data['graph_arrays'][2] for data in dataset.data_dict_list])
+/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/utils/data_utils.py:114: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  X = torch.tensor(X, dtype=torch.float)
+/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/utils/data_utils.py:120: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  X = torch.tensor(X, dtype=torch.float)
+Exception ignored in: <function Pool.__del__ at 0x7ff254cb1670>
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 362, in put
+AttributeError: 'NoneType' object has no attribute 'dumps'

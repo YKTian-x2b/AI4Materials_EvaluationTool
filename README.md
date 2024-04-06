@@ -10,8 +10,8 @@
   - 分类任务：ROC, AUC, Accuracy, Precision, Recall, F1_Score
 
 - 对于材料生成任务，希望评估如下指标：
-  - 有效率：
-  - 成功率：
+  - 有效率
+  - 成功率
   - COV
   - EMD
 
@@ -40,14 +40,20 @@
 | **MAE** | - | 0.0625682767954642 | | |
 | **MSE** | - | 0.00973441919158266 | | |
 | **RMSE** | - | 0.09866316025539959 | | |
-| 有效率 | (TODO) | - | | |
-| COV | (TODO) | - | | |
-| EMD | (TODO) | - | | |
+| **有效率** | 0.9/1.0(numGen=10) | - | | |
+| **COV** |  | - | | |
+| **EMD** | 0.258/1.075 | - | | |
 | ROC/AUC | - | (TODO) | | |
 | Accuracy | - | (TODO) | | |
 | Precision | - | (TODO) | | |
 | Recall | - | (TODO) | | |
 | F1_Score | - | (TODO) | | |
+
+### 黑盒资源利用率
+
+- SyMat模型 & perov_5数据集 & 50epoch的资源利用率采样情况
+
+![](assets/BlockBoxResource_show.png)
 
 
 
