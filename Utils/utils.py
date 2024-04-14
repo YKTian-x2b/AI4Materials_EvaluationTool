@@ -4,6 +4,7 @@ import torch
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 class StandardScaler:
     """A :class:`StandardScaler` normalizes the features of a dataset.
     When it is fit on a dataset, the :class:`StandardScaler` learns the

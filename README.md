@@ -21,33 +21,33 @@
 
 - 目前希望支持材料表示学习/材料表征/声子计算/材料生成领域的部分模型：
 
-  - SyMat, PDos, Matformer
+  - SyMat, Matformer, CrystalMELA_ExRT, PDos
 
   
 
 ### Demo结果
 
-| Metrics/Model                         | **SyMat**                | Matformer | PDos(TODO) | Other |
+| Metrics/Model                         | **SyMat**                | Matformer | CrystalMELA_ExRT | PDos(TODO) |
 | ------------------------------------- |--------------------------| ---- | ---- | ----- |
-| **duration (s)**                      | 59.766264567151666       | 279.6747203390005 |      |       |
-| **gpu:0/gpu_utilization (%)/mean**    | 44.72449783248215        | 57.34024483103515 |      |       |
-| **gpu:0/memory_utilization (%)/mean** | 20.88040779519485        | 52.77920022097266 |      |       |
-| **gpu:0/power_usage (W)/mean**        | 59.759263886971425       | 137.61544282401448 |      |       |
-| **host/cpu_percent (%)/mean**         | 11.093333485733483       | 10.778991993015806 |      |       |
-| **host/memory_percent (%)/mean**      | 61.39133474256576        | 57.97314795422511 |      |       |
-| **Params** | 144 M (trainset) | 191 M (trainset) | | |
-| **FLOPs** | 565 G (trainset) | 4507 G (trainset) | | |
-| **MAE** | - | 0.0625682767954642 | | |
-| **MSE** | - | 0.00973441919158266 | | |
-| **RMSE** | - | 0.09866316025539959 | | |
-| **有效率** | 0.9/1.0(numGen=10) | - | | |
-| **COV** |  | - | | |
-| **EMD** | 0.258/1.075 | - | | |
-| ROC/AUC | - | (TODO) | | |
-| Accuracy | - | (TODO) | | |
-| Precision | - | (TODO) | | |
-| Recall | - | (TODO) | | |
-| F1_Score | - | (TODO) | | |
+| **duration (s)**                      | 59.766264567151666       | 279.6747203390005 | 6.047079102998396 |       |
+| **gpu:0/gpu_utilization (%)/mean**    | 44.72449783248215        | 57.34024483103515 | 11.003273684208766 |       |
+| **gpu:0/memory_utilization (%)/mean** | 20.88040779519485        | 52.77920022097266 | 6.495060309199788 |       |
+| **gpu:0/power_usage (W)/mean**        | 59.759263886971425       | 137.61544282401448 | 17.624458588602128 |       |
+| **host/cpu_percent (%)/mean**         | 11.093333485733483       | 10.778991993015806 | 60.34570476629634 |       |
+| **host/memory_percent (%)/mean**      | 61.39133474256576        | 57.97314795422511 | 67.23119746163277 |       |
+| **Params** | 144 M (trainset) | 191 M (trainset) | - (ExRT是传统机器学习模型) | |
+| **FLOPs** | 565 G (trainset) | 4507 G (trainset) | - | |
+| **MAE** | - | 0.0625682767954642 | - | |
+| **MSE** | - | 0.00973441919158266 | - | |
+| **RMSE** | - | 0.09866316025539959 | - | |
+| **有效率** | 0.9/1.0(numGen=10) | - | - | |
+| **COV-P/COV-R** | (TODO) | - | - | |
+| **EMD** | 0.258/1.075(numGen=10) | - | - | |
+| **ROC/AUC** | - | -                   | 0.18400880762056013/0.03733669441730265 | |
+| **Accuracy** | - | - | 0.918989320135452/0.802031779109143 | |
+| **Precision** | - | - | 0.8820606355813501/0.6898393250597135 | |
+| **Recall** | - | - | 0.8518414383176423/0.5316257366414497 | |
+| **F1_Score** | - | - | 0.86343144768573/0.6269558037116416 | |
 
 ### 黑盒资源利用率
 
@@ -60,7 +60,7 @@
 ### 运行
 
 ~~~bash
-# [SyMat, Matformer, PDos]
+# [SyMat, Matformer, PDos, CrystalMELA_ExRT]
 python main.py --modelName SyMat
 ~~~
 
@@ -76,4 +76,5 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 pip install thop
 
 # 除此之外，你还需要安装对应模型运行所需的包。如 Models/{modelName}/README 所示。
+# CrystalMELA_ExRT模型用到的包比较简单，所以和SyMat共用一个虚拟环境"SyMat"
 ~~~

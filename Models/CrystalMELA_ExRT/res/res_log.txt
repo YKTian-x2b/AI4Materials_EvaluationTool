@@ -1,0 +1,2 @@
+mean accuracy of space group prediction:  80.2031779109143
+mean accuracy of crystal system prediction:  91.89893201354519

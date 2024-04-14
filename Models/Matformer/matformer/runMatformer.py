@@ -23,7 +23,7 @@ def run():
     device = torch.device("cuda")
     pyFile = 'train_mp.py'
     command = 'python ' + pyFile
-    output_dir_ = current_dir + "matformer_mp_bulk"
+    output_dir_ = current_dir + "matformer_mp_bulk/"
     if not os.path.exists(output_dir_):
         os.makedirs(output_dir_)
     # getxPUInfo(command, output_dir_)
@@ -52,8 +52,8 @@ def run():
 
 
 def getxPUInfo(command, output_dir):
-    logFile = '/res_log.txt'
-    errFile = '/err_log.txt'
+    logFile = 'res_log.txt'
+    errFile = 'err_log.txt'
     df = pd.DataFrame()
     collector = ResourceMetricCollector(root_pids={1}, interval=2.0)
     with collector(tag='resources'):
@@ -69,7 +69,7 @@ def getxPUInfo(command, output_dir):
         err.close()
     print("end...")
     df.insert(0, 'time', df['resources/timestamp'].map(datetime.fromtimestamp))
-    df.to_csv(output_dir + '/metrics.csv', index=False)
+    df.to_csv(output_dir + 'metrics.csv', index=False)
 
 
 def getFLOPSandParams(device, config, use_save, mp_id_list, line_graph, output_dir, classification):
@@ -87,7 +87,7 @@ def getFLOPSandParams(device, config, use_save, mp_id_list, line_graph, output_d
         total_params += params
     msg = f'total_flops: {total_flops}, total_params: {total_params}'
     print(msg)
-    with open(output_dir + '/flopsAndParams.txt', 'w') as paramsFile:
+    with open(output_dir + 'flopsAndParams.txt', 'w') as paramsFile:
         paramsFile.write(msg)
 
 
@@ -95,17 +95,16 @@ def getEvalMetrics(config, use_save, mp_id_list, classification):
     _, targets, predictions = train_dgl(config, test_only=True,
                                         use_save=use_save,
                                         mp_id_list=mp_id_list)
-
     if not classification:
         testMAE = MetricsForPrediction.getMAE(targets, predictions)
         testMSE = MetricsForPrediction.getMSE(targets, predictions)
         testRMSE = MetricsForPrediction.getRMSE(targets, predictions)
         print("testMAE=", testMAE, "; testMSE=", testMSE, "; testRMSE=", testRMSE)
-    else:
-        testAccuracy = MetricsForPrediction.getAccuracy(targets, predictions)
-        testRecall = MetricsForPrediction.getRecall(targets, predictions)
-        testPrecision = MetricsForPrediction.getPrecision(targets, predictions)
-        testF1Score = MetricsForPrediction.getF1Score(targets, predictions)
-        testROCandAUC = MetricsForPrediction.getROCandAUC(targets, predictions)
-        print("testAccuracy=", testAccuracy, "; testRecall=", testRecall, "; testPrecision=", testPrecision)
-        print("testF1Score=", testF1Score, "; testROCandAUC=", testROCandAUC)
+    # else:
+    #     testAccuracy = MetricsForPrediction.getAccuracy(targets, predictions)
+    #     testRecall = MetricsForPrediction.getRecall(targets, predictions)
+    #     testPrecision = MetricsForPrediction.getPrecision(targets, predictions)
+    #     testF1Score = MetricsForPrediction.getF1Score(targets, predictions)
+    #     testROCandAUC = MetricsForPrediction.getROCandAUC(targets, predictions)
+    #     print("testAccuracy=", testAccuracy, "; testRecall=", testRecall, "; testPrecision=", testPrecision)
+    #     print("testF1Score=", testF1Score, "; testROCandAUC=", testROCandAUC)

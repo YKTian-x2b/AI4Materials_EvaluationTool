@@ -2,21 +2,25 @@ import os
 import sys
 import argparse
 
-from Models.SyMat import runSyMat
+# from Models.SyMat import runSyMat
 # from Models.Matformer.matformer import runMatformer
+from Models.CrystalMELA_ExRT import runCrystalMELA_ExRT
 
 
 def runModel(modelName):
     if modelName == 'SyMat':
         print('SyMat')
-        runSyMat.run()
+        # runSyMat.run()
     elif modelName == 'Matformer':
         print('Matformer')
         # runMatformer.run()
     elif modelName == 'PDos':
         print('PDos')
+    elif modelName == 'CrystalMELA_ExRT':
+        runCrystalMELA_ExRT.run()
+        print('CrystalMELA_ExRT')
     else:
-        raise ValueError("The model should be one of [SyMat, Matformer, PDos]")
+        raise ValueError("The model should be one of [SyMat, Matformer, PDos, CrystalMELA_ExRT]")
 
 
 def parse_args():
@@ -29,4 +33,4 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     runModel(args.modelName)
-    # python main.py --modelName Matformer
+    # python main.py --modelName CrystalMELA_ExRT

@@ -55,7 +55,7 @@ def run(datasetName='perov_5'):
 
     print("executing generate and eval...")
     model_path = 'result/model_699.pth'
-    num_gen = 10
+    num_gen = 10000
     if not os.path.isfile(model_path):
         raise Exception("Model path is not exist!")
     generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
@@ -141,7 +141,7 @@ def generate(model_path, test_data_path, train_data_path, conf, score_norm_path,
     # pyFile = 'generate.py'
     # modelPath = 'result/model_699.pth'
     # dataset = 'perov_5'
-    # numGen = 100
+    # numGen = 10000
     # # python generate.py --model_path result/model_699.pth --dataset perov_5 --num_gen 100
     # command = 'python ' + pyFile + ' --model_path ' + modelPath + \
     #           ' --dataset ' + dataset + '--num_gen' + numGen
@@ -177,4 +177,9 @@ def generate(model_path, test_data_path, train_data_path, conf, score_norm_path,
     print("element EMD: {}".format(elemEMD))
     densityEMD = MetricsForGeneration.getDensityEMD(gen_structure_list, gt_structure_list)
     print("density EMD: {}".format(densityEMD))
+
+    cov_precision, cov_recall = MetricsForGeneration.getCOV(gen_atom_types_list, gt_atom_types_list,
+                                                            gen_structure_list, gt_structure_list, 'perov_5')
+    print(f"cov_precision: {cov_precision}, cov_recall: {cov_recall}")
+
 

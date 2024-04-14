@@ -4,7 +4,7 @@ import torch
 from runner import Runner
 from dataset import MatDataset
 from torch_geometric.data import DataLoader
-from utils import smact_validity, compute_elem_type_num_wdist, get_structure, compute_density_wdist, structure_validity
+from utils import smact_validity, compute_elem_type_num_wdist, get_structure, compute_density_wdist, structure_validity, compute_cov
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str, help='The directory for storing training outputs')
@@ -63,3 +63,7 @@ print("structure validity: {}".format(structure_validity))
 
 density_wdist = compute_density_wdist(gen_structure_list, gt_structure_list)
 print("density EMD: {}".format(density_wdist))
+
+cov_recall, cov_precision = compute_cov(gen_atom_types_list, gt_atom_types_list, gen_structure_list, gt_structure_list, 'perov_5')
+print(f"cov_precision: {cov_precision}, cov_recall: {cov_recall}")
+# python generate.py --model_path result/model_699.pth --dataset perov_5 --num_gen 10
