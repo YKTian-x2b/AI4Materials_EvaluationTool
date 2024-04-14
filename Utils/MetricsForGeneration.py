@@ -90,6 +90,8 @@ def getCOV(gen_atom_types_list, gt_atom_types_list, gen_structure_list, gt_struc
             filtered_gen_structure_fps.append(structure_fp)
     print(len(filtered_gen_comp_fps))
     CompScaler = StandardScaler(means=np.array(CompScalerMeans), stds=np.array(CompScalerStds), replace_nan_token=0.)
+    print('filtered_gen_comp_fps', filtered_gen_comp_fps)
+    print('gt_comp_fps', gt_comp_fps)
     gen_comp_fps = CompScaler.transform(filtered_gen_comp_fps)
     gt_comp_fps = CompScaler.transform(gt_comp_fps)
     gen_structure_fps = np.array(filtered_gen_structure_fps)
