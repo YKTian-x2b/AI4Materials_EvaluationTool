@@ -7,3 +7,6 @@ Suzuki, Y., Hino, H., Hawai, T., Saito, K., Kotsugi, M. & Ono, K.
 
 The code are available as Jupyter Notebook (*.ipynb) in `notebooks/`.  
 The dataset will be downloaded automatically when the code execution.
+
+
+数据集是 POW_COD经过处理后的283006个条目
