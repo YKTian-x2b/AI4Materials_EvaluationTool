@@ -1,0 +1,2 @@
+W0428 22:29:52.057631 16897 gpu_resources.cc:119] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 12.0
+W0428 22:29:52.058116 16897 gpu_resources.cc:164] device: 0, cuDNN Version: 8.9.

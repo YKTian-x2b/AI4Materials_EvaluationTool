@@ -1,4 +1,6 @@
-# 材料计算模型评估框架
+# 材料计算评测框架
+
+## 模型评测
 
 ### 目标
 
@@ -53,7 +55,7 @@
 
 - SyMat模型 & perov_5数据集 & 50epoch的资源利用率采样情况
 
-![](assets/BlockBoxResource_show.png)
+![](assets/BlackBoxResource_show.png)
 
 
 
@@ -61,7 +63,7 @@
 
 ~~~bash
 # [SyMat, Matformer, PDos, CrystalMELA_ExRT]
-python main.py --modelName SyMat
+python modelMain.py --modelName SyMat
 ~~~
 
 
@@ -76,5 +78,55 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 pip install thop
 
 # 除此之外，你还需要安装对应模型运行所需的包。如 Models/{modelName}/README 所示。
-# CrystalMELA_ExRT模型用到的包比较简单，所以和SyMat共用一个虚拟环境"SyMat"
+# SyMat for SyMat && CrystalMELA_ExRT
+# Matformer for Matformer
+# pdos for pdos(failure now)
 ~~~
+
+
+
+
+
+## 框架评测
+
+### 目标
+
+- 支持材料学经典模型的Torch/Paddle/MindSpore实现
+
+
+
+### 支持的模型
+
+- CGCNN, E3NN
+
+
+
+### Demo结果
+
+<img src="assets/CGCNN_200Epoch_BlackBoxResource.png" style="zoom: 67%;" />
+
+
+
+### 运行
+
+~~~bash
+# [CGCNN, E3NN]
+python frameMain.py --modelName CGCNN
+~~~
+
+
+
+### 需要用到的包：
+
+~~~bash
+### nvitop/thop/psutil
+# nvitop
+pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
+# thop
+pip install thop
+
+# 除此之外，你还需要安装对应模型运行所需的包。如 Models/{modelName}/README 所示。
+# CGCNN_paddle for CGCNN_paddle
+# SyMat for CGCNN_torch
+~~~
+

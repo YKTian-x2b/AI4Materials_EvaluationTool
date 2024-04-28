@@ -2,7 +2,9 @@ import paddle
 import numpy as np
 from sklearn import metrics
 import shutil
+import os
 
+current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 class Normalizer(object):
     """
@@ -66,7 +68,7 @@ def mae(prediction, target):
     return paddle.mean(paddle.abs(target - prediction))
 
 
-def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
+def save_checkpoint(state, is_best, filename=current_dir+'checkpoint.pth.tar'):
     paddle.save(state, filename)
     if is_best:
-        shutil.copyfile(filename, 'model_best.pth.tar')
+        shutil.copyfile(filename, current_dir+'model_best.pth.tar')

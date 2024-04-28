@@ -1,0 +1,806 @@
+[Warning] train_ratio is None, using 1 - val_ratio - test_ratio = 0.8 as training dataConfig.
+=> no checkpoint found at '-'
+Epoch: [0][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       8.14170074)
+Epoch: [1][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       8.92750549)
+Epoch: [2][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.95521367)
+Epoch: [3][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.96541709)
+Epoch: [4][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.59389204)
+Epoch: [5][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.45947301)
+Epoch: [6][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.76066434)
+Epoch: [7][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.87163985)
+Epoch: [8][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.78656358)
+Epoch: [9][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.61256349)
+Epoch: [10][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.44063264)
+Epoch: [11][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.32850704)
+Epoch: [12][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.27870443)
+Epoch: [13][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.26478380)
+Epoch: [14][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25937936)
+Epoch: [15][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.26141936)
+Epoch: [16][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.27797651)
+Epoch: [17][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.29849380)
+Epoch: [18][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.30607921)
+Epoch: [19][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.29641965)
+Epoch: [20][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.28003985)
+Epoch: [21][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.26964056)
+Epoch: [22][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25690174)
+Epoch: [23][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.24319890)
+Epoch: [24][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23365593)
+Epoch: [25][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23166248)
+Epoch: [26][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23598623)
+Epoch: [27][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23850697)
+Epoch: [28][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23332317)
+Epoch: [29][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.22349475)
+Epoch: [30][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.21837699)
+Epoch: [31][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.21818304)
+Epoch: [32][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.21569175)
+Epoch: [33][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.21012595)
+Epoch: [34][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.20915037)
+Epoch: [35][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.20910501)
+Epoch: [36][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.20491107)
+Epoch: [37][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.20315248)
+Epoch: [38][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.20366776)
+Epoch: [39][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.20129365)
+Epoch: [40][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.19789402)
+Epoch: [41][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.19632697)
+Epoch: [42][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.19317943)
+Epoch: [43][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.19065487)
+Epoch: [44][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.18892272)
+Epoch: [45][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.18507536)
+Epoch: [46][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.18296999)
+Epoch: [47][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.17966622)
+Epoch: [48][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.17713401)
+Epoch: [49][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.17378548)
+Epoch: [50][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.17149319)
+Epoch: [51][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16882534)
+Epoch: [52][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16711226)
+Epoch: [53][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16472763)
+Epoch: [54][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16321728)
+Epoch: [55][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16206013)
+Epoch: [56][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16098896)
+Epoch: [57][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.16019461)
+Epoch: [58][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15943244)
+Epoch: [59][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15842441)
+Epoch: [60][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15773748)
+Epoch: [61][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15687677)
+Epoch: [62][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15582222)
+Epoch: [63][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15501940)
+Epoch: [64][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15449882)
+Epoch: [65][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15382755)
+Epoch: [66][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15309724)
+Epoch: [67][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15202542)
+Epoch: [68][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15123291)
+Epoch: [69][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15141758)
+Epoch: [70][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15202758)
+Epoch: [71][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15160036)
+Epoch: [72][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14820395)
+Epoch: [73][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14424664)
+Epoch: [74][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14394835)
+Epoch: [75][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15221396)
+Epoch: [76][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.15412220)
+Epoch: [77][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14474888)
+Epoch: [78][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14088237)
+Epoch: [79][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14959951)
+Epoch: [80][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13780187)
+Epoch: [81][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14344497)
+Epoch: [82][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13301358)
+Epoch: [83][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14076439)
+Epoch: [84][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14735198)
+Epoch: [85][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14688350)
+Epoch: [86][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14382660)
+Epoch: [87][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13539784)
+Epoch: [88][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14850566)
+Epoch: [89][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14951441)
+Epoch: [90][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14927986)
+Epoch: [91][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14547038)
+Epoch: [92][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13794249)
+Epoch: [93][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14266081)
+Epoch: [94][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14262217)
+Epoch: [95][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14109437)
+Epoch: [96][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14149484)
+Epoch: [97][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13901335)
+Epoch: [98][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13481453)
+Epoch: [99][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13816044)
+Epoch: [100][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13368547)
+Epoch: [101][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13234280)
+Epoch: [102][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13516387)
+Epoch: [103][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13412109)
+Epoch: [104][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12650257)
+Epoch: [105][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12749794)
+Epoch: [106][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13430229)
+Epoch: [107][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12763911)
+Epoch: [108][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12023294)
+Epoch: [109][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12096640)
+Epoch: [110][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13462345)
+Epoch: [111][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11763926)
+Epoch: [112][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11288543)
+Epoch: [113][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12040933)
+Epoch: [114][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12421402)
+Epoch: [115][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11407620)
+Epoch: [116][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12214886)
+Epoch: [117][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11132707)
+Epoch: [118][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11765932)
+Epoch: [119][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11989620)
+Epoch: [120][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11552031)
+Epoch: [121][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10921584)
+Epoch: [122][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12086166)
+Epoch: [123][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11665449)
+Epoch: [124][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11467751)
+Epoch: [125][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11283953)
+Epoch: [126][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12914805)
+Epoch: [127][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11234957)
+Epoch: [128][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13271356)
+Epoch: [129][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11768739)
+Epoch: [130][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.14108494)
+Epoch: [131][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11548986)
+Epoch: [132][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13587576)
+Epoch: [133][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13496961)
+Epoch: [134][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11653087)
+Epoch: [135][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13107377)
+Epoch: [136][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11935882)
+Epoch: [137][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11294817)
+Epoch: [138][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12682688)
+Epoch: [139][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11811689)
+Epoch: [140][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11547910)
+Epoch: [141][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11358491)
+Epoch: [142][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11064240)
+Epoch: [143][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10733703)
+Epoch: [144][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10406888)
+Epoch: [145][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10289712)
+Epoch: [146][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10154726)
+Epoch: [147][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10358732)
+Epoch: [148][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10284655)
+Epoch: [149][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10221110)
+Epoch: [150][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10436872)
+Epoch: [151][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10401124)
+Epoch: [152][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10415313)
+Epoch: [153][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10289069)
+Epoch: [154][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10805889)
+Epoch: [155][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10211102)
+Epoch: [156][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10317572)
+Epoch: [157][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10405836)
+Epoch: [158][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10947801)
+Epoch: [159][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10117516)
+Epoch: [160][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10176411)
+Epoch: [161][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10360527)
+Epoch: [162][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11720195)
+Epoch: [163][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.09969725)
+Epoch: [164][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10772502)
+Epoch: [165][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10415149)
+Epoch: [166][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.12378698)
+Epoch: [167][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10635513)
+Epoch: [168][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11371206)
+Epoch: [169][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10291374)
+Epoch: [170][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11152611)
+Epoch: [171][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10955961)
+Epoch: [172][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10685928)
+Epoch: [173][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11022376)
+Epoch: [174][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11092226)
+Epoch: [175][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10892720)
+Epoch: [176][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10399743)
+Epoch: [177][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11553720)
+Epoch: [178][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.09969763)
+Epoch: [179][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10602346)
+Epoch: [180][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10739157)
+Epoch: [181][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.09890093)
+Epoch: [182][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10576417)
+Epoch: [183][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10457902)
+Epoch: [184][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10205474)
+Epoch: [185][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10234483)
+Epoch: [186][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10622425)
+Epoch: [187][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10138440)
+Epoch: [188][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10098242)
+Epoch: [189][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10055011)
+Epoch: [190][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11085089)
+Epoch: [191][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.09659724)
+Epoch: [192][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10341288)
+Epoch: [193][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10526026)
+Epoch: [194][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10914819)
+Epoch: [195][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10297568)
+Epoch: [196][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10072940)
+Epoch: [197][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.10354342)
+Epoch: [198][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.11394924)
+Epoch: [199][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.09988853)
+---------Evaluate Model on TestSet---------------
+Test: [0/1]	
+ ** MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.13925007)
