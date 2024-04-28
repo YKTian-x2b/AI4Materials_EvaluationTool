@@ -1,0 +1,126 @@
+[Warning] train_ratio is None, using 1 - val_ratio - test_ratio = 0.8 as training dataConfig.
+=> no checkpoint found at '-'
+Epoch: [0][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       5.05111504)
+Epoch: [1][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       4.30385113)
+Epoch: [2][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.77305937)
+Epoch: [3][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.86710286)
+Epoch: [4][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.69785023)
+Epoch: [5][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.47270334)
+Epoch: [6][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.49948728)
+Epoch: [7][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.67714173)
+Epoch: [8][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.75640529)
+Epoch: [9][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.70798171)
+Epoch: [10][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.58128607)
+Epoch: [11][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.42945105)
+Epoch: [12][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.34069937)
+Epoch: [13][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.29810452)
+Epoch: [14][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.27981198)
+Epoch: [15][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.27179214)
+Epoch: [16][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.26677620)
+Epoch: [17][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25872326)
+Epoch: [18][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25806683)
+Epoch: [19][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25627655)
+Epoch: [20][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25329056)
+Epoch: [21][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25307775)
+Epoch: [22][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25476247)
+Epoch: [23][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.25314933)
+Epoch: [24][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.24810889)
+Epoch: [25][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.24385947)
+Epoch: [26][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.24068701)
+Epoch: [27][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23356269)
+Epoch: [28][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.22529176)
+Epoch: [29][0/3]	
+Test: [0/1]	
+ * MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.21947053)
+---------Evaluate Model on TestSet---------------
+Test: [0/1]	
+ ** MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       0.23603344)

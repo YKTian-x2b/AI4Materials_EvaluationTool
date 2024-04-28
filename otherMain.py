@@ -1,29 +1,45 @@
 import numpy as np
-
-# from Utils.utils import readCSV, readCSV_v2, draw
+from Utils.utils import readCSV, readCSV_v2, draw, drawForFrame
 import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-# def readV1(filePath):
-#     readCSV(filePath)
-#
-#
-# def readV2(filePath):
-#     readCSV_v2(filePath)
-#     draw(filePath)
+def readV1(filePath):
+    readCSV(filePath)
+
+
+def readV2(filePath):
+    readCSV_v2(filePath)
+    draw(filePath)
 
 
 if __name__ == '__main__':
-    # configForMetrics = [["Matformer", "matformer/matformer_mp_bulk"],
-    #                     ["CrystalMELA_ExRT", "res"],
-    #                     ["SyMat", "tmpRes"]]
-    # Idx = 1
-    # filePath_ = os.path.join(current_dir, "Models",
+    configForMode = ["Models", "Framework"]
+    configForMetrics = [["Matformer", "matformer/matformer_mp_bulk"],
+                        ["CrystalMELA_ExRT", "res"],
+                        ["SyMat", "tmpRes"],
+                        ["CGCNN", "res/TorchRes"],
+                        ["CGCNN", "res/PaddleRes"],
+                        ]
+
+    # Idx = 4
+    # filePath_ = os.path.join(current_dir, configForMode[1],
     #                          configForMetrics[Idx][0],
     #                          configForMetrics[Idx][1],
     #                          "metrics.csv")
-    # readV1(filePath_)
-    # readV2
-    print(np.sin(-np.pi))
+    # # readV1(filePath_)
+    # readV2(filePath_)
+
+    idx1 = 3
+    filePath_1 = os.path.join(current_dir, configForMode[1],
+                              configForMetrics[idx1][0],
+                              configForMetrics[idx1][1],
+                              "metrics.csv")
+    idx2 = 4
+    filePath_2 = os.path.join(current_dir, configForMode[1],
+                              configForMetrics[idx2][0],
+                              configForMetrics[idx2][1],
+                              "metrics.csv")
+    savePath = os.path.join(current_dir, "Framework/CGCNN/")
+    drawForFrame(filePath_1, filePath_2, "torch", "paddle", savePath)

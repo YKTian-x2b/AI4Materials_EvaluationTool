@@ -9,6 +9,7 @@ import warnings
 import paddle
 import paddle.nn as nn
 import paddle.optimizer as optim
+from paddle.regularizer import L2Decay
 
 from dataset import CIFData, collate_pool, get_train_val_test_loader
 from model import CrystalGraphConvNet
@@ -16,7 +17,8 @@ from utils import save_checkpoint, AverageMeter, mae, class_eval, Normalizer
 from argParser import getArgs
 
 args = getArgs()
-warnings.filterwarnings("ignore", message="When training, we now always track global mean and variance.")
+warnings.filterwarnings("ignore", category=Warning)
+current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 
 def main():
@@ -66,10 +68,12 @@ def main():
         criterion = nn.MSELoss()
     if args.optim == 'SGD':
         optimizer = optim.SGD(learning_rate=args.lr,
-                              parameters=model.parameters())  # weight_decay = args.weight_decay
+                              parameters=model.parameters(),
+                              weight_decay=L2Decay(0.0001))  # weight_decay = args.weight_decay
     elif args.optim == 'Adam':
         optimizer = optim.Adam(learning_rate=args.lr,
-                               parameters=model.parameters())  # weight_decay = args.weight_decay
+                               parameters=model.parameters(),
+                               weight_decay=L2Decay(0.0001))  # weight_decay = args.weight_decay
     else:
         raise NameError('Only SGD or Adam is allowed as --optim')
 
@@ -79,7 +83,7 @@ def main():
             checkpoint = paddle.load(args.resume)
             args.start_epoch = checkpoint['epoch']
             best_mae_error = checkpoint['best_mae_error']
-            model.load_state_dict(checkpoint['state_dict'])
+            model.set_state_dict(checkpoint['state_dict'])
             optimizer.set_state_dict(checkpoint['optimizer'])
             normalizer.load_state_dict(checkpoint['normalizer'])
             print("=> loaded checkpoint '{}' (epoch {})"
@@ -116,7 +120,7 @@ def main():
 
     # test best model
     print("---------Evaluate Model on TestSet---------------")
-    best_checkpoint = paddle.load('model_best.pth.tar')
+    best_checkpoint = paddle.load(current_dir+'model_best.pth.tar')
     model.set_state_dict(best_checkpoint['state_dict'])
     validate(test_loader, model, criterion, normalizer, gpu_device, test=True)
 
@@ -179,7 +183,7 @@ def train(train_loader, model, criterion, optimizer, epoch, normalizer, gpu_devi
         end = time.time()
         if i % args.print_freq == 0:
             if args.task == 'regression':
-                print('Test: [{0}][{1}/{2}]\t'.format(epoch, i, len(train_loader)))
+                print('Epoch: [{0}][{1}/{2}]\t'.format(epoch, i, len(train_loader)))
                 # print('Test: [{0}][{1}/{2}]\t'
                 #       'Time {batch_time_val:.3f} ({batch_time_avg:.3f})\t'
                 #       'Data {data_time_val:.3f} ({data_time_avg:.3f})\t'

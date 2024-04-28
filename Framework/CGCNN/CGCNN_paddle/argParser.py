@@ -1,6 +1,9 @@
 import argparse
 import sys
+import os
 import paddle
+
+current_dir = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 
 def getArgs():
@@ -15,7 +18,7 @@ def getArgs():
                         help='Disable CUDA')
     parser.add_argument('-j', '--workers', default=0, type=int, metavar='N',
                         help='number of dataConfig loading workers (default: 0)')
-    parser.add_argument('--epochs', default=30, type=int, metavar='N',
+    parser.add_argument('--epochs', default=200, type=int, metavar='N',
                         help='number of total epochs to run (default: 30)')
     parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                         help='manual epoch number (useful on restarts)')
@@ -33,7 +36,8 @@ def getArgs():
                         metavar='W', help='weight decay (default: 0)')
     parser.add_argument('--print-freq', '-p', default=10, type=int,
                         metavar='N', help='print frequency (default: 10)')
-    parser.add_argument('--resume', default='', type=str, metavar='PATH',
+    # current_dir+"checkpoint.pth.tar"
+    parser.add_argument('--resume', default="-", type=str, metavar='PATH',
                         help='path to latest checkpoint (default: none)')
     train_group = parser.add_mutually_exclusive_group()
     train_group.add_argument('--train-ratio', default=None, type=float, metavar='N',
@@ -53,7 +57,7 @@ def getArgs():
     test_group.add_argument('--test-size', default=None, type=int, metavar='N',
                             help='number of test dataConfig to be loaded (default 1000)')
 
-    parser.add_argument('--optim', default='SGD', type=str, metavar='SGD',
+    parser.add_argument('--optim', default='Adam', type=str, metavar='SGD',
                         help='choose an optimizer, SGD or Adam, (default: SGD)')
     parser.add_argument('--atom-fea-len', default=64, type=int, metavar='N',
                         help='number of hidden atom features in conv layers')

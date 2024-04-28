@@ -271,13 +271,14 @@ def readCSV_v2(filePath):
 
 
 def draw(filePath):
+    plt.clf()
     df = pd.read_csv(filePath)
     duration_label = 'metrics-daemon/duration (s)'
     gpu_utilization_label = 'metrics-daemon/gpu:0/gpu_utilization (%)/mean'
     gpu_memory_utilization_label = 'metrics-daemon/gpu:0/memory_utilization (%)/mean'
     host_cpu_percent_label = 'metrics-daemon/host/cpu_percent (%)/mean'
     host_memory_percent_label = 'metrics-daemon/host/memory_percent (%)/mean'
-    interval = 10
+    interval = 2
     x_axis_data = df[duration_label][::interval]
     y_gpu_utilization_data = df[gpu_utilization_label][::interval]
     y_gpu_memory_utilization_data = df[gpu_memory_utilization_label][::interval]
@@ -304,4 +305,63 @@ def draw(filePath):
     # plt.title('BlackBoxResourceUtilization')
 
     plt.savefig('BlackBoxResource.jpg')
+    plt.show()
+
+
+def drawForFrame(filePath1, filePath2, name1, name2, savePath):
+    plt.clf()
+    df1 = pd.read_csv(filePath1)
+    df2 = pd.read_csv(filePath2)
+    duration_label = 'metrics-daemon/duration (s)'
+    gpu_utilization_label = 'metrics-daemon/gpu:0/gpu_utilization (%)/mean'
+    gpu_memory_utilization_label = 'metrics-daemon/gpu:0/memory_utilization (%)/mean'
+    host_cpu_percent_label = 'metrics-daemon/host/cpu_percent (%)/mean'
+    host_memory_percent_label = 'metrics-daemon/host/memory_percent (%)/mean'
+    interval = 2
+
+    x1_axis_data = df1[duration_label][::interval]
+    y1_gpu_utilization_data = df1[gpu_utilization_label][::interval]
+    y1_gpu_memory_utilization_data = df1[gpu_memory_utilization_label][::interval]
+    y1_host_cpu_percent_data = df1[host_cpu_percent_label][::interval]
+    y1_host_memory_percent_data = df1[host_memory_percent_label][::interval]
+
+    x2_axis_data = df2[duration_label][::interval]
+    y2_gpu_utilization_data = df2[gpu_utilization_label][::interval]
+    y2_gpu_memory_utilization_data = df2[gpu_memory_utilization_label][::interval]
+    y2_host_cpu_percent_data = df2[host_cpu_percent_label][::interval]
+    y2_host_memory_percent_data = df2[host_memory_percent_label][::interval]
+
+    x_max = max(x1_axis_data.iloc[-1], x2_axis_data.iloc[-1])
+    plt.xlim((0, x_max*1.05))
+    plt.ylim((0, 100))
+    plt.plot(x1_axis_data, y1_gpu_utilization_data, marker='s', markersize=4, color='tomato',
+             linestyle='-', label='gpu_utilization_' + name1, alpha=0.8)
+    plt.plot(x2_axis_data, y2_gpu_utilization_data, marker='s', markersize=4, color='tomato',
+             linestyle='--', label='gpu_utilization_' + name2, alpha=0.8)
+
+    plt.plot(x1_axis_data, y1_gpu_memory_utilization_data, marker='o', markersize=4, color='y',
+             linestyle='-', label='gpu_memory_utilization_' + name1, alpha=0.8)
+    plt.plot(x2_axis_data, y2_gpu_memory_utilization_data, marker='o', markersize=4, color='y',
+             linestyle='--', label='gpu_memory_utilization_' + name2, alpha=0.8)
+
+    plt.plot(x1_axis_data, y1_host_cpu_percent_data, marker='*', markersize=4, color='m',
+             linestyle='-', label='host_cpu_percent_' + name1, alpha=0.8)
+    plt.plot(x2_axis_data, y2_host_cpu_percent_data, marker='*', markersize=4, color='m',
+             linestyle='--', label='host_cpu_percent_' + name2, alpha=0.8)
+
+    plt.plot(x1_axis_data, y1_host_memory_percent_data, marker='x', markersize=4, color='g',
+             linestyle='-', label='host_memory_percent_' + name1, alpha=0.8)
+    plt.plot(x2_axis_data, y2_host_memory_percent_data, marker='x', markersize=4, color='g',
+             linestyle='--', label='host_memory_percent_' + name2, alpha=0.8)
+
+    plt.tight_layout()
+
+    # 创建图例，并将其放置在图的右下角外部
+    plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.04), ncol=3, borderaxespad=0.)
+    plt.subplots_adjust(top=0.9)
+    plt.xlabel('duration(s)')  # 数据库的单位得改一下
+    plt.ylabel('utilization/precent(%)')  # y_label
+    plt.title('CGCNN_200Epoch_Eval_BlackBoxResource')
+
+    plt.savefig(savePath + 'CGCNN_200Epoch_Eval_BlackBoxResource.jpg')
     plt.show()

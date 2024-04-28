@@ -43,7 +43,7 @@ def collate_pool(dataset_list):
         batch_atom_in_fea.append(atom_in_fea)
         batch_nbr_fea.append(nbr_fea)
         batch_nbr_fea_idx.append(nbr_fea_idx + base_idx)
-        new_idx = paddle.to_tensor(np.arange(n_i) + base_idx)
+        new_idx = paddle.to_tensor(np.arange(n_i, dtype=np.int64) + base_idx, place=paddle.CPUPlace(), dtype='int64')
         crystal_atom_idx.append(new_idx)
         batch_target.append(target)
         batch_cif_ids.append(cif_id)
@@ -53,6 +53,7 @@ def collate_pool(dataset_list):
             paddle.concat(batch_nbr_fea_idx, axis=0),
             crystal_atom_idx), \
             paddle.stack(batch_target, axis=0), batch_cif_ids
+
 
 def get_train_val_test_loader(dataset, collate_fn,
                               batch_size=64, train_ratio=None,

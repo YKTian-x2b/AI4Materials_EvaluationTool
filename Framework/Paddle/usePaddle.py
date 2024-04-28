@@ -5,7 +5,7 @@ import os
 from pymatgen.core.structure import Structure
 
 if __name__ == "__main__":
-    root_dir = './root_dir'
+    root_dir = '../CGCNN/CGCNN_paddle/root_dir'
     cif_id = 'mp-7090'
     crystal = Structure.from_file(os.path.join(root_dir, cif_id + '.cif'))
     # print(crystal)
