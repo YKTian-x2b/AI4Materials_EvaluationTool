@@ -127,6 +127,6 @@ pip install thop
 
 # 除此之外，你还需要安装对应模型运行所需的包。如 Models/{modelName}/README 所示。
 # CGCNN_paddle for CGCNN_paddle
-# SyMat for CGCNN_torch
+# SyMat for CGCNN_torch/NequIP_torch
 ~~~
 
