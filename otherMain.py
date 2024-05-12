@@ -1,6 +1,8 @@
 import numpy as np
-from Utils.utils import readCSV, readCSV_v2, draw, drawForFrame
+import csv
 import os
+
+from Utils.draw import readCSV, readCSV_v2, draw, drawForFrame
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -21,6 +23,8 @@ if __name__ == '__main__':
                         ["SyMat", "tmpRes"],
                         ["CGCNN", "res/TorchRes"],
                         ["CGCNN", "res/PaddleRes"],
+                        ["E3NN/NequIP", "res/TorchRes"],
+                        ["E3NN/NequIP", "res/MindsporeRes"],
                         ]
 
     # Idx = 4
@@ -31,15 +35,15 @@ if __name__ == '__main__':
     # # readV1(filePath_)
     # readV2(filePath_)
 
-    idx1 = 3
+    idx1 = 5
     filePath_1 = os.path.join(current_dir, configForMode[1],
                               configForMetrics[idx1][0],
                               configForMetrics[idx1][1],
                               "metrics.csv")
-    idx2 = 4
+    idx2 = 6
     filePath_2 = os.path.join(current_dir, configForMode[1],
                               configForMetrics[idx2][0],
                               configForMetrics[idx2][1],
                               "metrics.csv")
-    savePath = os.path.join(current_dir, "Framework/CGCNN/")
-    drawForFrame(filePath_1, filePath_2, "torch", "paddle", savePath)
+    savePath = os.path.join(current_dir, "Framework/E3NN/NequIP/")
+    drawForFrame(filePath_1, filePath_2, "torch", "mindspore", savePath)

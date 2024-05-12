@@ -97,7 +97,7 @@ pip install thop
 
 ### 支持的模型
 
-- CGCNN, E3NN
+- CGCNN, NequIP
 
 
 
@@ -105,13 +105,13 @@ pip install thop
 
 <img src="assets/CGCNN_200Epoch_BlackBoxResource.png" style="zoom: 67%;" />
 
-
+<img src="assets/NequIP_200Epoch_BlackBoxResource_show.png" style="zoom: 67%;" />
 
 ### 运行
 
 ~~~bash
-# [CGCNN, E3NN]
-python frameMain.py --modelName CGCNN
+# [CGCNN, NequIP]
+python frameMain.py --modelName NequIP
 ~~~
 
 
@@ -125,8 +125,9 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 # thop
 pip install thop
 
-# 除此之外，你还需要安装对应模型运行所需的包。如 Models/{modelName}/README 所示。
+# 除此之外，你还需要安装对应模型运行所需的包。如 Framework/{modelName}/README 所示。
 # CGCNN_paddle for CGCNN_paddle
 # SyMat for CGCNN_torch/NequIP_torch
+# NequIP_mindspore for NequIP_mindspore
 ~~~
 
