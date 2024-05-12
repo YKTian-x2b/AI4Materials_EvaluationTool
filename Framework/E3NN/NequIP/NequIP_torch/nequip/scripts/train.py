@@ -68,10 +68,11 @@ def main(args=None, running_as_script: bool = True):
         )
 
     # for fresh new train
-    if not found_restart_file:
-        trainer = fresh_start(config)
-    else:
-        trainer = restart(config)
+    trainer = fresh_start(config)
+    # if not found_restart_file:
+    #     trainer = fresh_start(config)
+    # else:
+    #     trainer = restart(config)
 
     # Train
     trainer.save()

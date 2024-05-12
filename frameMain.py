@@ -2,18 +2,18 @@ import os
 import sys
 import argparse
 
-from Framework.CGCNN import run_CGCNN
-
 
 def runModel(modelName):
     if modelName == 'CGCNN':
+        from Framework.CGCNN import run_CGCNN
         print('CGCNN')
         run_CGCNN.run()
-    elif modelName == 'E3NN':
-        print('E3NN')
-        # runMatformer.run()
+    elif modelName == 'NequIP':
+        from Framework.E3NN.NequIP import run_NequIP
+        print('NequIP')
+        run_NequIP.run()
     else:
-        raise ValueError("The model should be one of [CGCNN, E3NN]")
+        raise ValueError("The model should be one of [CGCNN, NequIP]")
 
 
 def parse_args():
@@ -25,4 +25,4 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     runModel(args.modelName)
-    # python frameMain.py --modelName CGCNN
+    # python frameMain.py --modelName NequIP

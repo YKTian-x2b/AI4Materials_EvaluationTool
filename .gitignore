@@ -3,8 +3,10 @@ dataset
 .idea
 
 data
+benchmark_data
 
 *.pt
+*.pth
 *.egg
 *.egg-info/
 __pycache__/
