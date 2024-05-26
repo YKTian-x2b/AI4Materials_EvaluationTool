@@ -97,7 +97,7 @@ pip install thop
 
 ### 支持的模型
 
-- CGCNN, NequIP
+- CGCNN, NequIP, VGNN
 
 
 
@@ -119,15 +119,15 @@ python frameMain.py --modelName NequIP
 ### 需要用到的包：
 
 ~~~bash
-### nvitop/thop/psutil
+### nvitop
 # nvitop
 pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
-# thop
-pip install thop
 
 # 除此之外，你还需要安装对应模型运行所需的包。如 Framework/{modelName}/README 所示。
 # CGCNN_paddle for CGCNN_paddle
 # SyMat for CGCNN_torch/NequIP_torch
 # NequIP_mindspore for NequIP_mindspore
+# VGNN_torch for VGNN_torch
+# VGNN_mindspore for VGNN_mindspore
 ~~~
 
