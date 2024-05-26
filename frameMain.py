@@ -12,8 +12,12 @@ def runModel(modelName):
         from Framework.E3NN.NequIP import run_NequIP
         print('NequIP')
         run_NequIP.run()
+    elif modelName == 'VGNN':
+        from Framework.E3NN.VGNN import run_VGNN
+        print('VGNN')
+        run_VGNN.run()
     else:
-        raise ValueError("The model should be one of [CGCNN, NequIP]")
+        raise ValueError("The model should be one of [CGCNN, NequIP, VGNN]")
 
 
 def parse_args():
@@ -25,4 +29,4 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     runModel(args.modelName)
-    # python frameMain.py --modelName NequIP
+    # python frameMain.py --modelName VGNN
