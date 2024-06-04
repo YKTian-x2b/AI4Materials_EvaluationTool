@@ -38,14 +38,14 @@ def getDataset():
 # The resulted performance is sligly worse than the original (accuracy 80.46% -> 80.20%).
 # If you would like to reproduce the result in the article, please set n_estimators=200.
 def getSpaceGroupModel():
-    return ExtraTreesClassifier(n_estimators=50, n_jobs=-1, max_depth=25,
+    return ExtraTreesClassifier(n_estimators=200, n_jobs=-1, max_depth=25,
                                 max_features=None, random_state=random_state)
 
 
 # To reduce the training time, we set n_estimators=50 which should be 500.
 # The resulted performance is  worse than the original (accuracy 92.23% -> 91.89%).
 def getCrystalSystemModel():
-    return ExtraTreesClassifier(n_estimators=50, max_depth=30,
+    return ExtraTreesClassifier(n_estimators=500, max_depth=30,
                                 max_features=9, n_jobs=-1,
                                 random_state=random_state, warm_start=False)
 

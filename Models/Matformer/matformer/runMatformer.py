@@ -8,7 +8,7 @@ import torch
 from datetime import datetime
 from Utils import GenericMetrics
 from Utils import MetricsForPrediction
-from nvitop import ResourceMetricCollector
+from nvitop import ResourceMetricCollector, collect_in_background
 
 # 调整工作目录
 os.chdir(current_dir)
@@ -27,24 +27,25 @@ def run():
     if not os.path.exists(output_dir_):
         os.makedirs(output_dir_)
     # getxPUInfo(command, output_dir_)
+    getxPUInfoList(command, output_dir_ + "resList/")
 
-    props = ["e_form", "gap pbe", "bulk modulus", "shear modulus"]      # ["mu_b", "elastic anisotropy"]
-    mp_id_list_ = "bulk"
-    use_save_ = True
-    line_graph = True
-    classification = False
-    config = get_prop_model_config(learning_rate=0.001, name="matformer", dataset="megnet",
-                                   prop=props[2], pyg_input=True, n_epochs=2, batch_size=64,
-                                   use_lattice=True, output_dir=output_dir_, use_angle=False,
-                                   save_dataloader=False, use_save=use_save_, mp_id_list=mp_id_list_)
-    print(config)
-    if type(config) is dict:
-        try:
-            config = TrainingConfig(**config)
-        except Exception as exp:
-            print("Check", exp)
-            print('error in converting to training config!')
-    getFLOPSandParams(device, config, use_save_, mp_id_list_, line_graph, output_dir_, classification)
+    # props = ["e_form", "gap pbe", "bulk modulus", "shear modulus"]      # ["mu_b", "elastic anisotropy"]
+    # mp_id_list_ = "bulk"
+    # use_save_ = True
+    # line_graph = True
+    # classification = False
+    # config = get_prop_model_config(learning_rate=0.001, name="matformer", dataset="megnet",
+    #                                prop=props[2], pyg_input=True, n_epochs=2, batch_size=64,
+    #                                use_lattice=True, output_dir=output_dir_, use_angle=False,
+    #                                save_dataloader=False, use_save=use_save_, mp_id_list=mp_id_list_)
+    # print(config)
+    # if type(config) is dict:
+    #     try:
+    #         config = TrainingConfig(**config)
+    #     except Exception as exp:
+    #         print("Check", exp)
+    #         print('error in converting to training config!')
+    # getFLOPSandParams(device, config, use_save_, mp_id_list_, line_graph, output_dir_, classification)
 
     # if config["classification_threshold"] is not None:
     #     classification = True
@@ -70,6 +71,42 @@ def getxPUInfo(command, output_dir):
     print("end...")
     df.insert(0, 'time', df['resources/timestamp'].map(datetime.fromtimestamp))
     df.to_csv(output_dir + 'metrics.csv', index=False)
+
+
+def getxPUInfoList(command, output_dir):
+    resFile = output_dir + 'res_log.txt'
+    errFile = output_dir + 'err_log.txt'
+    res = open(resFile, 'w')
+    err = open(errFile, 'w')
+
+    def on_collect(metrics):
+        if res.closed:
+            return False
+        with open(output_dir + 'metrics.csv', 'a', newline='') as file:
+            df_metrics = pd.DataFrame.from_dict(metrics, orient='index').T
+            csv_string = df_metrics.to_csv(index=False, header=False)
+            if os.path.getsize(output_dir + 'metrics.csv') == 0:
+                csv_string = df_metrics.to_csv(index=False)
+            file.write(csv_string)
+        return True
+
+    def on_stop(collector):
+        if not res.closed:
+            res.close()
+        print('collection end!')
+
+    collect_in_background(
+        on_collect,
+        ResourceMetricCollector(root_pids={1}),
+        interval=2.0,
+        on_stop=on_stop,
+    )
+    process = subprocess.Popen(command, shell=True, stdout=res, stderr=err)
+    print("running...")
+    process.wait()
+    res.close()
+    err.close()
+    print("end...")
 
 
 def getFLOPSandParams(device, config, use_save, mp_id_list, line_graph, output_dir, classification):

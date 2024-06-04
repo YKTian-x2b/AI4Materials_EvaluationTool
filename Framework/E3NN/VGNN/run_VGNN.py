@@ -16,9 +16,9 @@ def run():
     # cd VGNN_torch && python VVN.py
     # cd VGNN_midnspore && python train.py
 
-    runPathIdx = 0
+    runPathIdx = 1
     commandList = ['cd VGNN_torch && python VVN.py',
-                   'cd VGNN_midnspore && python train.py']
+                   'cd VGNN_mindspore && python train.py']
     resFileList = ['res/TorchRes/', 'res/MindsporeRes/']
 
     if not os.path.exists(resFileList[runPathIdx]):

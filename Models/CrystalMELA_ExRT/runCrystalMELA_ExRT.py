@@ -22,15 +22,16 @@ def run():
     if not os.path.exists(output_dir_):
         os.makedirs(output_dir_)
     # getxPUInfo(command, output_dir_)
+    getxPUInfoList(command, output_dir_ + "resList/")
 
-    df = pd.read_csv(output_dir_ + 'pred_result_test.csv')
-    crystal_system_pred = df['crystal_system_pred']
-    crystal_system_true= df['crystal_system_true']
-    sg_num_pred = df['sg_num_pred']
-    sg_num_true = df['sg_num_true']
-    # 这里提供了另一个思路，就是我们在运行过程中把结果写入csv文件，eval的时候直接读文件，而不是再跑一次
-    getEvalMetrics(crystal_system_true, crystal_system_pred, output_dir_)
-    getEvalMetrics(sg_num_true, sg_num_pred, output_dir_)
+    # df = pd.read_csv(output_dir_ + 'pred_result_test.csv')
+    # crystal_system_pred = df['crystal_system_pred']
+    # crystal_system_true= df['crystal_system_true']
+    # sg_num_pred = df['sg_num_pred']
+    # sg_num_true = df['sg_num_true']
+    # # 这里提供了另一个思路，就是我们在运行过程中把结果写入csv文件，eval的时候直接读文件，而不是再跑一次
+    # getEvalMetrics(crystal_system_true, crystal_system_pred, output_dir_)
+    # getEvalMetrics(sg_num_true, sg_num_pred, output_dir_)
 
 
 def getxPUInfo(command, output_dir):
@@ -52,6 +53,42 @@ def getxPUInfo(command, output_dir):
     print("end...")
     df.insert(0, 'time', df['resources/timestamp'].map(datetime.fromtimestamp))
     df.to_csv(output_dir + 'metrics.csv', index=False)
+
+
+def getxPUInfoList(command, output_dir):
+    resFile = output_dir + 'res_log.txt'
+    errFile = output_dir + 'err_log.txt'
+    res = open(resFile, 'w')
+    err = open(errFile, 'w')
+
+    def on_collect(metrics):
+        if res.closed:
+            return False
+        with open(output_dir + 'metrics.csv', 'a', newline='') as file:
+            df_metrics = pd.DataFrame.from_dict(metrics, orient='index').T
+            csv_string = df_metrics.to_csv(index=False, header=False)
+            if os.path.getsize(output_dir + 'metrics.csv') == 0:
+                csv_string = df_metrics.to_csv(index=False)
+            file.write(csv_string)
+        return True
+
+    def on_stop(collector):
+        if not res.closed:
+            res.close()
+        print('collection end!')
+
+    collect_in_background(
+        on_collect,
+        ResourceMetricCollector(root_pids={1}),
+        interval=2.0,
+        on_stop=on_stop,
+    )
+    process = subprocess.Popen(command, shell=True, stdout=res, stderr=err)
+    print("running...")
+    process.wait()
+    res.close()
+    err.close()
+    print("end...")
 
 
 def getEvalMetrics(targets, predictions, output_dir):
