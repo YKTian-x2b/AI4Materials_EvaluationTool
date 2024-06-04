@@ -55,8 +55,15 @@
 
 - SyMat模型 & perov_5数据集 & 50epoch的资源利用率采样情况
 
-![](assets/BlackBoxResource_show.png)
+![](assets/SyMat_BlackBoxResource_show.png)
 
+
+- CrystalMELA_ExRT
+![](assets/CrystalMELA_ExRT_BlackBoxResource_show.png)
+
+
+- Matformer模型 & 200epoch
+![](assets/Matformer_200Epoch_BlackBoxResource_show.png)
 
 
 ### 运行
@@ -110,7 +117,7 @@ pip install thop
 ### 运行
 
 ~~~bash
-# [CGCNN, NequIP]
+# [CGCNN, NequIP, VGNN]
 python frameMain.py --modelName NequIP
 ~~~
 

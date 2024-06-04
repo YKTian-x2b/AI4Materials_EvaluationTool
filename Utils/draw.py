@@ -105,7 +105,7 @@ def draw(filePath):
     gpu_memory_utilization_label = 'metrics-daemon/gpu:0/memory_utilization (%)/mean'
     host_cpu_percent_label = 'metrics-daemon/host/cpu_percent (%)/mean'
     host_memory_percent_label = 'metrics-daemon/host/memory_percent (%)/mean'
-    interval = 2
+    interval = 20
     x_axis_data = df[duration_label][::interval]
     y_gpu_utilization_data = df[gpu_utilization_label][::interval]
     y_gpu_memory_utilization_data = df[gpu_memory_utilization_label][::interval]
@@ -131,7 +131,7 @@ def draw(filePath):
     plt.ylabel('utilization/precent(%)')  # y_label
     # plt.title('BlackBoxResourceUtilization')
 
-    plt.savefig('BlackBoxResource.jpg')
+    plt.savefig('Matformer_BlackBoxResource.jpg')
     plt.show()
 
 

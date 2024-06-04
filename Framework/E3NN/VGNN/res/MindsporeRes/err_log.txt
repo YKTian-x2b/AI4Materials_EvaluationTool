@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "train.py", line 112, in <module>
+    main()
+  File "train.py", line 63, in main
+    data_dict = get_gamma_data_dict(data_dir, "240602-152947")
+  File "/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Framework/E3NN/VGNN/VGNN_mindspore/utils/utils_data.py", line 174, in get_gamma_data_dict
+    return pkl.load(open(data_dict_path, 'rb'))
+ModuleNotFoundError: No module named 'torch_geometric'

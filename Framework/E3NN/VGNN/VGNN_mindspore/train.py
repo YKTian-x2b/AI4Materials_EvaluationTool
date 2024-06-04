@@ -4,11 +4,11 @@ import mindspore.dataset as ds
 import numpy as np
 import time
 import os
+import random
 from sklearn.model_selection import train_test_split
 from model import train, GraphNetworkVVN, BandLoss
 from utils.utils_load import load_band_structure_data
-from utils.utils_data import generate_gamma_data_dict
-import random
+from utils.utils_data import generate_gamma_data_dict_ms
 
 
 def subset_generator(original_dataset, indices):
@@ -22,14 +22,15 @@ def main():
     ms.set_context(mode=ms.PYNATIVE_MODE,
                    save_graphs=False, save_graphs_path="./graphs",
                    device_target="GPU", device_id=0)
+    seed = None  # 42
     tr_ratio = 0.9
     batch_size = 1
     k_fold = 5
 
-    max_iter = 100  # 200
+    max_iter = 2  # 200
     lmax = 0
     mul = 4
-    nlayers = 4
+    nlayers = 2
     r_max = 7
     number_of_basis = 5
     radial_layers = 1
@@ -48,27 +49,29 @@ def main():
     schedule_gamma = 0.96
 
     run_name = time.strftime('%y%m%d-%H%M%S', time.localtime())
-    model_dir = 'models'
-    data_dir = 'data'
-    raw_dir = './data/phonon'
+    data_dir = '../data'
+    raw_dir = '../data/phonon'
     data_file = 'DFPT_band_structure.pkl'
 
-    os.system(f'rm -r {data_dir}/9850858*')
-    os.system(f'rm -r {data_dir}/phonon/')
-    os.system(f'cd {data_dir}; wget --no-verbose https://figshare.com/ndownloader/files/9850858')
-    os.system(f'cd {data_dir}; tar -xf 9850858')
-    os.system(f'rm -r {data_dir}/9850858*')
+    # os.system(f'rm -r {data_dir}/9850858*')
+    # os.system(f'rm -r {data_dir}/phonon/')
+    # os.system(f'cd {data_dir}; wget --no-verbose https://figshare.com/ndownloader/files/9850858')
+    # os.system(f'cd {data_dir}; tar -xf 9850858')
+    # os.system(f'rm -r {data_dir}/9850858*')
 
     data = load_band_structure_data(data_dir, raw_dir, data_file)
-    data_dict = generate_gamma_data_dict(data_dir, run_name, data, r_max, vn_an)
+    # data_dict = generate_gamma_data_dict_ms(data_dir, run_name, data, r_max, vn_an)
+    data_dict = generate_gamma_data_dict_ms(data_dir, run_name, data, r_max, vn_an)
 
     num = len(data_dict)
+    print("len(data_dict)", num)
+
     tr_nums = [int((num * tr_ratio) // k_fold)] * k_fold
     te_num = num - sum(tr_nums)
     idx_tr, idx_te = train_test_split(range(num), test_size=te_num, random_state=seed)
-    with open(f'./data/idx_{run_name}_tr.txt', 'w') as f:
+    with open(f'../data/idx_{run_name}_tr.txt', 'w') as f:
         for idx in idx_tr: f.write(f"{idx}\n")
-    with open(f'./data/idx_{run_name}_te.txt', 'w') as f:
+    with open(f'../data/idx_{run_name}_te.txt', 'w') as f:
         for idx in idx_te: f.write(f"{idx}\n")
 
     # data_set = torch.utils.data.Subset(list(data_dict.values()), range(len(data_dict)))

@@ -280,7 +280,7 @@ def generate_gamma_data_dict(data_dir, run_name, data, r_max, vn_an=26, descript
             # print(id)
             gi = np.argmin(np.abs(np.linalg.norm(qpts - np.array([0, 0, 0]), axis = 1)), axis = 0)
             data_dict[id] = build_data_vvn(id, structure, qpts[gi], band_structure[gi], r_max, vnelem, descriptor)
-        # pkl.dump(data_dict, open(data_dict_path, 'wb'))
+        pkl.dump(data_dict, open(data_dict_path, 'wb'))
     else:
         data_dict  = pkl.load(open(data_dict_path, 'rb'))
     return data_dict
