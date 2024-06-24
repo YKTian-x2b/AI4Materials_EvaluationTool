@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_CaIn2Cu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.44084390
+_cell_length_b   5.83153215
+_cell_length_c   7.40204639
+_cell_angle_alpha   90.00001287
+_cell_angle_beta   89.99999746
+_cell_angle_gamma   112.51644771
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CaIn2Cu
+_chemical_formula_sum   'Ca2 In4 Cu2'
+_cell_volume   177.07761702
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.06736450  0.13501656  0.75000012  1
+  Ca  Ca1  1  0.93263544  0.86498343  0.24999989  1
+  In  In2  1  0.35593219  0.71161431  0.94853258  1
+  In  In3  1  0.64406780  0.28838571  0.05146741  1
+  In  In4  1  0.64406787  0.28838583  0.44853263  1
+  In  In5  1  0.35593213  0.71161416  0.55146739  1
+  Cu  Cu6  1  0.78406997  0.57055062  0.75000013  1
+  Cu  Cu7  1  0.21593010  0.42944939  0.24999985  1
