@@ -12,8 +12,8 @@ def readV1(filePath):
 
 
 def readV2(filePath):
-    readCSV_v2(filePath)
-    # draw(filePath)
+    # readCSV_v2(filePath)
+    draw(filePath)
 
 
 if __name__ == '__main__':
@@ -27,7 +27,7 @@ if __name__ == '__main__':
                         ["E3NN/NequIP", "res/MindsporeRes"],
                         ]
 
-    Idx = 0
+    Idx = 2
     filePath_ = os.path.join(current_dir, configForMode[0],
                              configForMetrics[Idx][0],
                              configForMetrics[Idx][1],
