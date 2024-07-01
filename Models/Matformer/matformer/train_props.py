@@ -194,6 +194,7 @@ def train_prop_model(
         # config['atom_features']='atomic_number'
         if prop in ["homo", "lumo", "gap", "zpve", "U0", "U", "H", "G"]:
             config["target_multiplication_factor"] = 27.211386024367243
+    exit()
     if test_only:
         t1 = time.time()
         result, targets, predictions = train_dgl(config, test_only=test_only, use_save=use_save, mp_id_list=mp_id_list)

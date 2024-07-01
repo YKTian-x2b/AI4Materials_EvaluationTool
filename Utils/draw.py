@@ -125,8 +125,8 @@ def draw(filePath):
     plt.tight_layout()
 
     # 创建图例，并将其放置在图的右下角外部
-    plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.02), ncol=3, borderaxespad=0.)
-    plt.subplots_adjust(top=0.9)
+    plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.02), ncol=3, borderaxespad=0., fontsize=15)
+    plt.subplots_adjust(top=0.8)
     plt.xlabel('duration(s)')  # 数据库的单位得改一下
     plt.ylabel('utilization/precent(%)')  # y_label
     # plt.title('BlackBoxResourceUtilization')
@@ -144,7 +144,7 @@ def drawForFrame(filePath1, filePath2, name1, name2, savePath):
     gpu_memory_utilization_label = 'metrics-daemon/gpu:0/memory_utilization (%)/mean'
     host_cpu_percent_label = 'metrics-daemon/host/cpu_percent (%)/mean'
     host_memory_percent_label = 'metrics-daemon/host/memory_percent (%)/mean'
-    interval = 200
+    interval = 2
 
     x1_axis_data = df1[duration_label][::interval]
     y1_gpu_utilization_data = df1[gpu_utilization_label][::interval]
@@ -184,11 +184,12 @@ def drawForFrame(filePath1, filePath2, name1, name2, savePath):
     plt.tight_layout()
 
     # 创建图例，并将其放置在图的右下角外部
-    plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.04), ncol=3, borderaxespad=0.)
-    plt.subplots_adjust(top=0.9)
+    plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.04), ncol=3, borderaxespad=0., fontsize=12)
+    plt.subplots_adjust(top=0.8)
     plt.xlabel('duration(s)')  # 数据库的单位得改一下
     plt.ylabel('utilization/precent(%)')  # y_label
-    plt.title('NequIP_200Epoch_Train_BlackBoxResource')
+    plt.title('CGCNN_200Epoch_Eval_BlackBoxResource')
+    # NequIP_200Epoch_Train_BlackBoxResource
 
-    plt.savefig(savePath + 'NequIP_200Epoch_Train_BlackBoxResource.jpg')
+    plt.savefig(savePath + 'CGCNN_200Epoch_Eval_BlackBoxResource.jpg')
     plt.show()

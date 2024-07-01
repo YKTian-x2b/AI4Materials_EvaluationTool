@@ -110,9 +110,9 @@ pip install thop
 
 ### Demo结果
 
-<img src="assets/CGCNN_200Epoch_BlackBoxResource.png" style="zoom: 67%;" />
+<img src="assets/CGCNN_show2.png" style="zoom: 67%;" />
 
-<img src="assets/NequIP_200Epoch_BlackBoxResource_show.png" style="zoom: 67%;" />
+<img src="assets/NequIP_show2.png" style="zoom: 67%;" />
 
 ### 运行
 
