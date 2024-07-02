@@ -27,7 +27,7 @@ if __name__ == '__main__':
                         ["E3NN/NequIP", "res/MindsporeRes"],
                         ]
 
-    Idx = 2
+    Idx = 0
     filePath_ = os.path.join(current_dir, configForMode[0],
                              configForMetrics[Idx][0],
                              configForMetrics[Idx][1],
