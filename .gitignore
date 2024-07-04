@@ -13,3 +13,6 @@ benchmark_data
 *.egg-info/
 __pycache__/
 MANIFEST
+
+*.qdrep
+*.sqlite

@@ -1,0 +1,6 @@
+=> loading model params 'GCN_torch/model_best.pth.tar'
+=> loaded model params 'GCN_torch/model_best.pth.tar'
+=> loading model 'GCN_torch/model_best.pth.tar'
+=> loaded model 'GCN_torch/model_best.pth.tar' (epoch 162, validation 0.12453095614910126)
+Test: [0/1]	Time 0.891 (0.891)	Loss 0.0109 (0.0109)	MAE 0.076 (0.076)
+ ** MAE 0.076

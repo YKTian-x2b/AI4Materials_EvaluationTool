@@ -1,4 +1,0 @@
----------Evaluate Model on TestSet---------------
-Test: [0/1]	
- ** MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
-       21.15661049)
