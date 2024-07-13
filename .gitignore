@@ -16,3 +16,6 @@ MANIFEST
 
 *.qdrep
 *.sqlite
+*.qdstrm
+*.nsys-rep
+*.ncu-rep

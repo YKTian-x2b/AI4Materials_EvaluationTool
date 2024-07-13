@@ -1,0 +1,48 @@
+==PROF== Connected to process 2361568 (/home/yujixuan/anaconda3/envs/CGCNN_paddle/bin/python3.8)
+==PROF== Profiling "Kernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedBroadcastKernel" - 2: 0%....50%....100% - 8 passes
+Tensor(shape=[4, 4], dtype=float32, place=Place(gpu:0), stop_gradient=True,
+       [[ 0.04751094,  1.33061492,  0.62597644,  4.33939219],
+        [ 0.50466317,  0.85326856,  1.52707934, -1.41294169],
+        [-2.10312939,  2.33545685, -0.18106234, -0.24027812],
+        [-2.29965258,  2.75196743,  0.05093110, -2.36528063]])
+==PROF== Disconnected from process 2361568
+[2361568] python3.8@127.0.0.1
+  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params), 2024-Jul-13 18:00:33, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,linear_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.61
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.02
+    gpu__time_duration.sum                                                         usecond                           5.15
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                            104
+    launch__shared_mem_per_block_dynamic                                       Kbyte/block                          81.92
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.38
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.31
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>), 2024-Jul-13 18:00:34, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,linear_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           4.29
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.02
+    gpu__time_duration.sum                                                         usecond                           3.52
+    launch__block_size                                                                                                 64
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             24
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.04
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           3.48
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

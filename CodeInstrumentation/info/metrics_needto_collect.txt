@@ -1,0 +1,33 @@
+# SM SOL
+sm__throughput.avg.pct_of_peak_sustained_elapsed
+# Memory SOL
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed
+# DRAM SOL
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed
+# Duration
+gpu__time_duration.sum
+# Grid Size
+launch__grid_size
+# Block Size
+launch__block_size
+# Registers Per Thread
+launch__registers_per_thread
+# Static Shared Memory Per Block
+launch__shared_mem_per_block_static
+# Dynamic Shared Memory Per Block
+launch__shared_mem_per_block_dynamic
+# Achieved Occupancy
+sm__warps_active.avg.pct_of_peak_sustained_active
+
+
+
+sm__throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__time_duration.sum,\
+launch__grid_size,\
+launch__block_size,\
+launch__registers_per_thread,\
+launch__shared_mem_per_block_static,\
+launch__shared_mem_per_block_dynamic,\
+sm__warps_active.avg.pct_of_peak_sustained_active

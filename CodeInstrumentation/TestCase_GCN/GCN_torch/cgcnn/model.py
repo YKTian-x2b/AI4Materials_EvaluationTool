@@ -2,6 +2,7 @@ from __future__ import print_function, division
 
 import torch
 import torch.nn as nn
+import nvtx
 
 
 class ConvLayer(nn.Module):
@@ -150,8 +151,18 @@ class CrystalGraphConvNet(nn.Module):
 
         """
         atom_fea = self.embedding(atom_fea)
-        for conv_func in self.convs:
-            atom_fea = conv_func(atom_fea, nbr_fea, nbr_fea_idx)
+
+        # for conv_func in self.convs:
+        #     atom_fea = conv_func(atom_fea, nbr_fea, nbr_fea_idx)
+
+        torch.cuda.synchronize(0)
+        conv_nvtx = nvtx.start_range(message="convLayer", color="blue")
+
+        atom_in_fea = self.convs[0](atom_fea, nbr_fea, nbr_fea_idx)
+
+        torch.cuda.synchronize(0)
+        nvtx.end_range(conv_nvtx)
+
         crys_fea = self.pooling(atom_fea, crystal_atom_idx)
         crys_fea = self.conv_to_fc(self.conv_to_fc_softplus(crys_fea))
         crys_fea = self.conv_to_fc_softplus(crys_fea)

@@ -1,5 +1,6 @@
 import paddle
 from paddle import nn
+import nvtx
 
 
 class ConvLayer(nn.Layer):
@@ -82,8 +83,18 @@ class CrystalGraphConvNet(nn.Layer):
         crystal_atom_idx:
         """
         atom_in_fea = self.embedding(input_atom_in_fea)
-        for convLayer in self.convLayers:
-            atom_in_fea = convLayer(atom_in_fea, bond_in_fea, atom_nbrs_idx)
+
+        # for convLayer in self.convLayers:
+            # atom_in_fea = convLayer(atom_in_fea, bond_in_fea, atom_nbrs_idx)
+
+        paddle.device.cuda.synchronize(0)
+        conv_nvtx = nvtx.start_range(message="convLayer", color="blue")
+
+        atom_in_fea = self.convLayers[0](atom_in_fea, bond_in_fea, atom_nbrs_idx)
+
+        paddle.device.cuda.synchronize(0)
+        nvtx.end_range(conv_nvtx)
+
         crys_fea = self.pooling(atom_in_fea, crystal_atom_idx)
         crys_fea = self.conv_to_fc_softplus(crys_fea)
         crys_fea = self.conv_to_fc_softplus(self.conv_to_fc(crys_fea))

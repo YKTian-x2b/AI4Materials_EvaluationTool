@@ -1,0 +1,287 @@
+==PROF== Connected to process 1800013 (/home/yujixuan/anaconda3/envs/CGCNN_paddle/bin/python3.8)
+==PROF== Profiling "GatherNdCUDAKernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedBroadcastKernel" - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "ConcatTensorWithDifferentShape" - 3: 0%....50%....100% - 8 passes
+==PROF== Profiling "Kernel" - 4: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedBroadcastKernel" - 5: 0%....50%....100% - 8 passes
+==PROF== Profiling "BNForwardInference" - 6: 0%....50%....100% - 8 passes
+==PROF== Profiling "SplitTensorWithDifferentShape" - 7: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedElementwiseKernel" - 8: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedElementwiseKernel" - 9: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedBroadcastKernel" - 10: 0%....50%....100% - 8 passes
+==PROF== Profiling "ReduceHigherDimKernel" - 11: 0%....50%....100% - 8 passes
+==PROF== Profiling "BNForwardInference" - 12: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedBroadcastKernel" - 13: 0%....50%....100% - 8 passes
+==PROF== Profiling "VectorizedElementwiseKernel" - 14: 0%....50%....100% - 8 passes
+---------Evaluate Model on TestSet---------------
+Test: [0/1]	
+ ** MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
+       1.89429963)
+==PROF== Disconnected from process 1800013
+[1800013] python3.8@127.0.0.1
+  void phi::funcs::GatherNdCUDAKernel<float, int>(float const*, common::Dim<9>, int const*, float*, unsigned long, unsigned long, unsigned long), 2024-Jul-13 20:27:35, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          34.62
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          21.97
+    gpu__time_duration.sum                                                         usecond                          11.17
+    launch__block_size                                                                                                512
+    launch__grid_size                                                                                                 117
+    launch__registers_per_thread                                           register/thread                             74
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          12.92
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          32.54
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedBroadcastKernel<phi::kps::IdentityFunctor<float, float>, float, 1, 1, 4, 1>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, common::Array<bool, 1>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 1>, int, int, int, phi::kps::IdentityFunctor<float, float>), 2024-Jul-13 20:27:35, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           7.53
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.06
+    gpu__time_duration.sum                                                         usecond                           4.03
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  59
+    launch__registers_per_thread                                           register/thread                             18
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           9.35
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          20.72
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::ConcatTensorWithDifferentShape<int, 4, phi::funcs::PointerAndColWrapper<float, int, 4> >(phi::funcs::PointerAndColWrapper<float, int, 4>, int, int, int, void*), 2024-Jul-13 20:27:36, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          27.25
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          27.25
+    gpu__time_duration.sum                                                         usecond                           6.72
+    launch__block_size                                                                                                960
+    launch__grid_size                                                                                                  69
+    launch__registers_per_thread                                           register/thread                             18
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          12.89
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          57.75
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_32x6_nn_align1>(cutlass_80_tensorop_s1688gemm_64x64_32x6_nn_align1::Params), 2024-Jul-13 20:27:37, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          28.01
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          13.81
+    gpu__time_duration.sum                                                         usecond                          13.28
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  30
+    launch__registers_per_thread                                           register/thread                            110
+    launch__shared_mem_per_block_dynamic                                       Kbyte/block                          98.30
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          20.68
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.33
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>), 2024-Jul-13 20:27:38, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          25.74
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          25.74
+    gpu__time_duration.sum                                                         usecond                           5.76
+    launch__block_size                                                                                                512
+    launch__grid_size                                                                                                  59
+    launch__registers_per_thread                                           register/thread                             24
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           9.98
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          41.33
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::BNForwardInference<float, (common::DataLayout)2>(float const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, int, int, int, double, float*), 2024-Jul-13 20:27:40, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           5.53
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           5.53
+    gpu__time_duration.sum                                                         usecond                          21.28
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                 468
+    launch__registers_per_thread                                           register/thread                             30
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          69.84
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          80.49
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::SplitTensorWithDifferentShape<float, int, phi::funcs::PointerArray<float, (phi::funcs::SegmentedArraySize)4>, phi::funcs::ValueArray<int, (phi::funcs::SegmentedArraySize)4, 4> >(float const*, int, int, phi::funcs::PointerArray<float, (phi::funcs::SegmentedArraySize)4>, phi::funcs::ValueArray<int, (phi::funcs::SegmentedArraySize)4, 4>), 2024-Jul-13 20:27:41, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          24.47
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          24.47
+    gpu__time_duration.sum                                                         usecond                           5.60
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  69
+    launch__registers_per_thread                                           register/thread                             18
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          13.58
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          59.87
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSigmoidFunctor<float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::funcs::CudaSigmoidFunctor<float>), 2024-Jul-13 20:27:42, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          16.88
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          16.88
+    gpu__time_duration.sum                                                         usecond                           4.32
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  59
+    launch__registers_per_thread                                           register/thread                             23
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           8.97
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          19.36
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSoftplusFunctor<float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::funcs::CudaSoftplusFunctor<float>), 2024-Jul-13 20:27:43, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          15.03
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          15.03
+    gpu__time_duration.sum                                                         usecond                           4.70
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  59
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          13.83
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          20.10
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::MultiplyFunctor<float>, float, 2, 1, 4, 3>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::MultiplyFunctor<float>), 2024-Jul-13 20:27:43, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          31.49
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          31.49
+    gpu__time_duration.sum                                                         usecond                           4.35
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  59
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.63
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          18.20
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::ReduceHigherDimKernel<float, float, float, phi::kps::AddFunctor<float>, phi::kps::IdentityFunctor<float, float> >(float const*, float*, phi::kps::AddFunctor<float>, phi::kps::IdentityFunctor<float, float>, float, int, int, int, phi::kps::DimConfig, int, bool, float*, bool), 2024-Jul-13 20:27:44, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          17.99
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          17.99
+    gpu__time_duration.sum                                                         usecond                           4.32
+    launch__block_size                                                                                                 64
+    launch__grid_size                                                                                                  78
+    launch__registers_per_thread                                           register/thread                             40
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           2.72
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           6.77
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::BNForwardInference<float, (common::DataLayout)2>(float const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, int, int, int, double, float*), 2024-Jul-13 20:27:45, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.36
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           1.25
+    gpu__time_duration.sum                                                         usecond                           4.86
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  20
+    launch__registers_per_thread                                           register/thread                             30
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          14.78
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          16.13
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 3>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>), 2024-Jul-13 20:27:46, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.94
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           3.94
+    gpu__time_duration.sum                                                         usecond                           3.23
+    launch__block_size                                                                                                 64
+    launch__grid_size                                                                                                  20
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.22
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           4.11
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSoftplusFunctor<float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::funcs::CudaSoftplusFunctor<float>), 2024-Jul-13 20:27:47, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,convLayer>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.31
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           1.53
+    gpu__time_duration.sum                                                         usecond                           4.03
+    launch__block_size                                                                                                 64
+    launch__grid_size                                                                                                  20
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.42
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           4.14
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

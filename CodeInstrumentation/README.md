@@ -132,13 +132,15 @@ Time(%)      Total Time       Calls         Average         Minimum         Maxi
 
 
 ~~~bash
-pip install nvtx
+pip install nvtx -i https://pypi.douban.com/simple/
 ~~~
 
 
 ~~~python
 import nvtx
+import torch
 
+torch.cuda.synchronize(0)
 transformer_nvtx = nvtx.start_range(message="transformer", color="blue")
 
 # predict noise model_output
@@ -146,10 +148,22 @@ noise_pred = self.transformer(
     latent_model_input, timestep=timesteps, class_labels=class_labels_input
 ).sample
 
+torch.cuda.synchronize(0)
 nvtx.end_range(transformer_nvtx)
 ~~~
 
 
 ~~~bash
-ncu --nvtx --nvtx-include "fmha" --nvtx-exclude "beforeLoop" --replay-mode=application --set full -f -o profile python 01-many-mmha.py 
+sudo /usr/local/cuda-11.1/nsight-compute-2020.2.0/ncu --nvtx --nvtx-include "transformer" \
+--metrics gpu__time_duration.sum,\
+sm__throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,\
+launch__grid_size,\
+launch__block_size,\
+launch__registers_per_thread,\
+launch__shared_mem_per_block_static,\
+launch__shared_mem_per_block_dynamic,\
+sm__warps_active.avg.pct_of_peak_sustained_active \
+--csv python demo3.py > metrics_713_paddle_.csv 
 ~~~

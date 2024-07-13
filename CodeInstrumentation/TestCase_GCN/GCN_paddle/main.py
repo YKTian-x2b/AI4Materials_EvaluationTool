@@ -54,7 +54,7 @@ def main():
     print("---------Evaluate Model on TestSet---------------")
     best_checkpoint = paddle.load(current_dir+'model_best.pth.tar')
     model.set_state_dict(best_checkpoint['state_dict'])
-    normalizer.set_state_dict(best_checkpoint['normalizer'])
+    # normalizer.set_state_dict(best_checkpoint['normalizer'])
     validate(test_loader, model, criterion, normalizer, gpu_device, test=True)
 
 

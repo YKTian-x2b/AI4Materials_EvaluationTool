@@ -1,0 +1,128 @@
+Tensor(shape=[4, 128], dtype=float32, place=Place(gpu:0), stop_gradient=True,
+       [[-4.13657188 ,  18.03549576,  22.43663025, -9.89931870 , -10.77305412,
+          9.82187939 , -4.27648067 ,  7.06083012 ,  16.67366219,  13.23883057,
+          4.58644247 ,  3.76707935 ,  12.73828697,  7.28034115 ,  13.32152081,
+          10.84943104, -2.08459210 ,  0.11779809 ,  17.63281059,  8.45086670 ,
+         -7.78473663 , -4.62522984 ,  0.43273330 ,  3.79863024 , -12.39975452,
+          3.56399798 , -2.05001163 ,  16.32127953,  2.51735377 , -1.13039052 ,
+          12.85097218, -12.03878307,  17.21228218,  4.94241047 ,  21.68715668,
+         -17.54500961,  11.85990715,  8.83483410 ,  16.79012680,  10.13043213,
+         -3.37386346 ,  8.74016094 , -3.97952175 , -12.25797081,  9.87989998 ,
+          2.86857057 , -5.35511446 ,  18.19890785,  1.27194297 , -8.76238632 ,
+         -3.98322439 , -17.63401794,  12.50175476,  5.21808577 , -26.52759171,
+          8.29675865 ,  3.23222804 , -8.08089161 ,  7.92220688 , -6.81038952 ,
+          7.22438097 ,  0.63581598 , -1.84634960 ,  9.27067661 ,  15.70524025,
+         -9.59990788 ,  5.39566374 , -4.42194271 ,  4.57677317 ,  3.96064329 ,
+          24.54187393, -2.38825083 , -1.34313738 ,  12.75282192, -15.65794563,
+          5.16641712 ,  5.29584265 ,  24.14871597,  28.35471535,  7.21798801 ,
+          21.48684120, -0.92812979 , -0.10511792 , -6.18301296 , -20.81762123,
+          0.50577521 , -8.04299545 , -0.52161461 ,  7.88055372 , -10.00321198,
+         -19.34330368, -12.71315289, -1.93925905 , -27.03437042, -12.75796795,
+          7.72409773 , -13.98545933,  13.47543716, -12.16413498,  23.74386597,
+         -5.58734608 , -19.98808479, -4.13375092 , -7.25349331 , -33.11755753,
+          10.33092594,  0.97967768 ,  14.23056984, -12.52055550,  3.87850690 ,
+          18.66532707,  13.48724747, -9.37445545 , -10.68567657,  5.74238157 ,
+          4.83144522 , -8.80385399 ,  15.65396976,  3.08422470 ,  2.46417379 ,
+          5.08769512 , -0.44935110 , -5.68605232 , -23.22719765, -15.46768761,
+         -21.17111015, -3.88851738 , -2.67660546 ],
+        [-17.17865562, -11.35939407,  0.51800859 , -8.10436440 ,  6.74563313 ,
+         -11.30320072, -0.69641876 ,  6.83802509 , -5.17478085 , -11.90984344,
+          4.90826607 , -7.79901123 , -1.85145485 ,  2.30819416 , -7.44854069 ,
+          8.31684780 ,  8.37363434 , -0.33078742 , -9.83704853 ,  15.14582825,
+         -10.44338703, -11.21543407, -14.49000454, -4.28437090 , -9.51744461 ,
+          2.82400203 , -6.08116627 ,  5.70636415 ,  3.85905242 , -9.20397377 ,
+         -5.34842968 ,  0.37665164 , -12.66384602, -2.74614859 ,  7.32799911 ,
+         -34.16189194,  10.61640835,  15.70337296,  4.39467478 ,  17.66511345,
+         -4.60962868 , -11.91337681,  19.99391365,  7.97896385 ,  10.07595348,
+         -0.00616765 ,  12.11559868,  12.75354290, -3.37696409 ,  2.68367887 ,
+          5.48665667 , -15.24875546,  13.44555283,  9.60319042 ,  4.10582829 ,
+          3.59011221 ,  15.84699059, -4.59782314 , -6.21482658 ,  13.13062954,
+         -4.18446732 ,  10.53291702,  7.04001188 , -0.95296729 , -16.25572014,
+          6.92490053 , -16.43514442,  8.40073013 , -0.16754985 , -13.06064034,
+         -3.58480096 , -4.11262751 , -9.84083176 , -2.94281244 , -10.46079826,
+         -9.47357559 , -9.49248314 ,  4.06652641 , -5.25239801 ,  16.99196815,
+          1.18872309 ,  11.72751522, -14.78708839,  14.29868698,  10.05216885,
+         -11.01205444, -2.84212494 , -13.79768753, -14.67629433,  0.07629728 ,
+          8.74086380 ,  7.00508404 , -1.35003066 , -5.78677464 ,  15.79959679,
+         -5.78670359 , -10.68318939,  9.71380997 , -15.29996490,  10.34480190,
+          9.77365494 , -21.04530334,  4.35589981 , -9.22002125 ,  10.20879078,
+          5.58650494 ,  3.67737365 , -6.67411423 ,  2.32933211 ,  3.79806590 ,
+          3.53436899 ,  26.86035347, -1.23679829 , -14.92249870, -0.51026917 ,
+         -10.76384735,  17.48709679, -6.88256264 ,  11.65544796,  2.78836727 ,
+          13.85802460, -13.70209503,  4.21120405 , -3.14558363 ,  0.30909598 ,
+         -2.66959381 , -3.44819236 ,  10.76511288],
+        [-25.26045609, -16.48149300,  10.51190567, -8.70096779 , -3.72126842 ,
+         -1.05160379 ,  3.19574118 , -0.28267777 , -5.24826670 , -14.77827835,
+          0.05892092 , -8.00915909 , -9.00427246 , -0.36492562 , -11.31031132,
+          15.70449162,  15.32422256, -11.95899200, -5.28379965 ,  0.62552500 ,
+          14.16687012, -6.98095703 ,  29.29558372, -15.63666439,  11.71166992,
+         -1.18036497 ,  2.17396641 ,  5.10177469 ,  2.52090001 , -6.26600170 ,
+         -3.05226326 ,  2.63208246 , -6.47489071 , -16.38327217,  1.91578054 ,
+          1.26326537 ,  2.39228082 ,  13.03824806, -11.11797428,  1.44377160 ,
+          18.05369949,  11.35215664,  19.23786163,  21.32477379, -6.18332911 ,
+         -3.46489191 ,  12.58217335,  9.33547306 ,  10.39661503,  1.58893728 ,
+          12.36500168,  1.49368012 ,  8.25251007 , -2.83145857 ,  6.19346237 ,
+         -8.84949303 ,  6.01136303 , -1.92501056 , -13.02973938, -2.32235599 ,
+          0.27671111 , -1.87143755 , -18.81984901,  14.97754955, -9.21244240 ,
+          11.75920391,  22.29216576, -10.49259281, -14.55810452,  1.36418176 ,
+          11.01965237, -9.38545895 , -18.01923943, -2.99441934 ,  18.18398094,
+          9.75953388 , -0.29940253 ,  9.97654533 , -5.67076683 , -10.51396847,
+         -1.05069578 ,  3.87162519 , -11.43836021, -14.54589844,  1.37385559 ,
+          16.78451729, -9.08620453 ,  19.25364113,  15.58725834, -13.02726936,
+          1.25240779 ,  0.65019661 , -1.71895254 ,  2.58265591 ,  3.59656286 ,
+         -2.39049721 ,  13.56694317, -0.53408015 ,  12.82823277, -4.14122343 ,
+         -15.37479019, -4.85897398 , -21.82256317,  9.62523651 ,  21.55141640,
+         -3.40664101 , -8.04342079 , -10.78625107, -0.48143190 ,  6.90094948 ,
+          3.20731664 ,  31.90583420,  10.71660900, -3.04884863 , -1.43222618 ,
+         -7.49974728 ,  13.00080872,  8.15867615 , -4.54768801 , -13.72567177,
+          16.30965042, -5.01833534 , -8.10867310 ,  14.34263134, -12.65350246,
+          15.65118980, -9.61559486 ,  2.15290546 ],
+        [-6.81122398 , -11.99411488,  7.35033464 , -21.26849365, -17.31427956,
+         -3.25727177 ,  3.18015409 , -13.47896194, -0.26226854 , -23.56668091,
+         -13.36872387,  21.08593941, -7.43953753 , -4.25786495 , -10.18832016,
+          34.82061386, -1.76990533 ,  0.98455811 ,  0.38279903 , -17.93769836,
+          4.77431870 ,  14.05428123,  0.21749355 ,  1.57659543 , -8.18208504 ,
+         -15.69359398, -2.99826813 ,  1.04467142 , -1.93958473 ,  6.43962336 ,
+         -6.06263494 ,  7.09676313 ,  34.97860718,  0.50990242 ,  9.08815002 ,
+          11.68680000,  3.16783905 , -11.19129276,  11.98272514,  4.32299709 ,
+         -5.70040798 ,  12.19271278,  6.48505116 ,  6.00358868 ,  7.48317528 ,
+         -5.50904512 ,  20.52646828, -6.55525303 ,  10.46242046,  12.95429230,
+         -7.08327150 , -3.34916782 , -11.23866272,  7.10964203 ,  3.65511036 ,
+          12.29224396,  20.28537369, -0.41967598 , -14.96762657,  5.71306753 ,
+          3.87898588 ,  35.61794662,  4.89392853 , -1.96793222 , -7.57555580 ,
+          0.25654542 , -5.58802366 ,  7.35105467 ,  19.01219940, -11.15413284,
+         -8.08206749 , -4.06054878 ,  2.72016358 ,  16.51877022, -5.72371578 ,
+          25.07214928,  27.87609673,  11.63945389,  8.11737919 ,  9.49163342 ,
+         -1.39706826 , -6.25668859 ,  18.79419136,  20.02524948, -1.21229529 ,
+         -2.29124546 ,  1.70210445 ,  5.98729610 , -8.30379391 ,  15.03471947,
+         -0.21563780 ,  13.14523029, -2.85226107 , -2.39336252 ,  18.08149910,
+          4.18759775 , -16.99232101, -26.82523155,  4.94433165 , -13.10521317,
+          3.15045118 , -17.05989265, -8.86237621 ,  20.04944229,  9.07345963 ,
+         -4.37496233 ,  6.51002169 ,  23.30386734, -16.74358940, -5.28498983 ,
+          6.61088181 , -16.69431305,  28.68803787,  1.40380716 , -10.77928543,
+         -20.20219040,  3.03239608 ,  9.64453602 , -6.05974102 , -2.28756428 ,
+         -21.30907440, -7.77383947 , -12.96991348, -18.27380180,  1.49657202 ,
+          13.73272133,  1.63154399 , -2.31209803 ]])
+==PROF== Connected to process 93785 (/home/yujixuan/anaconda3/envs/CGCNN_paddle/bin/python3.8)
+==PROF== Disconnected from process 93785
+"ID","Process ID","Process Name","Host Name","thread Domain:Push/Pop_Range:PL_Type:PL_Value","Id:Domain:Start/Stop_Range:PL_Type:PL_Value","Kernel Name","Kernel Time","Context","Stream","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed","%","2.45"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed","%","2.45"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","gpu__time_duration.sum","nsecond","8,192"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","launch__block_size","","128"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","launch__grid_size","","2"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","launch__registers_per_thread","register/thread","104"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","launch__shared_mem_per_block_dynamic","byte/block","81,920"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","launch__shared_mem_per_block_static","byte/block","0"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","sm__throughput.avg.pct_of_peak_sustained_elapsed","%","1.03"
+"0","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x10_nn_align4::Params)","2024-Jul-13 19:18:31","1","13","Command line profiler metrics","sm__warps_active.avg.pct_of_peak_sustained_active","%","8.32"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed","%","4.30"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed","%","0.24"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","gpu__time_duration.sum","nsecond","3,584"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","launch__block_size","","64"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","launch__grid_size","","2"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","launch__registers_per_thread","register/thread","24"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","launch__shared_mem_per_block_dynamic","byte/block","0"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","launch__shared_mem_per_block_static","byte/block","0"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","sm__throughput.avg.pct_of_peak_sustained_elapsed","%","0.07"
+"1","93785","python3.8","127.0.0.1",""," ""0:<default domain>:linear_nvtx:none:none"" ","void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)","2024-Jul-13 19:18:32","1","13","Command line profiler metrics","sm__warps_active.avg.pct_of_peak_sustained_active","%","4.16"

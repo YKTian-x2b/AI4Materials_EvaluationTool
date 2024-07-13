@@ -1,156 +1,130 @@
+(CGCNN_paddle) yujixuan@libo-MS-7C95:~/AI4Sci/AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_GCN$ nsys profile --stats=true -f true -o res/PaddleRes/paddle_gcn_profile_nsys python GCN_paddle/main.py root_dir
+W0706 13:12:15.307866 3107631 gpu_resources.cc:119] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 11.4, Runtime API Version: 11.1
+W0706 13:12:15.308796 3107631 gpu_resources.cc:164] device: 0, cuDNN Version: 8.9.
 ---------Evaluate Model on TestSet---------------
-Test: [0/1]	
- ** MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
-       21.15661049)
-
 Test: [0/1]     
  ** MAE Tensor(shape=[], dtype=float32, place=Place(gpu:0), stop_gradient=False,
        21.15661049)
-(CGCNN_paddle) yujixuan@libo-MS-7C95:~/AI4Sci/AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_GCN$ nsys profile --stats=true -f true -o res/gcn_profile_nsys \
-> python main.py root_dir > res/gcn_profile_nsys.txt
-Warning: LBR backtrace method is not supported on this platform. DWARF backtrace method will be used.
-Collecting data...
-W0624 19:56:57.359184 2123031 gpu_resources.cc:119] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 11.4, Runtime API Version: 11.1
-W0624 19:56:57.360280 2123031 gpu_resources.cc:164] device: 0, cuDNN Version: 6.0.
-W0624 19:56:58.186348 2123031 gpu_resources.cc:299] WARNING: device: . The installed Paddle is compiled with CUDNN 8.2, but CUDNN version in your machine is 6.0, which may cause serious incompatible bug. Please recompile or reinstall Paddle with compatible CUDNN version.
-Processing events...
-Capturing symbol files...
-Saving temporary "/tmp/nsys-report-c2fb-aaee-5371-4eae.qdstrm" file to disk...
-Creating final output files...
+Generating '/tmp/nsys-report-ae90.qdstrm'
+[1/8] [========================100%] paddle_gcn_profile_nsys.nsys-rep
+[2/8] [========================100%] paddle_gcn_profile_nsys.sqlite
+[3/8] Executing 'nvtx_sum' stats report
+SKIPPED: /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_GCN/res/PaddleRes/paddle_gcn_profile_nsys.sqlite does not contain NV Tools Extension (NVTX) data.
+[4/8] Executing 'osrt_sum' stats report
 
-Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-c2fb-aaee-5371-4eae.qdrep"
-Exporting 70784 events: [=================================================100%]
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)       Med (ns)      Min (ns)    Max (ns)     StdDev (ns)            Name         
+ --------  ---------------  ---------  -------------  -------------  ----------  -----------  -------------  ----------------------
+     39.9    4,009,727,563          5  801,945,512.6  999,879,665.0  10,081,969  999,984,770  442,665,180.8  usleep                
+     24.2    2,432,338,202         38   64,008,900.1  100,139,067.0       2,370  100,154,736   45,661,067.3  poll                  
+     19.9    2,000,454,237          5  400,090,847.4  500,087,836.0     124,374  500,090,335  223,588,056.1  pthread_cond_timedwait
+     11.9    1,193,535,706          4  298,383,926.5  298,810,578.5      25,499  595,889,050  343,140,845.0  pthread_cond_wait     
+      1.4      139,293,880         24    5,803,911.7        2,935.0       1,000   45,314,626   11,742,312.2  fread                 
+      1.1      108,904,433      2,291       47,535.8       25,929.0         999    9,434,060      329,584.1  ioctl                 
+      1.0       99,788,804      2,604       38,321.4        2,030.0         999   30,356,410      947,166.4  read                  
+      0.2       25,101,321          4    6,275,330.3    6,219,793.5       2,569   12,659,165    7,243,430.4  futex                 
+      0.2       21,742,212         16    1,358,888.3    1,399,853.5       1,780    2,514,980      937,996.1  pthread_mutex_lock    
+      0.1        8,804,180      3,435        2,563.1        2,070.0       1,050       30,128        1,393.5  open64                
+      0.0        4,082,645          4    1,020,661.3    1,163,335.0     489,986    1,265,989      358,700.3  fork                  
+      0.0        2,300,577        636        3,617.3        2,210.0       1,000      245,888       10,568.9  mmap64                
+      0.0        1,419,743        388        3,659.1        2,330.0       1,000       41,418        4,321.4  munmap                
+      0.0        1,299,920         16       81,245.0        8,770.0       4,950      379,022      127,254.1  pthread_join          
+      0.0        1,017,615         57       17,852.9        3,840.0       1,050      359,372       64,189.7  fopen                 
+      0.0          999,571         17       58,798.3       59,337.0      53,178       64,607        2,496.9  sleep                 
+      0.0          546,954          4      136,738.5       19,584.5      14,669      493,116      237,612.7  waitpid               
+      0.0          491,525         10       49,152.5       39,278.0      10,619      229,269       65,212.9  sem_timedwait         
+      0.0          437,500         54        8,101.9        4,740.0       1,360       55,247       10,511.2  mmap                  
+      0.0          365,520         12       30,460.0        6,164.5       1,570      297,126       84,046.8  open                  
+      0.0          277,866          1      277,866.0      277,866.0     277,866      277,866            0.0  sem_wait              
+      0.0          250,326         20       12,516.3       11,484.5       1,190       31,998        7,072.0  fgets                 
+      0.0          249,418          8       31,177.3       32,033.5      19,759       39,208        7,471.0  pthread_create        
+      0.0           83,073         37        2,245.2        1,650.0       1,000        6,909        1,422.9  fclose                
+      0.0           54,048         16        3,378.0        2,385.0       1,060       10,979        2,682.2  write                 
+      0.0           44,429         23        1,931.7        1,330.0       1,040        4,500        1,006.0  pthread_cond_signal   
+      0.0           33,518         10        3,351.8        2,940.0       1,450        5,869        1,641.1  pipe2                 
+      0.0           18,930          4        4,732.5        3,780.0       1,380        9,990        3,714.4  fopen64               
+      0.0           14,370          9        1,596.7        1,380.0       1,110        2,640          504.4  fcntl                 
+      0.0            9,648          3        3,216.0        2,969.0       1,260        5,419        2,090.5  fwrite                
+      0.0            8,839          2        4,419.5        4,419.5       1,739        7,100        3,790.8  socket                
+      0.0            7,909          3        2,636.3        3,339.0       1,200        3,370        1,244.0  pthread_cond_broadcast
+      0.0            5,810          1        5,810.0        5,810.0       5,810        5,810            0.0  connect               
+      0.0            2,890          1        2,890.0        2,890.0       2,890        2,890            0.0  putc                  
+      0.0            2,340          1        2,340.0        2,340.0       2,340        2,340            0.0  prctl                 
+      0.0            1,470          1        1,470.0        1,470.0       1,470        1,470            0.0  fputs_unlocked        
+      0.0            1,080          1        1,080.0        1,080.0       1,080        1,080            0.0  sigaction             
+      0.0            1,000          1        1,000.0        1,000.0       1,000        1,000            0.0  fflush                
 
-Exported successfully to
-/tmp/nsys-report-c2fb-aaee-5371-4eae.sqlite
+[5/8] Executing 'cuda_api_sum' stats report
 
-Generating CUDA API Statistics...
-CUDA API Statistics (nanoseconds)
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)     Med (ns)    Min (ns)    Max (ns)     StdDev (ns)               Name            
+ --------  ---------------  ---------  ------------  -----------  --------  -------------  ------------  ----------------------------
+     61.1    1,064,588,721        200   5,322,943.6      3,740.0     2,470  1,062,987,850  75,164,024.4  cudaMalloc                  
+     24.1      421,006,852         14  30,071,918.0        590.0       290    347,251,785  93,381,745.3  cudaFree                    
+      7.8      135,706,498         16   8,481,656.1      1,410.0       950    135,532,896  33,880,352.0  cudaStreamCreateWithFlags   
+      6.2      107,386,296        234     458,915.8    104,165.0     2,090      7,859,905     934,948.8  cuModuleUnload              
+      0.6       10,401,254          2   5,200,627.0  5,200,627.0   534,075      9,867,179   6,599,501.1  cudaHostAlloc               
+      0.1        1,714,872        261       6,570.4      3,989.0     3,309         29,429       4,595.0  cudaMemcpy                  
+      0.1        1,520,093        136      11,177.2      6,149.0     3,900        579,893      49,248.4  cudaLaunchKernel            
+      0.0          632,560         40      15,814.0     13,779.0    13,489         42,248       5,818.4  cudaMemGetInfo              
+      0.0          370,671         56       6,619.1      5,690.0     3,769         21,949       3,390.7  cudaMemcpyAsync             
+      0.0           78,495        384         204.4        180.0        70          1,000         104.8  cuGetProcAddress            
+      0.0           29,397         73         402.7        330.0       240          1,360         219.9  cudaEventCreateWithFlags    
+      0.0           19,129          1      19,129.0     19,129.0    19,129         19,129           0.0  cudaMemsetAsync             
+      0.0           16,378          7       2,339.7      1,710.0     1,179          4,599       1,518.2  cudaStreamSynchronize       
+      0.0            8,910          1       8,910.0      8,910.0     8,910          8,910           0.0  cudaStreamCreateWithPriority
+      0.0            3,310          3       1,103.3        930.0       900          1,480         326.5  cuInit                      
+      0.0            2,660          1       2,660.0      2,660.0     2,660          2,660           0.0  cudaEventRecord             
+      0.0            1,320          1       1,320.0      1,320.0     1,320          1,320           0.0  cudaStreamIsCapturing_v10000
 
-Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   50.3      1709124966         195       8764743.4            2450      1707272594  cudaMalloc                                                                      
-   23.0       780254116           6     130042352.7             330       598464963  cudaFree                                                                        
-   15.2       514550903           8      64318862.9            1320       514454323  cudaStreamCreateWithFlags                                                       
-   11.1       377387837         602        626890.1            1760        28089863  cuModuleUnload                                                                  
-    0.3         9910019           1       9910019.0         9910019         9910019  cudaHostAlloc                                                                   
-    0.1         2100644         258          8142.0            3540           39670  cudaMemcpy                                                                      
-    0.1         1798852         136         13226.9            4130          689241  cudaLaunchKernel                                                                
-    0.0          617821          40         15445.5           13040           39580  cudaMemGetInfo                                                                  
-    0.0          381730          56          6816.6            3870           24140  cudaMemcpyAsync                                                                 
-    0.0           31410          78           402.7             290            1480  cudaEventCreateWithFlags                                                        
-    0.0           18010           2          9005.0            2250           15760  cudaStreamCreateWithPriority                                                    
-    0.0           16400           7          2342.9            1240            4670  cudaStreamSynchronize                                                           
-    0.0            3200           3          1066.7             780            1410  cuInit                                                                          
+[6/8] Executing 'cuda_gpu_kern_sum' stats report
 
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  ----------------------------------------------------------------------------------------------------
+     14.0           64,892          6  10,815.3  10,815.5     3,807    17,855      7,664.9  void phi::BNForwardInference<float, (common::DataLayout)2>(const T1 *, const phi::backends::gpu::Cu…
+     12.9           59,869         30   1,995.6   1,952.0     1,920     2,272         90.3  void phi::funcs::VectorizedElementwiseKernel<float, phi::FullFunctor<float, float>, (int)0, (int)1,…
+      7.6           35,069         16   2,191.8   2,112.0     2,079     2,624        168.5  void phi::funcs::VectorizedElementwiseKernel<int, phi::ScaleFunctor<int, int>, (int)1, (int)1, (int…
+      7.2           33,245          3  11,081.7  11,199.0    10,655    11,391        381.8  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_32x6_nn_align1>(T1::Params)                
+      6.4           29,569         11   2,688.1   2,624.0     2,304     3,168        269.6  void phi::funcs::ReduceHigherDimKernel<float, float, float, phi::kps::AddFunctor<float>, phi::kps::…
+      6.0           28,062          3   9,354.0   9,503.0     8,608     9,951        683.8  void phi::funcs::GatherNdCUDAKernel<float, int>(const T1 *, common::Dim<(int)9>, const T2 *, T1 *, …
+      5.5           25,597          8   3,199.6   3,072.0     2,784     4,063        448.4  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSoftplusFunctor<float>, (int)1,…
+      5.5           25,504          8   3,188.0   3,184.0     3,136     3,264         45.1  void phi::funcs::GatherNdCUDAKernel<float, long>(const T1 *, common::Dim<(int)9>, const T2 *, T1 *,…
+      5.2           24,060          8   3,007.5   2,879.5     2,336     3,743        592.1  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, (int)2, (int)1, (i…
+      4.1           19,005          3   6,335.0   6,207.0     6,143     6,655        279.0  void phi::funcs::ConcatTensorWithDifferentShape<int, (int)4, phi::funcs::PointerAndColWrapper<float…
+      3.3           15,135          6   2,522.5   2,608.0     2,272     2,688        187.3  void phi::funcs::DistributionKernel<float, phi::funcs::uniform_distribution<float>, phi::funcs::uni…
+      2.7           12,736          3   4,245.3   4,160.0     4,064     4,512        235.9  void phi::funcs::SplitTensorWithDifferentShape<float, int, phi::funcs::PointerArray<float, (phi::fu…
+      2.4           11,263          2   5,631.5   5,631.5     5,247     6,016        543.8  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(T1::Params)                
+      1.9            8,768          3   2,922.7   2,848.0     2,848     3,072        129.3  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSigmoidFunctor<float>, (int)1, …
+      1.8            8,543          3   2,847.7   2,848.0     2,783     2,912         64.5  void phi::funcs::VectorizedBroadcastKernel<phi::kps::IdentityFunctor<float, float>, float, (int)1, …
+      1.8            8,256          1   8,256.0   8,256.0     8,256     8,256          0.0  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_tt_align1>(T1::Params)                
+      1.8            8,126          3   2,708.7   2,719.0     2,687     2,720         18.8  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::MultiplyFunctor<float>, float, (int)2, (int)…
+      1.6            7,232          3   2,410.7   2,400.0     2,272     2,560        144.3  void cub::DeviceReduceSingleTileKernel<cub::DeviceReducePolicy<float, float, int, phi::kps::AddFunc…
+      1.4            6,657          3   2,219.0   2,209.0     2,208     2,240         18.2  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, (int)2, (int)1, (i…
+      1.4            6,464          3   2,154.7   2,080.0     2,048     2,336        157.9  void phi::funcs::VectorizedElementwiseKernel<float, phi::ScaleFunctor<float, float>, (int)1, (int)1…
+      1.2            5,504          2   2,752.0   2,752.0     2,432     3,072        452.5  void phi::funcs::StackCudaKernel<float, int, phi::funcs::ConstPointerArray<float, (phi::funcs::Segm…
+      1.1            5,120          2   2,560.0   2,560.0     2,336     2,784        316.8  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::MultiplyFunctor<float>, float, (int)2, (int)…
+      1.0            4,767          2   2,383.5   2,383.5     2,271     2,496        159.1  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::SubtractFunctor<float>, float, (int)2, (int)…
+      0.7            3,199          1   3,199.0   3,199.0     3,199     3,199          0.0  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::DivideFunctor<float, void>, float, (int)2, (…
+      0.6            2,944          1   2,944.0   2,944.0     2,944     2,944          0.0  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::SubtractFunctor<float>, float, (int)2, (int)…
+      0.5            2,144          1   2,144.0   2,144.0     2,144     2,144          0.0  void phi::funcs::VectorizedElementwiseKernel<float, phi::CudaAbsFunctor<float, void>, (int)1, (int)…
+      0.5            2,144          1   2,144.0   2,144.0     2,144     2,144          0.0  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSquareFunctor<float>, (int)1, (…
 
+[7/8] Executing 'cuda_gpu_mem_time_sum' stats report
 
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)            Operation           
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ------------------------------
+     61.2          278,425    218   1,277.2     896.0       832     6,143      1,207.8  [CUDA memcpy Host-to-Device]  
+     25.2          114,684     56   2,047.9   2,016.0     1,951     2,335         94.9  [CUDA memcpy Device-to-Device]
+     13.0           59,161     43   1,375.8   1,056.0     1,023     4,543        878.5  [CUDA memcpy Device-to-Host]  
+      0.5            2,432      1   2,432.0   2,432.0     2,432     2,432          0.0  [CUDA memset]                 
 
-Generating CUDA Kernel Statistics...
-CUDA Kernel Statistics (nanoseconds)
+[8/8] Executing 'cuda_gpu_mem_size_sum' stats report
 
-Time(%)      Total Time   Instances         Average         Minimum         Maximum  Name                                                                                                                                                                                                                                                                                                                                         
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------------------------------------------                                                                                                                                                                                                                         
-   18.3           58366           6          9727.7            2784           17215  void phi::BNForwardInference<float, (common::DataLayout)2>(float const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormParamType const*, phi::backends::gpu::CudnnDataType<float>::BatchNormPa
-    9.1           29184          30           972.8             960             993  void phi::funcs::VectorizedElementwiseKernel<float, phi::FullFunctor<float, float>, 0, 1, 4>(common::Array<char const* restrict, 0>, common::Array<float*, 1>, long, long, int, phi::FullFunctor<float, float>)                                                                                                                              
-    9.1           28960           3          9653.3            9440            9824  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_32x6_nn_align1>(cutlass_80_tensorop_s1688gemm_64x64_32x6_nn_align1::Params)                                                                                                                                                                                                         
-    7.6           24415           3          8138.3            7551            8864  void phi::funcs::GatherNdCUDAKernel<float, int>(float const*, common::Dim<9>, int const*, float*, unsigned long, unsigned long, unsigned long)                                                                                                                                                                                               
-    6.0           19072          16          1192.0            1088            1472  void phi::funcs::VectorizedElementwiseKernel<int, phi::ScaleFunctor<int, int>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<int*, 1>, long, long, int, phi::ScaleFunctor<int, int>)                                                                                                                                        
-    5.6           17856          11          1623.3            1344            2144  void phi::funcs::ReduceHigherDimKernel<float, float, float, phi::kps::AddFunctor<float>, phi::kps::IdentityFunctor<float, float> >(float const*, float*, phi::kps::AddFunctor<float>, phi::kps::IdentityFunctor<float, float>, float, int, int, int, phi::kps::DimConfig, int, bool, float*, bool)                                           
-    5.4           17374           8          2171.8            1823            2975  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSoftplusFunctor<float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::funcs::CudaSoftplusFunctor<float>)                                                                                                              
-    5.4           17311           8          2163.9            2080            2240  void phi::funcs::GatherNdCUDAKernel<float, long>(float const*, common::Dim<9>, long const*, float*, unsigned long, unsigned long, unsigned long)                                                                                                                                                                                             
-    5.1           16320           3          5440.0            5088            5760  void phi::funcs::ConcatTensorWithDifferentShape<int, 4, phi::funcs::PointerAndColWrapper<float, int, 4> >(phi::funcs::PointerAndColWrapper<float, int, 4>, int, int, int, void*)                                                                                                                                                             
-    4.7           15040           8          1880.0            1344            2688  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)                                     
-    3.0            9472           3          3157.3            3008            3328  void phi::funcs::SplitTensorWithDifferentShape<float, int, phi::funcs::PointerArray<float, (phi::funcs::SegmentedArraySize)4>, phi::funcs::ValueArray<int, (phi::funcs::SegmentedArraySize)4, 4> >(float const*, int, int, phi::funcs::PointerArray<float, (phi::funcs::SegmentedArraySize)4>, phi::funcs::ValueArray<int, (phi::funcs::Segme
-    2.9            9280           2          4640.0            4000            5280  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4>(cutlass_80_tensorop_s1688gemm_64x64_16x6_nn_align4::Params)                                                                                                                                                                                                         
-    2.7            8768           6          1461.3            1249            1664  void phi::funcs::DistributionKernel<float, phi::funcs::uniform_distribution<float>, phi::funcs::uniform_real_transform<float> >(unsigned long, unsigned long, unsigned long, phi::funcs::uniform_distribution<float>, phi::funcs::uniform_real_transform<float>, float*, unsigned long)                                                      
-    2.1            6848           1          6848.0            6848            6848  void cutlass::Kernel<cutlass_80_tensorop_s1688gemm_64x64_16x6_tt_align1>(cutlass_80_tensorop_s1688gemm_64x64_16x6_tt_align1::Params)                                                                                                                                                                                                         
-    1.7            5504           3          1834.7            1793            1887  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSigmoidFunctor<float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::funcs::CudaSigmoidFunctor<float>)                                                                                                                
-    1.6            5152           3          1717.3            1696            1760  void phi::funcs::VectorizedBroadcastKernel<phi::kps::IdentityFunctor<float, float>, float, 1, 1, 4, 1>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, common::Array<bool, 1>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 1>, int, int, int, phi::kps::IdentityFunctor<float, float>)                 
-    1.5            4895           3          1631.7            1568            1695  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::MultiplyFunctor<float>, float, 2, 1, 4, 3>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::MultiplyFunctor<float>)                           
-    1.2            3968           3          1322.7            1312            1344  void cub::DeviceReduceSingleTileKernel<cub::DeviceReducePolicy<float, float, int, phi::kps::AddFunctor<float> >::Policy600, cub::TransformInputIterator<float, phi::kps::DivideFunctor<float, float>, float const*, long>, float*, int, phi::kps::AddFunctor<float>, float>(cub::TransformInputIterator<float, phi::kps::DivideFunctor<float,
-    1.2            3744           3          1248.0            1184            1376  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::AddFunctor<float>, float, 2, 1, 4, 3>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::AddFunctor<float>)                                     
-    1.1            3456           2          1728.0            1440            2016  void phi::funcs::StackCudaKernel<float, int, phi::funcs::ConstPointerArray<float, (phi::funcs::SegmentedArraySize)8> >(phi::funcs::ConstPointerArray<float, (phi::funcs::SegmentedArraySize)8>, phi::funcs::GeneralDivMod<int>, int, int, int, float*)                                                                                       
-    1.0            3296           3          1098.7            1088            1120  void phi::funcs::VectorizedElementwiseKernel<float, phi::ScaleFunctor<float, float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::ScaleFunctor<float, float>)                                                                                                                            
-    0.9            2880           2          1440.0            1344            1536  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::MultiplyFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::MultiplyFunctor<float>)                           
-    0.8            2656           2          1328.0            1312            1344  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::SubtractFunctor<float>, float, 2, 1, 4, 3>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::SubtractFunctor<float>)                           
-    0.6            1856           1          1856.0            1856            1856  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::DivideFunctor<float, void>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::DivideFunctor<float, void>)                   
-    0.5            1728           1          1728.0            1728            1728  void phi::funcs::VectorizedBroadcastKernel<phi::funcs::SubtractFunctor<float>, float, 2, 1, 4, 1>(common::Array<char const* restrict, 2>, common::Array<float*, 1>, common::Array<bool, 2>, unsigned int, common::Array<phi::kps::details::BroadcastConfig, 2>, int, int, int, phi::funcs::SubtractFunctor<float>)                           
-    0.4            1120           1          1120.0            1120            1120  void phi::funcs::VectorizedElementwiseKernel<float, phi::funcs::CudaSquareFunctor<float>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::funcs::CudaSquareFunctor<float>)                                                                                                                  
-    0.4            1119           1          1119.0            1119            1119  void phi::funcs::VectorizedElementwiseKernel<float, phi::CudaAbsFunctor<float, void>, 1, 1, 4>(common::Array<char const* restrict, 1>, common::Array<float*, 1>, long, long, int, phi::CudaAbsFunctor<float, void>)                                                                                                                          
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)            Operation           
+ ----------  -----  --------  --------  --------  --------  -----------  ------------------------------
+      1.490    218     0.007     0.000     0.000     0.087        0.021  [CUDA memcpy Host-to-Device]  
+      0.374     56     0.007     0.002     0.000     0.059        0.012  [CUDA memcpy Device-to-Device]
+      0.329     43     0.008     0.001     0.000     0.087        0.023  [CUDA memcpy Device-to-Host]  
+      0.009      1     0.009     0.009     0.009     0.009        0.000  [CUDA memset]                 
 
-
-
-Generating CUDA Memory Operation Statistics...
-CUDA Memory Operation Statistics (nanoseconds)
-
-Time(%)      Total Time  Operations         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   70.7          279581         215          1300.4             831            6240  [CUDA memcpy HtoD]                                                              
-   14.7           58141          56          1038.2             991            1280  [CUDA memcpy DtoD]                                                              
-   14.6           57628          43          1340.2            1023            4640  [CUDA memcpy DtoH]                                                              
-
-
-CUDA Memory Operation Statistics (KiB)
-
-              Total      Operations              Average            Minimum              Maximum  Name                                                                            
--------------------  --------------  -------------------  -----------------  -------------------  --------------------------------------------------------------------------------
-            365.188              56                6.521              0.094               57.656  [CUDA memcpy DtoD]                                                              
-            321.566              43                7.478              0.004               84.500  [CUDA memcpy DtoH]                                                              
-           1454.730             215                6.766              0.004               84.500  [CUDA memcpy HtoD]                                                              
-
-
-
-
-Generating Operating System Runtime API Statistics...
-Operating System Runtime API Statistics (nanoseconds)
-
-Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   33.0      5009774690           6     834962448.3        10088578       999966040  usleep                                                                          
-   24.6      3731528724          51      73167229.9           14910       100175764  poll                                                                            
-   23.1      3500930051           8     437616256.4          336260       500095510  pthread_cond_timedwait                                                          
-   17.4      2639131056           5     527826211.2           36720      1318376207  pthread_cond_wait                                                               
-    0.8       122871357        2618         46933.3            1000        11415219  ioctl                                                                           
-    0.5        81207848        2405         33766.3            1000        22531678  read                                                                            
-    0.3        39723318         494         80411.6            1000         3591243  fread                                                                           
-    0.2        25282742           4       6320685.5            4030        12749361  futex                                                                           
-    0.1         7591636        3427          2215.2            1120           31440  open64                                                                          
-    0.0         3343084         684          4887.5            1000          148110  sched_yield                                                                     
-    0.0         3085963           4        771490.8          332940         1153391  fork                                                                            
-    0.0         2340791         657          3562.8            1000          316570  mmap64                                                                          
-    0.0         1862243         454          4101.9            1010          214310  munmap                                                                          
-    0.0         1678050         384          4369.9            1000          326780  fopen                                                                           
-    0.0         1001480          17         58910.6           53680           65830  sleep                                                                           
-    0.0          770690          13         59283.8            1050          315610  pthread_mutex_lock                                                              
-    0.0          601251          24         25052.1           15800           38730  pthread_create                                                                  
-    0.0          528750          10         52875.0           10760          255790  sem_timedwait                                                                   
-    0.0          361721          15         24114.7            1000          323121  write                                                                           
-    0.0          357331           4         89332.7           12330          298061  waitpid                                                                         
-    0.0          269960          55          4908.4            1310           25280  mmap                                                                            
-    0.0          247450          15         16496.7            1680           94070  pthread_join                                                                    
-    0.0          247110          18         13728.3            3840           31900  fgets                                                                           
-    0.0          192730         132          1460.1            1000            4660  fclose                                                                          
-    0.0          179620          12         14968.3            2820          119560  open                                                                            
-    0.0          115090          51          2256.7            1070           11720  pthread_cond_signal                                                             
-    0.0          112550          49          2296.9            1500            5290  fflush                                                                          
-    0.0           35240           1         35240.0           35240           35240  sem_wait                                                                        
-    0.0           31080          10          3108.0            1530            5800  pipe2                                                                           
-    0.0           29390          12          2449.2            1460            7460  pthread_cond_broadcast                                                          
-    0.0           29140           1         29140.0           29140           29140  backtrace                                                                       
-    0.0           20600          14          1471.4            1000            2990  fcntl                                                                           
-    0.0           15140           4          3785.0            1350            6090  fwrite                                                                          
-    0.0           10000           4          2500.0            1030            3890  fopen64                                                                         
-    0.0            6540           2          3270.0            2720            3820  socket                                                                          
-    0.0            4270           1          4270.0            4270            4270  connect                                                                         
-    0.0            2230           1          2230.0            2230            2230  prctl                                                                           
-    0.0            1280           1          1280.0            1280            1280  signal                                                                          
-
-
-
-
-Generating NVTX Push-Pop Range Statistics...
-NVTX Push-Pop Range Statistics (nanoseconds)
-
-
+Generated:
+    /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_GCN/res/PaddleRes/paddle_gcn_profile_nsys.nsys-rep
+    /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_GCN/res/PaddleRes/paddle_gcn_profile_nsys.sqlite

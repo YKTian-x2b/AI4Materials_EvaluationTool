@@ -1,6 +1,6 @@
 # 材料计算评测框架
 
-## 模型评测
+## 黑盒资源利用率模型评测
 
 ### 目标
 
@@ -88,12 +88,12 @@ pip install thop
 
 
 
-## 框架评测
+## 黑盒资源利用率框架评测
 
 ### 目标
 
-- 支持材料学经典模型的Torch/Paddle/MindSpore实现
-
+- 支持材料学经典模型的Torch/Paddle/MindSpore实现，并分析不同框架实现的highLevel区别
+- 如应用的整体资源利用率
 
 
 ### 支持的模型
@@ -132,3 +132,42 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 # VGNN_mindspore for VGNN_mindspore
 ~~~
 
+
+
+## 白盒插桩方法框架评测
+
+### 目标
+
+- 支持材料学共性和个性评测用例的Torch/Paddle/MindSpore实现，并分析不同框架实现的lowLevel区别
+- 如某算子实现的计算、访存的时延和吞吐
+
+
+### 支持的用例
+
+- GCN
+
+
+
+### Demo结果
+- 指标细节详见：CodeInstrumentation/info/metrics_needto_collect.txt
+<img src="assets/GCN_convlayer_ncu_metrics_show.png" />
+
+
+### 运行
+
+~~~bash
+# 见 CodeInstrumentation/TestCase_GCN/profile.sh ncu部分
+~~~
+
+
+
+### 需要用到的包：
+
+~~~bash
+### nvtx
+pip install nvtx -i https://pypi.douban.com/simple/
+
+# 除此之外，你还需要安装对应用例运行所需的包。
+# CGCNN_paddle for GCN_paddle
+# SyMat for GCN_torch
+~~~
