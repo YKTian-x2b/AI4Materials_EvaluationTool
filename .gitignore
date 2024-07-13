@@ -19,3 +19,8 @@ MANIFEST
 *.qdstrm
 *.nsys-rep
 *.ncu-rep
+*.tar
+*.zip
+*.cif
+
+checkpoints/
