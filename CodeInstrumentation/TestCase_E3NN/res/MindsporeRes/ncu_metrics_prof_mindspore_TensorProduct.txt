@@ -1,0 +1,524 @@
+==PROF== Connected to process 3199911 (/home/yujixuan/anaconda3/envs/VGNN_mindspore/bin/python3.8)
+==PROF== Profiling "GatherKernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "Slice2D" - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "Slice2D" - 3: 0%....50%....100% - 8 passes
+==PROF== Profiling "Slice2D" - 4: 0%....50%....100% - 8 passes
+==PROF== Profiling "Transpose3DTensorSimple" - 5: 0%....50%....100% - 8 passes
+==PROF== Profiling "Transpose3DTensorSimple" - 6: 0%....50%....100% - 8 passes
+==PROF== Profiling "gemmk1_kernel" - 7: 0%....50%....100% - 8 passes
+==PROF== Profiling "gemmk1_kernel" - 8: 0%....50%....100% - 8 passes
+==PROF== Profiling "TransposeKernel" - 9: 0%....50%....100% - 8 passes
+==PROF== Profiling "TransposeKernel" - 10: 0%....50%....100% - 8 passes
+==PROF== Profiling "gemmk1_kernel" - 11: 0%....50%....100% - 8 passes
+==PROF== Profiling "AsStridedKernel" - 12: 0%....50%....100% - 8 passes
+==PROF== Profiling "BinaryWithoutBroadcastIn0Scalar" - 13: 0%....50%....100% - 8 passes
+==PROF== Profiling "GatherKernel" - 14: 0%....50%....100% - 8 passes
+==PROF== Profiling "Slice2D" - 15: 0%....50%....100% - 8 passes
+==PROF== Profiling "Slice2D" - 16: 0%....50%....100% - 8 passes
+==PROF== Profiling "Slice2D" - 17: 0%....50%....100% - 8 passes
+==PROF== Profiling "Transpose3DTensorSimple" - 18: 0%....50%....100% - 8 passes
+==PROF== Profiling "Transpose3DTensorSimple" - 19: 0%....50%....100% - 8 passes
+==PROF== Profiling "gemmk1_kernel" - 20: 0%....50%....100% - 8 passes
+==PROF== Profiling "gemmk1_kernel" - 21: 0%....50%....100% - 8 passes
+==PROF== Profiling "TransposeKernel" - 22: 0%....50%....100% - 8 passes
+==PROF== Profiling "TransposeKernel" - 23: 0%....50%....100% - 8 passes
+==PROF== Profiling "gemmk1_kernel" - 24: 0%....50%....100% - 8 passes
+==PROF== Profiling "AsStridedKernel" - 25: 0%....50%....100% - 8 passes
+==PROF== Profiling "BinaryWithoutBroadcastIn0Scalar" - 26: 0%....50%....100% - 8 passes
+test_avg_loss:  0.4999847412109375
+==PROF== Disconnected from process 3199911
+[3199911] python3.8@127.0.0.1
+  void GatherKernel<float, int>(float*, int*, float*, unsigned long, unsigned long, unsigned long, unsigned long), 2024-Jul-14 17:11:14, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.28
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.29
+    gpu__time_duration.sum                                                         usecond                           4.26
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             32
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           6.10
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          63.20
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-14 17:11:14, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.57
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           3.57
+    gpu__time_duration.sum                                                         usecond                           3.52
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           4.28
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          60.93
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-14 17:11:15, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.23
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.21
+    gpu__time_duration.sum                                                         usecond                           3.52
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.30
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          49.07
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-14 17:11:15, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.65
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           3.65
+    gpu__time_duration.sum                                                         usecond                           3.52
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           4.33
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          61.51
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Transpose3DTensorSimple<float, 0, 2, 1>(float const*, unsigned long, long, long, long, float*), 2024-Jul-14 17:11:15, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.50
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           3.50
+    gpu__time_duration.sum                                                         usecond                           3.52
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           4.67
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          61.42
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Transpose3DTensorSimple<float, 0, 2, 1>(float const*, unsigned long, long, long, long, float*), 2024-Jul-14 17:11:15, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.82
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.24
+    gpu__time_duration.sum                                                         usecond                           3.49
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.31
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          47.00
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void gemmk1_kernel<float, 256, 5, false, false, false, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>(cublasGemmk1Params<float, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float, biasType<cublasGemvTensorStridedBatched<float>::value_type, float>::type>), 2024-Jul-14 17:11:15, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          14.85
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.38
+    gpu__time_duration.sum                                                         usecond                           5.66
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                 598
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                            272
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          28.14
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          78.96
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void gemmk1_kernel<float, 256, 5, false, false, false, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>(cublasGemmk1Params<float, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float, biasType<cublasGemvTensorStridedBatched<float>::value_type, float>::type>), 2024-Jul-14 17:11:16, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          10.40
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.79
+    gpu__time_duration.sum                                                         usecond                           4.77
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                 337
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                            272
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          20.71
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          81.26
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void TransposeKernel<float>(float const*, unsigned long, TransposeInfoDevice, int, float*), 2024-Jul-14 17:11:16, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           5.28
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.62
+    gpu__time_duration.sum                                                         usecond                           4.58
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           6.12
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          61.46
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void TransposeKernel<float>(float const*, unsigned long, TransposeInfoDevice, int, float*), 2024-Jul-14 17:11:16, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           5.49
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.71
+    gpu__time_duration.sum                                                         usecond                           4.61
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           4.93
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          61.01
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void gemmk1_kernel<float, 256, 5, false, false, false, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>(cublasGemmk1Params<float, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float, biasType<cublasGemvTensorStridedBatched<float>::value_type, float>::type>), 2024-Jul-14 17:11:16, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          32.17
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.52
+    gpu__time_duration.sum                                                         usecond                          39.36
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                              10,764
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                            272
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          57.43
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          81.80
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void AsStridedKernel<float>(unsigned long, float const*, float*, unsigned long, long const*, long const*, unsigned long), 2024-Jul-14 17:11:16, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.76
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.54
+    gpu__time_duration.sum                                                         usecond                           5.12
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                  11
+    launch__registers_per_thread                                           register/thread                             40
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           5.22
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          61.80
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void BinaryWithoutBroadcastIn0Scalar<(BinaryOpType)12, float, float, float>(BinaryFunc<(BinaryOpType)12, float, float, float, std::integral_constant<bool, true> >, unsigned long, float*, float*, float*), 2024-Jul-14 17:11:17, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           4.50
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           4.50
+    gpu__time_duration.sum                                                         usecond                           3.23
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  43
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           2.10
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          16.23
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void GatherKernel<float, int>(float*, int*, float*, unsigned long, unsigned long, unsigned long, unsigned long), 2024-Jul-14 17:11:17, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.28
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.20
+    gpu__time_duration.sum                                                         usecond                           4.10
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             32
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.55
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          55.47
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-14 17:11:17, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.37
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.81
+    gpu__time_duration.sum                                                         usecond                           3.62
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.03
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          55.75
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-14 17:11:17, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.23
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.25
+    gpu__time_duration.sum                                                         usecond                           3.55
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.31
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          45.78
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-14 17:11:17, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.37
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.81
+    gpu__time_duration.sum                                                         usecond                           3.46
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.03
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          56.44
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Transpose3DTensorSimple<float, 0, 2, 1>(float const*, unsigned long, long, long, long, float*), 2024-Jul-14 17:11:18, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.83
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.23
+    gpu__time_duration.sum                                                         usecond                           3.49
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.31
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          47.94
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void Transpose3DTensorSimple<float, 0, 2, 1>(float const*, unsigned long, long, long, long, float*), 2024-Jul-14 17:11:18, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.97
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.78
+    gpu__time_duration.sum                                                         usecond                           3.42
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.06
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          57.32
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void gemmk1_kernel<float, 256, 5, false, false, false, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>(cublasGemmk1Params<float, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float, biasType<cublasGemvTensorStridedBatched<float>::value_type, float>::type>), 2024-Jul-14 17:11:18, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          14.60
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           7.24
+    gpu__time_duration.sum                                                         usecond                           5.60
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                 598
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                            272
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          27.72
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          81.45
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void gemmk1_kernel<float, 256, 5, false, false, false, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>(cublasGemmk1Params<float, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float, biasType<cublasGemvTensorStridedBatched<float>::value_type, float>::type>), 2024-Jul-14 17:11:18, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.37
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.89
+    gpu__time_duration.sum                                                         usecond                           3.46
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  75
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                            272
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           7.11
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          26.37
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void TransposeKernel<float>(float const*, unsigned long, TransposeInfoDevice, int, float*), 2024-Jul-14 17:11:18, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.47
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.64
+    gpu__time_duration.sum                                                         usecond                           4.35
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.50
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          54.00
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void TransposeKernel<float>(float const*, unsigned long, TransposeInfoDevice, int, float*), 2024-Jul-14 17:11:19, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.57
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.70
+    gpu__time_duration.sum                                                         usecond                           4.22
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.25
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          52.84
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void gemmk1_kernel<float, 256, 5, false, false, false, false, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>(cublasGemmk1Params<float, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float, biasType<cublasGemvTensorStridedBatched<float>::value_type, float>::type>), 2024-Jul-14 17:11:19, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          26.43
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.44
+    gpu__time_duration.sum                                                         usecond                          11.39
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                               2,392
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                            272
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                          47.79
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          81.44
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void AsStridedKernel<float>(unsigned long, float const*, float*, unsigned long, long const*, long const*, unsigned long), 2024-Jul-14 17:11:19, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.67
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.60
+    gpu__time_duration.sum                                                         usecond                           4.86
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             40
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.24
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          54.23
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void BinaryWithoutBroadcastIn0Scalar<(BinaryOpType)12, float, float, float>(BinaryFunc<(BinaryOpType)12, float, float, float, std::integral_constant<bool, true> >, unsigned long, float*, float*, float*), 2024-Jul-14 17:11:19, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.21
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           1.06
+    gpu__time_duration.sum                                                         usecond                           3.04
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  10
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.50
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          15.97
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

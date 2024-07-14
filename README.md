@@ -144,25 +144,27 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 
 ### 支持的用例
 
-- GCN
+- GCN, E3NN
+
+### Nsys_Demo结果
+- 详见CodeInstrumentation/README.md
 
 
-
-### Demo结果
+### NCU_Demo结果
 - 指标细节详见：CodeInstrumentation/info/metrics_needto_collect.txt
+
+- GCN 卷积算子实现的对比 torch & paddle
 <img src="assets/GCN_convlayer_ncu_metrics_show.png" />
 
 
-### 运行
 
+### 运行
 ~~~bash
-# 见 CodeInstrumentation/TestCase_GCN/profile.sh ncu部分
+# 见 CodeInstrumentation/TestCase_GCN/profile.sh
 ~~~
 
 
-
 ### 需要用到的包：
-
 ~~~bash
 ### nvtx
 pip install nvtx -i https://pypi.douban.com/simple/

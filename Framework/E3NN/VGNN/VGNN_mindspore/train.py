@@ -69,10 +69,10 @@ def main():
     tr_nums = [int((num * tr_ratio) // k_fold)] * k_fold
     te_num = num - sum(tr_nums)
     idx_tr, idx_te = train_test_split(range(num), test_size=te_num, random_state=seed)
-    with open(f'../data/idx_{run_name}_tr.txt', 'w') as f:
-        for idx in idx_tr: f.write(f"{idx}\n")
-    with open(f'../data/idx_{run_name}_te.txt', 'w') as f:
-        for idx in idx_te: f.write(f"{idx}\n")
+    # with open(f'../data/idx_{run_name}_tr.txt', 'w') as f:
+    #     for idx in idx_tr: f.write(f"{idx}\n")
+    # with open(f'../data/idx_{run_name}_te.txt', 'w') as f:
+    #     for idx in idx_te: f.write(f"{idx}\n")
 
     # data_set = torch.utils.data.Subset(list(data_dict.values()), range(len(data_dict)))
     # tr_set, te_set = torch.utils.data.Subset(data_set, idx_tr), torch.utils.data.Subset(data_set, idx_te)

@@ -1,0 +1,124 @@
+==PROF== Connected to process 3127013 (/home/yujixuan/anaconda3/envs/VGNN_torch/bin/python3.8)
+==PROF== Profiling "index_elementwise_kernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "elementwise_kernel" - 3: 0%....50%....100% - 8 passes
+==PROF== Profiling "index_elementwise_kernel" - 4: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 5: 0%....50%....100% - 8 passes
+==PROF== Profiling "elementwise_kernel" - 6: 0%....50%....100% - 8 passes
+test_avg_loss:  0.4996442198753357
+==PROF== Disconnected from process 3127013
+[3127013] python3.8@127.0.0.1
+  void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1}>(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1}>(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1} const&)::{lambda(int)#1}), 2024-Jul-14 17:08:13, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.34
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.25
+    gpu__time_duration.sum                                                         usecond                           6.08
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  22
+    launch__registers_per_thread                                           register/thread                             34
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           2.06
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           7.94
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 3> >(int, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 3>), 2024-Jul-14 17:08:13, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           8.77
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           8.77
+    gpu__time_duration.sum                                                         usecond                           3.30
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  22
+    launch__registers_per_thread                                           register/thread                             20
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.43
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           7.75
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > const&)::{lambda(int)#1}), 2024-Jul-14 17:08:14, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.61
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           3.61
+    gpu__time_duration.sum                                                         usecond                           4.13
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  43
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           2.06
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.23
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1}>(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1}>(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char*, long)#1} const&)::{lambda(int)#1}), 2024-Jul-14 17:08:14, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.33
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.24
+    gpu__time_duration.sum                                                         usecond                           5.95
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   5
+    launch__registers_per_thread                                           register/thread                             34
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.48
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.22
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 3> >(int, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 3>), 2024-Jul-14 17:08:14, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.97
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           1.97
+    gpu__time_duration.sum                                                         usecond                           3.10
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   5
+    launch__registers_per_thread                                           register/thread                             20
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.14
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.19
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::MulFunctor<float> > const&)::{lambda(int)#1}), 2024-Jul-14 17:08:15, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,TensorProduct>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.10
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.92
+    gpu__time_duration.sum                                                         usecond                           4.03
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  10
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.47
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.21
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

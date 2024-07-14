@@ -315,7 +315,7 @@ class GraphNetworkVVN(torch.nn.Module):
             irreps_in = gate.irreps_out
 
             self.layers.append(CustomCompose(conv, gate))
-        #last layer: conv
+        # last layer: conv
         self.layers.append(GraphConvolution(irreps_in,
                         self.irreps_node_attr,
                         self.irreps_edge_attr,

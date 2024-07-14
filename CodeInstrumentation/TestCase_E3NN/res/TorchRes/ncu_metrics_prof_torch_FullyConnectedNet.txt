@@ -1,0 +1,284 @@
+==PROF== Connected to process 3750285 (/home/yujixuan/anaconda3/envs/VGNN_torch/bin/python3.8)
+==PROF== Profiling "vectorized_elementwise_kernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "ampere_sgemm_32x128_nn" - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 3: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 4: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 5: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 6: 0%....50%....100% - 8 passes
+==PROF== Profiling "ampere_sgemm_32x32_sliced1x4_nn" - 7: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 8: 0%....50%....100% - 8 passes
+==PROF== Profiling "ampere_sgemm_32x128_nn" - 9: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 10: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 11: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 12: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 13: 0%....50%....100% - 8 passes
+==PROF== Profiling "ampere_sgemm_32x32_sliced1x4_nn" - 14: 0%....50%....100% - 8 passes
+test_avg_loss:  0.5000418424606323
+==PROF== Disconnected from process 3750285
+[3750285] python3.8@127.0.0.1
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:21, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.86
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.17
+    gpu__time_duration.sum                                                         usecond                           3.07
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.04
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.23
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  ampere_sgemm_32x128_nn, 2024-Jul-14 17:33:22, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           7.39
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.86
+    gpu__time_duration.sum                                                         usecond                           5.54
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  15
+    launch__registers_per_thread                                           register/thread                             57
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                        Kbyte/block                          16.38
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           7.39
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          16.57
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:22, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          11.85
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          11.85
+    gpu__time_duration.sum                                                         usecond                              4
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  76
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           5.25
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          12.77
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:22, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          13.62
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          13.62
+    gpu__time_duration.sum                                                         usecond                           3.42
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  76
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.15
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          12.61
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:23, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          14.52
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          14.52
+    gpu__time_duration.sum                                                         usecond                           3.42
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  76
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.20
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          12.61
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:23, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.02
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.53
+    gpu__time_duration.sum                                                         usecond                           3.04
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   3
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.06
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.11
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  ampere_sgemm_32x32_sliced1x4_nn, 2024-Jul-14 17:33:23, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           8.93
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           5.71
+    gpu__time_duration.sum                                                         usecond                           7.62
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  19
+    launch__registers_per_thread                                           register/thread                             86
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                        Kbyte/block                          32.77
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           8.77
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.32
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:24, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.86
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.16
+    gpu__time_duration.sum                                                         usecond                           3.14
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.04
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.25
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  ampere_sgemm_32x128_nn, 2024-Jul-14 17:33:24, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           7.28
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.77
+    gpu__time_duration.sum                                                         usecond                           5.54
+    launch__block_size                                                                                                256
+    launch__grid_size                                                                                                  15
+    launch__registers_per_thread                                           register/thread                             57
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                        Kbyte/block                          16.38
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           7.28
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          16.57
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:24, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          11.45
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          11.45
+    gpu__time_duration.sum                                                         usecond                           4.03
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  76
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           5.20
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          12.89
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:24, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          14.39
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          14.39
+    gpu__time_duration.sum                                                         usecond                           3.39
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  76
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.21
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          12.62
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:25, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                          14.68
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                          14.68
+    gpu__time_duration.sum                                                         usecond                           3.42
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  76
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.20
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          12.39
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-14 17:33:25, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.99
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.12
+    gpu__time_duration.sum                                                         usecond                           3.14
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.03
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.04
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  ampere_sgemm_32x32_sliced1x4_nn, 2024-Jul-14 17:33:25, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,FullyConnectedNet>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           8.98
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           5.54
+    gpu__time_duration.sum                                                         usecond                           7.58
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  19
+    launch__registers_per_thread                                           register/thread                             86
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                        Kbyte/block                          32.77
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           8.82
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.32
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

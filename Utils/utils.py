@@ -174,4 +174,8 @@ def distance_matrix_pbc(cart_coords, lengths, angles):
     return atom_distances
 
 
-
+"""
+#### E3NN 各种算子实现的对比 torch & mindspore
+- E3NN_FullyConnectedNet
+<img src="assets/E3NN_FullyConnectNet_ncu_metrics_prof.png" />
+"""

@@ -4,10 +4,10 @@ import mindspore.dataset as ds
 from mindchemistry.e3.nn import FullyConnectedNet, Scatter, Gate, soft_one_hot_linspace
 from mindchemistry.e3.o3 import Irrep, Irreps, TensorProduct, spherical_harmonics, FullyConnectedTensorProduct
 from mindchemistry.cell.message_passing import Compose
-from utils.utils_kai import random_split
-from utils.utils_data import msDataset
+from utils import msDataset
 import time
 import math
+import nvtx
 
 dtype = ms.float32
 
@@ -110,8 +110,22 @@ class GraphConvolution(nn.Cell):
         node_input_features = self.linear_input(node_input, node_attr)
         node_features = ms.ops.div(node_input_features, ms.ops.pow(node_deg, 0.5))
         node_mask = self.linear_mask(node_input, node_attr)
+
+        node_mask.asnumpy()
+        FullyConnectedNet_nvtx = nvtx.start_range(message="FullyConnectedNet", color="blue")
+
         edge_weight = self.edge2weight(edge_length_embedded)
+
+        node_mask.asnumpy()
+        nvtx.end_range(FullyConnectedNet_nvtx)
+
+        # ms.hal.synchronize() 2.3版本特性 目前不支持GPU
+        # edge_weight.asnumpy()
+        # TensorProduct_nvtx = nvtx.start_range(message="TensorProduct", color="blue")
         edge_features = self.tensor_edge(node_features[edge_src], edge_attr, edge_weight)
+        # ms.hal.synchronize()
+        # edge_features.asnumpy()
+        # nvtx.end_range(TensorProduct_nvtx)
 
         node_features = self.scatter(edge_features, edge_dst, dim_size=node_features.shape[0])
         node_features = ms.ops.div(node_features, ms.ops.pow(node_deg, 0.5))
@@ -170,11 +184,8 @@ class GraphNetworkVVN(nn.Cell):
                                     number_of_basis,
                                     radial_layers,
                                     radial_neurons)
-
-            # self.layers.append(CustomCompose(conv, gate))
-            self.layers.append(Compose(conv, gate))
             irreps_in = gate.irreps_out
-
+            self.layers.append(CustomCompose(conv, gate))
         self.layers.append(GraphConvolution(irreps_in,
                                             self.irreps_node_attr,
                                             self.irreps_edge_attr,
@@ -205,151 +216,3 @@ class GraphNetworkVVN(nn.Cell):
         return x
 
 
-def evaluate(model, dataloader, len_dataloader, loss_fn, option='kmvn'):
-    model.set_train(False)
-    loss_cumulative = 0.
-    for i, d in enumerate(dataloader):
-        logits = model(d)
-        loss = loss_fn(logits, d["y"])
-        loss_cumulative += loss.asnumpy()[0]
-    return loss_cumulative / len_dataloader
-
-
-def loglinspace(rate, step, end=None):
-    t = 0
-    while end is None or t <= end:
-        yield t
-        t = int(t + 1 + step * (1 - math.exp(-t * rate / step)))
-
-
-def train(model,
-          opt,
-          tr_set,
-          tr_nums,
-          te_set,
-          loss_fn,
-          run_name,
-          max_iter,
-          scheduler,
-          batch_size,
-          k_fold,
-          option='kmvn'):
-    checkpoint_generator = loglinspace(0.3, 5)
-    checkpoint = next(checkpoint_generator)
-    record_lines = []
-    start_time = time.time()
-
-    def forward(d):
-        logits = model(d)
-        loss = loss_fn(logits, d["y"])
-        return loss, logits
-
-    backward = ms.value_and_grad(forward, grad_position=None, weights=opt.parameters, has_aux=True)
-
-    tr_sets = random_split(tr_set, tr_nums)
-    for step in range(max_iter):
-        k = step % k_fold
-        curr_tr_dataset_list = []
-        for dataset_ in tr_sets[:k]:
-            curr_tr_dataset_list.extend(dataset_)
-        for dataset_ in tr_sets[k + 1:]:
-            curr_tr_dataset_list.extend(dataset_)
-        curr_va_dataset_list = tr_sets[k]
-        tr_set_generator = msDataset(curr_tr_dataset_list)
-        va_set_generator = msDataset(curr_va_dataset_list)
-        curr_tr_dataset = ds.GeneratorDataset(tr_set_generator, ["id",
-                                                                 "pos",
-                                                                 "lattice",
-                                                                 "symbol",
-                                                                 "x",
-                                                                 "z",
-                                                                 "y",
-                                                                 "node_deg",
-                                                                 "edge_index",
-                                                                 "edge_shift",
-                                                                 "edge_vec",
-                                                                 "edge_len",
-                                                                 "qpts",
-                                                                 "gphonon",
-                                                                 "r_max",
-                                                                 "numb", ], shuffle=True)
-        curr_va_dataset = ds.GeneratorDataset(va_set_generator, ["id",
-                                                                 "pos",
-                                                                 "lattice",
-                                                                 "symbol",
-                                                                 "x",
-                                                                 "z",
-                                                                 "y",
-                                                                 "node_deg",
-                                                                 "edge_index",
-                                                                 "edge_shift",
-                                                                 "edge_vec",
-                                                                 "edge_len",
-                                                                 "qpts",
-                                                                 "gphonon",
-                                                                 "r_max",
-                                                                 "numb", ], shuffle=True)
-        curr_tr_dataset.batch(batch_size=batch_size)
-        curr_va_dataset.batch(batch_size=batch_size)
-        tr_loader = curr_tr_dataset.create_dict_iterator()
-        va_loader = curr_va_dataset.create_dict_iterator()
-        model.set_train(True)
-        N = len(curr_tr_dataset_list)
-        for i, d in enumerate(tr_loader):
-            start = time.time()
-            (loss, _), grads = backward(d)
-            opt(grads)
-            print(f'num {i + 1:4d}/{N}, loss = {loss}, train time = {time.time() - start}', end='\r')
-
-        end_time = time.time()
-        wall = end_time - start_time
-        print(wall)
-        if step == checkpoint:
-            checkpoint = next(checkpoint_generator)
-            assert checkpoint > step
-
-            valid_avg_loss = evaluate(model, va_loader, len(curr_va_dataset_list), loss_fn, option)
-            train_avg_loss = evaluate(model, tr_loader, N, loss_fn, option)
-
-            # history.append({
-            #     'step': s0 + step,
-            #     'wall': wall,
-            #     'batch': {
-            #         'loss': loss.item(),
-            #     },
-            #     'valid': {
-            #         'loss': valid_avg_loss,
-            #     },
-            #     'train': {
-            #         'loss': train_avg_loss,
-            #     },
-            # })
-            #
-            # results = {
-            #     'history': history,
-            #     'state': model.state_dict()
-            # }
-
-            print(f"Iteration {step + 1:4d}   " +
-                  f"train loss = {train_avg_loss:8.20f}   " +
-                  f"valid loss = {valid_avg_loss:8.20f}   " +
-                  f"elapsed time = {time.strftime('%H:%M:%S', time.gmtime(wall))}")
-            record_line = '%d\t%.20f\t%.20f' % (step, train_avg_loss, valid_avg_loss)
-            record_lines.append(record_line)
-
-            # with open(f'./models/{run_name}.torch', 'wb') as f:
-            #     torch.save(results, f)
-            # loss_plot('./models/' + run_name, device, './models/' + run_name)
-            # loss_test_plot(model, device, './models/' + run_name, te_loader, loss_fn, option)
-            # df_tr = generate_dafaframe(model, tr_loader, loss_fn, device, option)
-            # df_te = generate_dafaframe(model, te_loader, loss_fn, device, option)
-            # palette = ['#43AA8B', '#F8961E', '#F94144', '#277DA1']
-            # plot_gphonons(df_te, header='./models/' + run_name, title='test', n=6, m=2, lwidth=0.5,
-            #               windowsize=(4, 2), palette=palette, formula=True)
-        text_file = open('./models/' + run_name + ".txt", "w")
-        for line in record_lines:
-            text_file.write(line + "\n")
-        text_file.close()
-
-        if scheduler is not None:
-            scheduler.step()

@@ -1,6 +1,11 @@
 # 1.修改目的地址
 # 2.在本地命令行执行 就是另起一个命令行
 
+# local to server
+scp -P 3434 ./*.json  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci\
+/AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_E3NN/data/phonon
+
+# server to local
 scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci\
 /AI4Materials_EvaluationTool/CodeInstrumentation/TestCase_GCN/profile_713.ncu-rep /home/yujixuan/Downloads
 
@@ -17,3 +22,12 @@ scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_Evaluati
 
 scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
 /CodeInstrumentation/TestCase_GCN/res/TorchRes/ncu_metrics_prof_torch.txt   ./
+
+
+
+###################### for E3NN
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_E3NN/res/MindsporeRes/ncu_metrics_prof_mindspore_FullyConnectedNet.txt ./
+
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_E3NN/res/TorchRes/ncu_metrics_prof_torch_FullyConnectedNet.txt ./
