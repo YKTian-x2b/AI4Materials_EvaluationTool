@@ -1,0 +1,84 @@
+==PROF== Connected to process 2365976 (/home/yujixuan/anaconda3/envs/VGNN_torch/bin/python3.8)
+==PROF== Profiling "vectorized_elementwise_kernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "_scatter_gather_elementwise_k..." - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 3: 0%....50%....100% - 8 passes
+==PROF== Profiling "_scatter_gather_elementwise_k..." - 4: 0%....50%....100% - 8 passes
+test_avg_loss:  0.49949225783348083
+==PROF== Disconnected from process 2365976
+[2365976] python3.8@127.0.0.1
+  void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, at::detail::Array<char*, 1> >(int, at::native::FillFunctor<float>, at::detail::Array<char*, 1>), 2024-Jul-27 20:59:37, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Scatter>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.87
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.02
+    gpu__time_duration.sum                                                         usecond                           2.53
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.03
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.22
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::_scatter_gather_elementwise_kernel<128, 4, at::native::_cuda_scatter_gather_internal_kernel<true, float>::operator()<at::native::ReduceAdd>(at::TensorIterator&, long, long, long, at::native::ReduceAdd const&)::{lambda(int)#1}>(int, at::native::_cuda_scatter_gather_internal_kernel<true, float>::operator()<at::native::ReduceAdd>(at::TensorIterator&, long, long, long, at::native::ReduceAdd const&)::{lambda(int)#1}), 2024-Jul-27 20:59:38, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Scatter>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.59
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           2.21
+    gpu__time_duration.sum                                                         usecond                           6.50
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                  22
+    launch__registers_per_thread                                           register/thread                             32
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           1.38
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           7.97
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, at::detail::Array<char*, 1> >(int, at::native::FillFunctor<float>, at::detail::Array<char*, 1>), 2024-Jul-27 20:59:38, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,Scatter>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.87
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.03
+    gpu__time_duration.sum                                                         usecond                           2.56
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.02
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.05
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::_scatter_gather_elementwise_kernel<128, 4, at::native::_cuda_scatter_gather_internal_kernel<true, float>::operator()<at::native::ReduceAdd>(at::TensorIterator&, long, long, long, at::native::ReduceAdd const&)::{lambda(int)#1}>(int, at::native::_cuda_scatter_gather_internal_kernel<true, float>::operator()<at::native::ReduceAdd>(at::TensorIterator&, long, long, long, at::native::ReduceAdd const&)::{lambda(int)#1}), 2024-Jul-27 20:59:38, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,Scatter>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           2.08
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.65
+    gpu__time_duration.sum                                                         usecond                           6.37
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   5
+    launch__registers_per_thread                                           register/thread                             32
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.31
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.16
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

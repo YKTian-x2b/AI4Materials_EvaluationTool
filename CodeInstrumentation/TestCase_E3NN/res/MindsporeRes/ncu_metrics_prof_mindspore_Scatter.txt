@@ -1,0 +1,44 @@
+==PROF== Connected to process 2268967 (/home/yujixuan/anaconda3/envs/VGNN_mindspore/bin/python3.8)
+==PROF== Profiling "TensorScatterAddKernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "TensorScatterAddKernel" - 2: 0%....50%....100% - 8 passes
+test_avg_loss:  0.5000973343849182
+==PROF== Disconnected from process 2268967
+[2268967] python3.8@127.0.0.1
+  void TensorScatterAddKernel<float, int>(float const*, int const*, float const*, float*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, TensorScatterInfo<int>), 2024-Jul-27 20:55:42, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Scatter>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.01
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.87
+    gpu__time_duration.sum                                                         usecond                          13.82
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             30
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.76
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          64.67
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void TensorScatterAddKernel<float, int>(float const*, int const*, float const*, float*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, TensorScatterInfo<int>), 2024-Jul-27 20:55:42, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <1,Scatter>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.14
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.47
+    gpu__time_duration.sum                                                         usecond                           7.26
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             30
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.44
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          54.82
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

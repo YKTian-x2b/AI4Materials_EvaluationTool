@@ -46,8 +46,13 @@ class CustomCompose(nn.Cell):
 
     def construct(self, *input):
         x = self.first(*input)
-        # self.first_out = x.clone()
+
+        # input[0].asnumpy()
+        # Gate_nvtx = nvtx.start_range(message="Gate_nvtx", color="blue")
         x = self.second(x)
+        # x.asnumpy()
+        # nvtx.end_range(Gate_nvtx)
+
         # self.second_out = x.clone()
         return x
 
@@ -111,13 +116,13 @@ class GraphConvolution(nn.Cell):
         node_features = ms.ops.div(node_input_features, ms.ops.pow(node_deg, 0.5))
         node_mask = self.linear_mask(node_input, node_attr)
 
-        node_mask.asnumpy()
-        FullyConnectedNet_nvtx = nvtx.start_range(message="FullyConnectedNet", color="blue")
+        # node_mask.asnumpy()
+        # FullyConnectedNet_nvtx = nvtx.start_range(message="FullyConnectedNet", color="blue")
 
         edge_weight = self.edge2weight(edge_length_embedded)
 
-        node_mask.asnumpy()
-        nvtx.end_range(FullyConnectedNet_nvtx)
+        # edge_weight.asnumpy()
+        # nvtx.end_range(FullyConnectedNet_nvtx)
 
         # ms.hal.synchronize() 2.3版本特性 目前不支持GPU
         # edge_weight.asnumpy()
@@ -127,7 +132,15 @@ class GraphConvolution(nn.Cell):
         # edge_features.asnumpy()
         # nvtx.end_range(TensorProduct_nvtx)
 
+        edge_features.asnumpy()
+        Scatter_nvtx = nvtx.start_range(message="Scatter", color="blue")
+
         node_features = self.scatter(edge_features, edge_dst, dim_size=node_features.shape[0])
+
+        node_features.asnumpy()
+        nvtx.end_range(Scatter_nvtx)
+
+
         node_features = ms.ops.div(node_features, ms.ops.pow(node_deg, 0.5))
         node_output_features = self.linear_output(node_features, node_attr)
 

@@ -31,5 +31,5 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     runModel(args.modelName)
-    # python modelMain.py --modelName Matformer
+    # python modelMain.py --modelName SyMat
     # python modelMain.py --modelName CrystalMELA_ExRT

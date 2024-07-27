@@ -1,0 +1,64 @@
+==PROF== Connected to process 2077442 (/home/yujixuan/anaconda3/envs/VGNN_torch/bin/python3.8)
+==PROF== Profiling "vectorized_elementwise_kernel" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "vectorized_elementwise_kernel" - 3: 0%....50%....100% - 8 passes
+test_avg_loss:  0.4996306300163269
+==PROF== Disconnected from process 2077442
+[2077442] python3.8@127.0.0.1
+  void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, at::detail::Array<char*, 1> >(int, at::native::FillFunctor<float>, at::detail::Array<char*, 1>), 2024-Jul-27 20:47:58, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Gate_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.88
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.02
+    gpu__time_duration.sum                                                         usecond                           2.59
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.02
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           8.04
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2> >(int, at::native::(anonymous namespace)::silu_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(float)#1}, at::detail::Array<char*, 2>), 2024-Jul-27 20:47:59, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Gate_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.52
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.03
+    gpu__time_duration.sum                                                         usecond                           3.36
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             26
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.03
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           5.90
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2> >(int, at::native::BUnaryFunctor<float, float, float, at::native::MulFunctor<float> >, at::detail::Array<char*, 2>), 2024-Jul-27 20:47:59, Context 1, Stream 7
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Gate_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           0.91
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.03
+    gpu__time_duration.sum                                                         usecond                           3.07
+    launch__block_size                                                                                                128
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.02
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           6.07
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

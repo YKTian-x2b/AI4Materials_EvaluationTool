@@ -27,41 +27,42 @@ def run(datasetName='perov_5'):
     dataset = datasetName
     command = 'python ' + pyFile + ' --result_path ' + resPath + \
               ' --dataset ' + dataset
-    # getxPUInfo(command, dataset)
-    # getxPUInfoList(command, dataset)
-
-    train_data_path = os.path.join('dataConfig', dataset, 'train.pt')
-    if not os.path.isfile(train_data_path):
-        train_data_path = os.path.join('dataConfig', dataset, 'train.csv')
-    test_data_path = os.path.join('dataConfig', dataset, 'test.pt')
-    if not os.path.isfile(test_data_path):
-        test_data_path = os.path.join('dataConfig', dataset, 'test.csv')
-    # val_data_path = os.path.join('dataConfig', dataset, 'val.pt')
-    # if not os.path.isfile(val_data_path):
-    #     val_data_path = os.path.join('dataConfig', dataset, 'val.csv')
-
-    score_norm_path = os.path.join('dataConfig', dataset, 'score_norm.txt')
-    os.chdir(current_dir)
-    if dataset == 'perov_5':
-        from config.perov_5_config_dict import conf
-    elif dataset == 'carbon_24':
-        from config.carbon_24_config_dict import conf
-    else:
-        from config.mp_20_config_dict import conf
-
-    model = MatGen(**conf['model'], score_norm=np.loadtxt(score_norm_path))
-    # print("executing getFLOPSandParams ...")
-    # getFLOPSandParams(model, train_data_path, conf)
-
-    print("executing generate and eval...")
-    model_path = 'result/model_699.pth'
-    num_gen = 10000
-    if not os.path.isfile(model_path):
-        raise Exception("Model path is not exist!")
-    generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
+    getxPUInfo(command, dataset)
+    # # getxPUInfoList(command, dataset)
+    #
+    # train_data_path = os.path.join('dataConfig', dataset, 'train.pt')
+    # if not os.path.isfile(train_data_path):
+    #     train_data_path = os.path.join('dataConfig', dataset, 'train.csv')
+    # test_data_path = os.path.join('dataConfig', dataset, 'test.pt')
+    # if not os.path.isfile(test_data_path):
+    #     test_data_path = os.path.join('dataConfig', dataset, 'test.csv')
+    # # val_data_path = os.path.join('dataConfig', dataset, 'val.pt')
+    # # if not os.path.isfile(val_data_path):
+    # #     val_data_path = os.path.join('dataConfig', dataset, 'val.csv')
+    #
+    # score_norm_path = os.path.join('dataConfig', dataset, 'score_norm.txt')
+    # os.chdir(current_dir)
+    # if dataset == 'perov_5':
+    #     from config.perov_5_config_dict import conf
+    # elif dataset == 'carbon_24':
+    #     from config.carbon_24_config_dict import conf
+    # else:
+    #     from config.mp_20_config_dict import conf
+    #
+    # model = MatGen(**conf['model'], score_norm=np.loadtxt(score_norm_path))
+    # # print("executing getFLOPSandParams ...")
+    # # getFLOPSandParams(model, train_data_path, conf)
+    #
+    # print("executing generate and eval...")
+    # model_path = 'result/model_699.pth'
+    # num_gen = 10000
+    # if not os.path.isfile(model_path):
+    #     raise Exception("Model path is not exist!")
+    # generate(model_path, test_data_path, train_data_path, conf, score_norm_path, num_gen)
 
 
 def getxPUInfo(command, dataset):
+    command = "./run_model.sh"
     resDir = 'tmpRes/'
     logFile = resDir + dataset + '_res_log.txt'
     errFile = resDir + dataset + '_err_log.txt'

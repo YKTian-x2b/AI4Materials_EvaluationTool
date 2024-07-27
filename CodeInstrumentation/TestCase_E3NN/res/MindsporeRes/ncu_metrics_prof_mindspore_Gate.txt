@@ -1,0 +1,65 @@
+==PROF== Connected to process 2132184 (/home/yujixuan/anaconda3/envs/VGNN_mindspore/bin/python3.8)
+==PROF== Profiling "Slice2D" - 1: 0%....50%....100% - 8 passes
+==PROF== Profiling "UnaryNoVecKernel" - 2: 0%....50%....100% - 8 passes
+==PROF== Profiling "BinaryWithoutBroadcastIn1Scalar" - 3: 0%....50%....100% - 8 passes
+pkl.load
+test_avg_loss:  0.4999232292175293
+==PROF== Disconnected from process 2132184
+[2132184] python3.8@127.0.0.1
+  void Slice2D<float>(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, float const*, float*), 2024-Jul-27 20:50:26, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Gate_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.20
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.02
+    gpu__time_duration.sum                                                         usecond                           3.42
+    launch__block_size                                                                                              1,024
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             22
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.11
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                          31.07
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void UnaryNoVecKernel<(ElwiseOpType)30, float, float>(UnaryFunc<(ElwiseOpType)30, float, float>, unsigned long, float const*, float*), 2024-Jul-27 20:50:26, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Gate_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           1.09
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.03
+    gpu__time_duration.sum                                                         usecond                           3.23
+    launch__block_size                                                                                                 32
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             21
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.01
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           2.08
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  void BinaryWithoutBroadcastIn1Scalar<(BinaryOpType)12, float, float, float>(BinaryFunc<(BinaryOpType)12, float, float, float, std::integral_constant<bool, true> >, unsigned long, float*, float*, float*), 2024-Jul-27 20:50:26, Context 1, Stream 13
+
+    NVTX Start/End Ranges:
+      <default domain>
+        <0,Gate_nvtx>
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed                     %                           3.66
+    gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed                               %                           0.04
+    gpu__time_duration.sum                                                         usecond                           3.20
+    launch__block_size                                                                                                 32
+    launch__grid_size                                                                                                   1
+    launch__registers_per_thread                                           register/thread                             16
+    launch__shared_mem_per_block_dynamic                                        byte/block                              0
+    launch__shared_mem_per_block_static                                         byte/block                              0
+    sm__throughput.avg.pct_of_peak_sustained_elapsed                                     %                           0.01
+    sm__warps_active.avg.pct_of_peak_sustained_active                                    %                           2.08
+    ---------------------------------------------------------------------- --------------- ------------------------------
+

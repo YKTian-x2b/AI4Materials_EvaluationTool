@@ -31,3 +31,15 @@ scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_Evaluati
 
 scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
 /CodeInstrumentation/TestCase_E3NN/res/TorchRes/ncu_metrics_prof_torch_FullyConnectedNet.txt ./
+
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_E3NN/res/TorchRes/ncu_metrics_prof_torch_Gate.txt ./
+
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_E3NN/res/MindsporeRes/ncu_metrics_prof_mindspore_Gate.txt ./
+
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_E3NN/res/MindsporeRes/ncu_metrics_prof_mindspore_Scatter.txt ./
+
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_E3NN/res/TorchRes/ncu_metrics_prof_torch_Scatter.txt ./

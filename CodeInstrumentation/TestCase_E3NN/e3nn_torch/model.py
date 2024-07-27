@@ -43,7 +43,13 @@ class CustomCompose(torch.nn.Module):
     def forward(self, *input):
         x = self.first(*input)
         self.first_out = x.clone()
+
+        # torch.cuda.synchronize(0)
+        # Gate_nvtx = nvtx.start_range(message="Gate_nvtx", color="blue")
         x = self.second(x)
+        # torch.cuda.synchronize(0)
+        # nvtx.end_range(Gate_nvtx)
+
         self.second_out = x.clone()
         return x
 
@@ -107,13 +113,13 @@ class GraphConvolution(torch.nn.Module):
 
         node_mask = self.linear_mask(node_input, node_attr)
 
-        torch.cuda.synchronize(0)
-        FullyConnectedNet_nvtx = nvtx.start_range(message="FullyConnectedNet", color="blue")
+        # torch.cuda.synchronize(0)
+        # FullyConnectedNet_nvtx = nvtx.start_range(message="FullyConnectedNet", color="blue")
 
         edge_weight = self.edge2weight(edge_length_embedded)
 
-        torch.cuda.synchronize(0)
-        nvtx.end_range(FullyConnectedNet_nvtx)
+        # torch.cuda.synchronize(0)
+        # nvtx.end_range(FullyConnectedNet_nvtx)
 
         # torch.cuda.synchronize(0)
         # TensorProduct_nvtx = nvtx.start_range(message="TensorProduct", color="blue")
@@ -121,7 +127,12 @@ class GraphConvolution(torch.nn.Module):
         # torch.cuda.synchronize(0)
         # nvtx.end_range(TensorProduct_nvtx)
 
+        torch.cuda.synchronize(0)
+        Scatter_nvtx = nvtx.start_range(message="Scatter", color="blue")
         node_features = scatter(edge_features, edge_dst, dim=0, dim_size=node_features.shape[0])
+        torch.cuda.synchronize(0)
+        nvtx.end_range(Scatter_nvtx)
+
         node_features = torch.div(node_features, torch.pow(node_deg, 0.5))
 
         node_output_features = self.linear_output(node_features, node_attr)

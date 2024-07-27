@@ -1,10 +1,240 @@
+Process ForkPoolWorker-8:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-12:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-5:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-9:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-13:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-15:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-11:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-16:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-10:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-6:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-14:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-4:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-2:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-7:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
+Process ForkPoolWorker-3:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 355, in get
+    with self._rlock:
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/synchronize.py", line 95, in __enter__
+    return self._semlock.__enter__()
+KeyboardInterrupt
 /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/runner.py:20: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
   lengths = torch.tensor([data['graph_arrays'][2] for data in dataset.data_dict_list])
 /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/utils/data_utils.py:114: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
   X = torch.tensor(X, dtype=torch.float)
 /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/utils/data_utils.py:120: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
   X = torch.tensor(X, dtype=torch.float)
-Exception ignored in: <function Pool.__del__ at 0x7ff254cb1670>
+Process ForkPoolWorker-1:
+Traceback (most recent call last):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 114, in worker
+    task = get()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 356, in get
+    res = self._reader.recv_bytes()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "train.py", line 37, in <module>
+    runner.train(train_data_path, val_data_path, result_path)
+  File "/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/runner.py", line 131, in train
+    avg_val_coord_loss, val_elem_type_num_acc, val_elem_type_acc, val_elem_type_recall, val_elem_num_acc, val_elem_type_match, val_elem_num_match, val_comp_match = self.valid(val_loader)
+  File "/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/runner.py", line 170, in valid
+    for iter_num, data_batch in enumerate(loader):
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 652, in __next__
+    data = self._next_data()
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 692, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/Models/SyMat/dataset.py", line 64, in __getitem__
+    angles=torch.Tensor(angles).view(1, -1),
+KeyboardInterrupt
+Exception ignored in: <function Pool.__del__ at 0x7fbf7f15cd30>
 Traceback (most recent call last):
   File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/pool.py", line 268, in __del__
   File "/home/yujixuan/anaconda3/envs/SyMat/lib/python3.8/multiprocessing/queues.py", line 362, in put

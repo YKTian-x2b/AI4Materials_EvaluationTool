@@ -101,3 +101,62 @@ launch__shared_mem_per_block_dynamic,\
 sm__warps_active.avg.pct_of_peak_sustained_active \
 python e3nn_mindspore/inference.py \
 > res/MindsporeRes/ncu_metrics_prof_mindspore_FullyConnectedNet.txt
+
+
+/usr/local/cuda-11.1/nsight-compute-2020.2.0/ncu --nvtx --nvtx-include "Gate_nvtx" \
+--metrics gpu__time_duration.sum,\
+sm__throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,\
+launch__grid_size,\
+launch__block_size,\
+launch__registers_per_thread,\
+launch__shared_mem_per_block_static,\
+launch__shared_mem_per_block_dynamic,\
+sm__warps_active.avg.pct_of_peak_sustained_active \
+python e3nn_torch/inference.py \
+> res/TorchRes/ncu_metrics_prof_torch_Gate.txt
+
+/usr/local/cuda-11.1/nsight-compute-2020.2.0/ncu --nvtx --nvtx-include "Gate_nvtx" \
+--metrics gpu__time_duration.sum,\
+sm__throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,\
+launch__grid_size,\
+launch__block_size,\
+launch__registers_per_thread,\
+launch__shared_mem_per_block_static,\
+launch__shared_mem_per_block_dynamic,\
+sm__warps_active.avg.pct_of_peak_sustained_active \
+python e3nn_mindspore/inference.py \
+> res/MindsporeRes/ncu_metrics_prof_mindspore_Gate.txt
+
+
+
+/usr/local/cuda-11.1/nsight-compute-2020.2.0/ncu --nvtx --nvtx-include "Scatter" \
+--metrics gpu__time_duration.sum,\
+sm__throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,\
+launch__grid_size,\
+launch__block_size,\
+launch__registers_per_thread,\
+launch__shared_mem_per_block_static,\
+launch__shared_mem_per_block_dynamic,\
+sm__warps_active.avg.pct_of_peak_sustained_active \
+python e3nn_torch/inference.py \
+> res/TorchRes/ncu_metrics_prof_torch_Scatter.txt
+
+/usr/local/cuda-11.1/nsight-compute-2020.2.0/ncu --nvtx --nvtx-include "Scatter" \
+--metrics gpu__time_duration.sum,\
+sm__throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,\
+gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,\
+launch__grid_size,\
+launch__block_size,\
+launch__registers_per_thread,\
+launch__shared_mem_per_block_static,\
+launch__shared_mem_per_block_dynamic,\
+sm__warps_active.avg.pct_of_peak_sustained_active \
+python e3nn_mindspore/inference.py \
+> res/MindsporeRes/ncu_metrics_prof_mindspore_Scatter.txt
