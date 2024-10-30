@@ -24,6 +24,12 @@ scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_Evaluati
 /CodeInstrumentation/TestCase_GCN/res/TorchRes/ncu_metrics_prof_torch.txt   ./
 
 
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_GCN/res/PaddleRes/convLayer_time_cost.txt   ./
+
+scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\
+/CodeInstrumentation/TestCase_GCN/res/TorchRes/convLayer_time_cost.txt   ./
+
 
 ###################### for E3NN
 scp -P 3434  yujixuan@10.134.138.222:/home/yujixuan/AI4Sci/AI4Materials_EvaluationTool\

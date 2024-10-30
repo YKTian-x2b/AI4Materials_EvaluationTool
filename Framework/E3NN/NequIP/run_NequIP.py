@@ -12,11 +12,10 @@ os.chdir(current_dir)
 sys.path.insert(0, current_dir)
 
 
-def run():
+def run(runPathIdx):
     # cd NequIP_torch && python nequip/scripts/train.py configs/example_rmd17.yaml
     # cd NequIP_midnspore && python train.py
 
-    runPathIdx = 1
     commandList = ['cd NequIP_torch && python nequip/scripts/train.py configs/example_rmd17.yaml',
                    'cd NequIP_mindspore && python train.py']
     resFileList = ['res/TorchRes/', 'res/MindsporeRes/']

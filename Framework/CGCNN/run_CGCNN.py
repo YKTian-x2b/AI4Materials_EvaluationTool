@@ -13,14 +13,14 @@ os.chdir(current_dir)
 sys.path.insert(0, current_dir)
 
 
-def run():
+def run(runPathIdx):
     # python CGCNN_torch/main.py data/root_dir_1000 > res/torch_res.txt
     # python CGCNN_paddle/main.py data/root_dir_1000 > res/paddle_res.txt
 
     pyFileList = ['CGCNN_torch/main.py', 'CGCNN_paddle/main.py']
     resFileList = ['res/TorchRes/', 'res/PaddleRes/']
     dataPath = 'data/root_dir_1000'
-    runPathIdx = 1
+
     command = 'python ' + pyFileList[runPathIdx] + ' ' + dataPath
     getxPUInfoList(command, resFileList[runPathIdx])
 

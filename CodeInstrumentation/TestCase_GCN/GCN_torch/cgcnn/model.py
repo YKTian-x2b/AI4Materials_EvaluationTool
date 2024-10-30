@@ -3,6 +3,8 @@ from __future__ import print_function, division
 import torch
 import torch.nn as nn
 import nvtx
+from datetime import datetime
+import os
 
 
 class ConvLayer(nn.Module):
@@ -155,13 +157,24 @@ class CrystalGraphConvNet(nn.Module):
         # for conv_func in self.convs:
         #     atom_fea = conv_func(atom_fea, nbr_fea, nbr_fea_idx)
 
+        atom_in_fea = self.convs[0](atom_fea, nbr_fea, nbr_fea_idx)
+
         torch.cuda.synchronize(0)
         conv_nvtx = nvtx.start_range(message="convLayer", color="blue")
+        start_time = datetime.now()
 
         atom_in_fea = self.convs[0](atom_fea, nbr_fea, nbr_fea_idx)
 
         torch.cuda.synchronize(0)
+        end_time = datetime.now()
         nvtx.end_range(conv_nvtx)
+        during_time = end_time - start_time
+        time_ms = during_time.seconds * 1000 + during_time.microseconds / 1000.0
+        msg = f"The whole time:  {time_ms} ms\n"
+        print(msg)
+        parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) + '/'
+        with open(parent_dir + "res/TorchRes/convLayer_time_cost.txt", "w") as time_cost_file:
+            time_cost_file.write(msg)
 
         crys_fea = self.pooling(atom_fea, crystal_atom_idx)
         crys_fea = self.conv_to_fc(self.conv_to_fc_softplus(crys_fea))

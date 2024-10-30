@@ -224,9 +224,6 @@ SKIPPED: /home/yujixuan/AI4Sci/AI4Materials_EvaluationTool/CodeInstrumentation/T
 
 
 # nvtx与nsight配合
-![](../assets/NVTX_use.png)
-
-
 ~~~bash
 pip install nvtx -i https://pypi.douban.com/simple/
 ~~~
@@ -235,17 +232,36 @@ pip install nvtx -i https://pypi.douban.com/simple/
 ~~~python
 import nvtx
 import torch
+from datetime import datetime
 
+warmup_time = 3
+test_time = 5
+# warmup
+for kk in range(warmup_time):
+    noise_pred = self.transformer(*input).sample
+# for ncu
 torch.cuda.synchronize(0)
 transformer_nvtx = nvtx.start_range(message="transformer", color="blue")
 
-# predict noise model_output
-noise_pred = self.transformer(
-    latent_model_input, timestep=timesteps, class_labels=class_labels_input
-).sample
+noise_pred = self.transformer(*input).sample
 
 torch.cuda.synchronize(0)
 nvtx.end_range(transformer_nvtx)
+# for cost_time
+torch.cuda.synchronize(0)
+start_time = datetime.now()
+# repeat
+for kk in range(test_time):
+    noise_pred = self.transformer(*input).sample
+
+torch.cuda.synchronize(0)
+end_time = datetime.now()
+during_time = end_time - start_time
+time_ms = during_time.seconds * 1000 + during_time.microseconds / 1000.0
+msg = f"The whole time:  {time_ms/test_time} ms\n"
+print(msg)
+with open(file_path, "w") as time_cost_file:
+    time_cost_file.write(msg)
 ~~~
 
 

@@ -12,11 +12,10 @@ os.chdir(current_dir)
 sys.path.insert(0, current_dir)
 
 
-def run():
+def run(runPathIdx):
     # cd VGNN_torch && python VVN.py
     # cd VGNN_midnspore && python train.py
 
-    runPathIdx = 1
     commandList = ['cd VGNN_torch && python VVN.py',
                    'cd VGNN_mindspore && python train.py']
     resFileList = ['res/TorchRes/', 'res/MindsporeRes/']

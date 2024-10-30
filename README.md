@@ -154,7 +154,11 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 - 指标细节详见：[`CodeInstrumentation_metrics_needto_collect`](./CodeInstrumentation/info/metrics_needto_collect.txt)
 
 - GCN 卷积算子实现的对比 torch & paddle
-<img src="assets/GCN_convlayer_ncu_metrics_show.png" />
+  <img src="assets/GCN_convlayer_ncu_metrics_show.png" />
+
+  | ConvLayer | Torch | Paddle |
+  | --------- | ----- | ------ |
+  | 耗时(ms)  | 0.341 | 0.482  |
 
 #### E3NN 各种算子实现的对比 torch & mindspore
 - E3NN_FullyConnectedNet
@@ -167,11 +171,11 @@ pip3 install --upgrade nvitop   # conda install -c conda-forge nvitop
 <img src="assets/E3NN_Scatter_ncu_metrics_prof.png" />
 
 - E3NN_TensorProduct
-- <img src="assets/E3NN_TensorProduct_ncu_metrics_prof.png" />
+<img src="assets/E3NN_TensorProduct_ncu_metrics_prof.png" />
 
 ### 运行
 ~~~bash
-# 见 CodeInstrumentation/TestCase_GCN/profile.sh
+# 见 CodeInstrumentation/TestCase_*/profile.sh
 ~~~
 
 

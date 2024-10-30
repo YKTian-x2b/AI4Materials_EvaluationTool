@@ -1,6 +1,8 @@
 import paddle
 from paddle import nn
 import nvtx
+import os
+from datetime import datetime
 
 
 class ConvLayer(nn.Layer):
@@ -87,13 +89,24 @@ class CrystalGraphConvNet(nn.Layer):
         # for convLayer in self.convLayers:
             # atom_in_fea = convLayer(atom_in_fea, bond_in_fea, atom_nbrs_idx)
 
+        atom_in_fea = self.convLayers[0](atom_in_fea, bond_in_fea, atom_nbrs_idx)
+
         paddle.device.cuda.synchronize(0)
         conv_nvtx = nvtx.start_range(message="convLayer", color="blue")
+        start_time = datetime.now()
 
         atom_in_fea = self.convLayers[0](atom_in_fea, bond_in_fea, atom_nbrs_idx)
 
         paddle.device.cuda.synchronize(0)
+        end_time = datetime.now()
         nvtx.end_range(conv_nvtx)
+        during_time = end_time - start_time
+        time_ms = during_time.seconds * 1000 + during_time.microseconds / 1000.0
+        msg = f"The whole time:  {time_ms} ms\n"
+        print(msg)
+        parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/'
+        with open(parent_dir + "res/PaddleRes/convLayer_time_cost.txt", "w") as time_cost_file:
+            time_cost_file.write(msg)
 
         crys_fea = self.pooling(atom_in_fea, crystal_atom_idx)
         crys_fea = self.conv_to_fc_softplus(crys_fea)
