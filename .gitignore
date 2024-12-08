@@ -4,6 +4,9 @@ dataset
 
 data
 benchmark_data
+parallel_log_output
+
+*.whl
 
 *.pt
 *.pth

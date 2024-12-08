@@ -1,0 +1,35 @@
+ACTIVATION: silu
+AVG_NUM_NEIGHBOR: 11.0
+BATCH_SIZE: 5
+BATCH_SIZE_EVAL: 5
+CUTOFF: 7
+DATA_PATH: ./dataset/rmd17/npz_data/rmd17_uracil.npz
+ENV_EMBED_MULTI: 128
+FACTOR: 0.8
+IS_PROFILING: false
+LEARNING_RATE: 0.002
+LRDECAY: true
+L_MAX: 3
+NUM_BASIS: 8
+NUM_LAYERS: 3
+N_EPOCH: 5
+N_EVAL: 50
+N_TRAIN: 950
+PATIENCE: 100
+SHUFFLE: false
+SPLIT_RANDOM: false
+USE_MSE_LOSS: true
+edge_eng_mlp_latent_dimensions:
+- 128
+- 1
+env_embed_mlp_latent_dimensions: []
+latent_mlp_latent_dimensions:
+- 1024
+- 1024
+- 1024
+two_body_latent_mlp_latent_dimensions:
+- 128
+- 256
+- 512
+- 1024
+4

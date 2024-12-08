@@ -1,0 +1,751 @@
+2024-12-08 20:12:39 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:12:39 (INFO): Loading data...                
+2024-12-08 20:13:19 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:13:19 (INFO): Loading data...                
+2024-12-08 20:18:46 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:18:46 (INFO): Loading data...                
+2024-12-08 20:18:52 (INFO): Initializing model...              
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:19:10 (INFO): Total parameters: 15108232
+2024-12-08 20:19:10 (INFO): Initializing profiler...      
+2024-12-08 20:35:36 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:35:36 (INFO): Loading data...                
+2024-12-08 20:35:38 (INFO): Initializing model...              
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:35:39 (INFO): Total parameters: 15108232
+2024-12-08 20:35:39 (INFO): Initializing profiler...      
+2024-12-08 20:35:40 (INFO): Initializing train...         
+2024-12-08 20:35:40 (INFO): seed is: 123
+2024-12-08 20:35:40 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:35:47 (INFO): loss: 468775520.0000000000000000  [  0/190]
+2024-12-08 20:35:48 (INFO): loss: 468785216.0000000000000000  [ 10/190]
+2024-12-08 20:35:48 (INFO): loss: 468774752.0000000000000000  [ 20/190]
+2024-12-08 20:35:49 (INFO): loss: 468760800.0000000000000000  [ 30/190]
+2024-12-08 20:35:50 (INFO): loss: 468365216.0000000000000000  [ 40/190]
+2024-12-08 20:35:51 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:35:52 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:35:52 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:35:53 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:35:54 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:35:55 (INFO): loss: nan  [100/190]
+2024-12-08 20:35:55 (INFO): loss: nan  [110/190]
+2024-12-08 20:35:56 (INFO): loss: nan  [120/190]
+2024-12-08 20:35:57 (INFO): loss: nan  [130/190]
+2024-12-08 20:35:58 (INFO): loss: nan  [140/190]
+2024-12-08 20:35:59 (INFO): loss: nan  [150/190]
+2024-12-08 20:35:59 (INFO): loss: nan  [160/190]
+2024-12-08 20:36:00 (INFO): loss: nan  [170/190]
+2024-12-08 20:36:01 (INFO): loss: nan  [180/190]
+2024-12-08 20:36:02 (INFO): train loss: nan, time gap: 21.9029
+2024-12-08 20:36:07 (INFO): Test: mse loss: nan
+2024-12-08 20:36:07 (INFO): Test: mae metric: nan
+2024-12-08 20:36:07 (INFO): lr: 0.0020000001
+
+2024-12-08 20:36:07 (INFO): Epoch 2
+-------------------------------
+2024-12-08 20:36:07 (INFO): loss: nan  [  0/190]
+2024-12-08 20:36:08 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:36:09 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:36:09 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:36:10 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:36:11 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:36:11 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:36:12 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:36:13 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:36:14 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:36:15 (INFO): loss: nan  [100/190]
+2024-12-08 20:36:15 (INFO): loss: nan  [110/190]
+2024-12-08 20:36:16 (INFO): loss: nan  [120/190]
+2024-12-08 20:36:17 (INFO): loss: nan  [130/190]
+2024-12-08 20:36:18 (INFO): loss: nan  [140/190]
+2024-12-08 20:36:18 (INFO): loss: nan  [150/190]
+2024-12-08 20:36:19 (INFO): loss: nan  [160/190]
+2024-12-08 20:36:20 (INFO): loss: nan  [170/190]
+2024-12-08 20:36:21 (INFO): loss: nan  [180/190]
+2024-12-08 20:36:21 (INFO): train loss: nan, time gap: 14.1826
+2024-12-08 20:36:22 (INFO): Test: mse loss: nan
+2024-12-08 20:36:22 (INFO): Test: mae metric: nan
+2024-12-08 20:36:22 (INFO): lr: 0.0020000001
+
+2024-12-08 20:36:22 (INFO): Epoch 3
+-------------------------------
+2024-12-08 20:36:22 (INFO): loss: nan  [  0/190]
+2024-12-08 20:36:23 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:36:23 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:36:24 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:36:25 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:36:26 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:36:26 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:36:27 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:36:28 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:36:29 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:36:29 (INFO): loss: nan  [100/190]
+2024-12-08 20:36:30 (INFO): loss: nan  [110/190]
+2024-12-08 20:36:31 (INFO): loss: nan  [120/190]
+2024-12-08 20:36:32 (INFO): loss: nan  [130/190]
+2024-12-08 20:36:32 (INFO): loss: nan  [140/190]
+2024-12-08 20:36:33 (INFO): loss: nan  [150/190]
+2024-12-08 20:36:34 (INFO): loss: nan  [160/190]
+2024-12-08 20:36:35 (INFO): loss: nan  [170/190]
+2024-12-08 20:36:36 (INFO): loss: nan  [180/190]
+2024-12-08 20:36:36 (INFO): train loss: nan, time gap: 14.4044
+2024-12-08 20:36:37 (INFO): Test: mse loss: nan
+2024-12-08 20:36:37 (INFO): Test: mae metric: nan
+2024-12-08 20:36:37 (INFO): lr: 0.0020000001
+
+2024-12-08 20:36:37 (INFO): Epoch 4
+-------------------------------
+2024-12-08 20:36:37 (INFO): loss: nan  [  0/190]
+2024-12-08 20:36:37 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:36:38 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:36:39 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:36:40 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:36:40 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:37:49 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:37:49 (INFO): Loading data...                
+2024-12-08 20:37:51 (INFO): Initializing model...              
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:37:51 (INFO): Total parameters: 15108232
+2024-12-08 20:37:52 (INFO): Initializing train...         
+2024-12-08 20:37:52 (INFO): seed is: 123
+2024-12-08 20:37:52 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:37:58 (INFO): loss: 468775520.0000000000000000  [  0/190]
+2024-12-08 20:37:59 (INFO): loss: 468785216.0000000000000000  [ 10/190]
+2024-12-08 20:37:59 (INFO): loss: 468774752.0000000000000000  [ 20/190]
+2024-12-08 20:37:59 (INFO): loss: 468760800.0000000000000000  [ 30/190]
+2024-12-08 20:38:00 (INFO): loss: 468365216.0000000000000000  [ 40/190]
+2024-12-08 20:38:00 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:38:01 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:38:01 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:38:01 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:38:02 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:38:02 (INFO): loss: nan  [100/190]
+2024-12-08 20:38:02 (INFO): loss: nan  [110/190]
+2024-12-08 20:38:03 (INFO): loss: nan  [120/190]
+2024-12-08 20:38:03 (INFO): loss: nan  [130/190]
+2024-12-08 20:38:03 (INFO): loss: nan  [140/190]
+2024-12-08 20:38:04 (INFO): loss: nan  [150/190]
+2024-12-08 20:38:04 (INFO): loss: nan  [160/190]
+2024-12-08 20:38:04 (INFO): loss: nan  [170/190]
+2024-12-08 20:38:05 (INFO): loss: nan  [180/190]
+2024-12-08 20:38:05 (INFO): train loss: nan, time gap: 13.6116
+2024-12-08 20:38:10 (INFO): Test: mse loss: nan
+2024-12-08 20:38:10 (INFO): Test: mae metric: nan
+2024-12-08 20:38:10 (INFO): lr: 0.0020000001
+
+2024-12-08 20:38:10 (INFO): Epoch 2
+-------------------------------
+2024-12-08 20:38:10 (INFO): loss: nan  [  0/190]
+2024-12-08 20:38:10 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:38:11 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:38:11 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:38:11 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:38:12 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:38:12 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:38:13 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:38:13 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:38:13 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:38:14 (INFO): loss: nan  [100/190]
+2024-12-08 20:38:14 (INFO): loss: nan  [110/190]
+2024-12-08 20:38:14 (INFO): loss: nan  [120/190]
+2024-12-08 20:38:15 (INFO): loss: nan  [130/190]
+2024-12-08 20:38:15 (INFO): loss: nan  [140/190]
+2024-12-08 20:38:15 (INFO): loss: nan  [150/190]
+2024-12-08 20:38:16 (INFO): loss: nan  [160/190]
+2024-12-08 20:38:16 (INFO): loss: nan  [170/190]
+2024-12-08 20:38:16 (INFO): loss: nan  [180/190]
+2024-12-08 20:38:17 (INFO): train loss: nan, time gap: 6.8005
+2024-12-08 20:38:17 (INFO): Test: mse loss: nan
+2024-12-08 20:38:17 (INFO): Test: mae metric: nan
+2024-12-08 20:38:17 (INFO): lr: 0.0020000001
+
+2024-12-08 20:38:17 (INFO): Epoch 3
+-------------------------------
+2024-12-08 20:38:17 (INFO): loss: nan  [  0/190]
+2024-12-08 20:38:17 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:38:18 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:38:18 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:38:18 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:38:19 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:38:19 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:38:20 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:38:20 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:38:20 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:38:21 (INFO): loss: nan  [100/190]
+2024-12-08 20:38:21 (INFO): loss: nan  [110/190]
+2024-12-08 20:38:21 (INFO): loss: nan  [120/190]
+2024-12-08 20:38:22 (INFO): loss: nan  [130/190]
+2024-12-08 20:38:22 (INFO): loss: nan  [140/190]
+2024-12-08 20:38:22 (INFO): loss: nan  [150/190]
+2024-12-08 20:38:23 (INFO): loss: nan  [160/190]
+2024-12-08 20:38:23 (INFO): loss: nan  [170/190]
+2024-12-08 20:38:23 (INFO): loss: nan  [180/190]
+2024-12-08 20:38:24 (INFO): train loss: nan, time gap: 6.8084
+2024-12-08 20:38:24 (INFO): Test: mse loss: nan
+2024-12-08 20:38:24 (INFO): Test: mae metric: nan
+2024-12-08 20:38:24 (INFO): lr: 0.0020000001
+
+2024-12-08 20:38:24 (INFO): Epoch 4
+-------------------------------
+2024-12-08 20:38:24 (INFO): loss: nan  [  0/190]
+2024-12-08 20:38:24 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:38:25 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:38:25 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:38:25 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:38:26 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:38:26 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:38:27 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:38:27 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:38:27 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:38:28 (INFO): loss: nan  [100/190]
+2024-12-08 20:38:28 (INFO): loss: nan  [110/190]
+2024-12-08 20:38:28 (INFO): loss: nan  [120/190]
+2024-12-08 20:38:29 (INFO): loss: nan  [130/190]
+2024-12-08 20:38:29 (INFO): loss: nan  [140/190]
+2024-12-08 20:38:29 (INFO): loss: nan  [150/190]
+2024-12-08 20:38:30 (INFO): loss: nan  [160/190]
+2024-12-08 20:38:30 (INFO): loss: nan  [170/190]
+2024-12-08 20:38:30 (INFO): loss: nan  [180/190]
+2024-12-08 20:38:31 (INFO): train loss: nan, time gap: 6.7894
+2024-12-08 20:38:31 (INFO): Test: mse loss: nan
+2024-12-08 20:38:31 (INFO): Test: mae metric: nan
+2024-12-08 20:38:31 (INFO): lr: 0.0020000001
+
+2024-12-08 20:38:31 (INFO): Epoch 5
+-------------------------------
+2024-12-08 20:38:31 (INFO): loss: nan  [  0/190]
+2024-12-08 20:38:31 (INFO): loss: nan  [ 10/190]
+2024-12-08 20:38:32 (INFO): loss: nan  [ 20/190]
+2024-12-08 20:38:32 (INFO): loss: nan  [ 30/190]
+2024-12-08 20:38:32 (INFO): loss: nan  [ 40/190]
+2024-12-08 20:38:33 (INFO): loss: nan  [ 50/190]
+2024-12-08 20:38:33 (INFO): loss: nan  [ 60/190]
+2024-12-08 20:38:34 (INFO): loss: nan  [ 70/190]
+2024-12-08 20:38:34 (INFO): loss: nan  [ 80/190]
+2024-12-08 20:38:34 (INFO): loss: nan  [ 90/190]
+2024-12-08 20:38:35 (INFO): loss: nan  [100/190]
+2024-12-08 20:38:35 (INFO): loss: nan  [110/190]
+2024-12-08 20:38:35 (INFO): loss: nan  [120/190]
+2024-12-08 20:38:36 (INFO): loss: nan  [130/190]
+2024-12-08 20:38:36 (INFO): loss: nan  [140/190]
+2024-12-08 20:38:36 (INFO): loss: nan  [150/190]
+2024-12-08 20:38:37 (INFO): loss: nan  [160/190]
+2024-12-08 20:38:37 (INFO): loss: nan  [170/190]
+2024-12-08 20:38:38 (INFO): loss: nan  [180/190]
+2024-12-08 20:38:38 (INFO): train loss: nan, time gap: 6.7990
+2024-12-08 20:38:38 (INFO): Test: mse loss: nan
+2024-12-08 20:38:38 (INFO): Test: mae metric: nan
+2024-12-08 20:38:38 (INFO): lr: 0.0020000001
+
+2024-12-08 20:38:38 (INFO): Done!
+2024-12-08 20:44:06 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:44:06 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:44:06 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:44:06 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:44:06 (INFO): Loading data...                
+2024-12-08 20:44:06 (INFO): Loading data...                
+2024-12-08 20:44:06 (INFO): Loading data...                
+2024-12-08 20:44:06 (INFO): Loading data...                
+2024-12-08 20:44:06 (INFO): Initializing model...              
+2024-12-08 20:44:06 (INFO): Initializing model...              
+2024-12-08 20:44:06 (INFO): Initializing model...              
+2024-12-08 20:44:06 (INFO): Initializing model...              
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Total parameters: 15108232
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:07 (INFO): Total parameters: 15108232
+2024-12-08 20:44:07 (INFO): Initializing train...         
+2024-12-08 20:44:07 (INFO): seed is: 123
+2024-12-08 20:44:07 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:44:07 (INFO): Initializing train...         
+2024-12-08 20:44:07 (INFO): seed is: 123
+2024-12-08 20:44:07 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Total parameters: 15108232
+2024-12-08 20:44:08 (INFO): Initializing train...         
+2024-12-08 20:44:08 (INFO): seed is: 123
+2024-12-08 20:44:08 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:44:08 (INFO): Total parameters: 15108232
+2024-12-08 20:44:08 (INFO): Initializing train...         
+2024-12-08 20:44:08 (INFO): seed is: 123
+2024-12-08 20:44:08 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:44:15 (INFO): loss: 468770432.0000000000000000  [  0/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468784384.0000000000000000  [  0/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468763264.0000000000000000  [  0/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468782560.0000000000000000  [  0/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468765056.0000000000000000  [ 10/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468758080.0000000000000000  [ 10/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468765120.0000000000000000  [ 10/ 47]
+2024-12-08 20:44:15 (INFO): loss: 468774176.0000000000000000  [ 10/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468754432.0000000000000000  [ 20/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468758816.0000000000000000  [ 20/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468757536.0000000000000000  [ 20/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468771200.0000000000000000  [ 20/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468758816.0000000000000000  [ 30/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468768832.0000000000000000  [ 30/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468765760.0000000000000000  [ 30/ 47]
+2024-12-08 20:44:16 (INFO): loss: 468752512.0000000000000000  [ 30/ 47]
+2024-12-08 20:44:17 (INFO): loss: 468364224.0000000000000000  [ 40/ 47]
+2024-12-08 20:44:17 (INFO): loss: 468364128.0000000000000000  [ 40/ 47]
+2024-12-08 20:44:17 (INFO): loss: 468369568.0000000000000000  [ 40/ 47]
+2024-12-08 20:44:17 (INFO): loss: 468373568.0000000000000000  [ 40/ 47]
+2024-12-08 20:44:17 (INFO): train loss: 468469504.0000000000000000, time gap: 9.6735
+2024-12-08 20:44:17 (INFO): train loss: 468468096.0000000000000000, time gap: 8.9880
+2024-12-08 20:44:17 (INFO): train loss: 468470560.0000000000000000, time gap: 9.6301
+2024-12-08 20:44:17 (INFO): train loss: 468466848.0000000000000000, time gap: 8.6797
+2024-12-08 20:44:22 (INFO): Test: mse loss: nan
+2024-12-08 20:44:22 (INFO): Test: mae metric: nan
+2024-12-08 20:44:22 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:22 (INFO): Epoch 2
+-------------------------------
+2024-12-08 20:44:22 (INFO): Test: mse loss: nan
+2024-12-08 20:44:22 (INFO): Test: mae metric: nan
+2024-12-08 20:44:22 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:22 (INFO): Epoch 2
+-------------------------------
+2024-12-08 20:44:22 (INFO): Test: mse loss: nan
+2024-12-08 20:44:22 (INFO): Test: mae metric: nan
+2024-12-08 20:44:22 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:22 (INFO): Epoch 2
+-------------------------------
+2024-12-08 20:44:22 (INFO): Test: mse loss: nan
+2024-12-08 20:44:22 (INFO): Test: mae metric: nan
+2024-12-08 20:44:22 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:22 (INFO): Epoch 2
+-------------------------------
+2024-12-08 20:44:22 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:22 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:23 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:23 (INFO): train loss: nan, time gap: 1.7538
+2024-12-08 20:44:23 (INFO): train loss: nan, time gap: 1.8245
+2024-12-08 20:44:23 (INFO): train loss: nan, time gap: 1.7722
+2024-12-08 20:44:23 (INFO): train loss: nan, time gap: 1.7102
+2024-12-08 20:44:24 (INFO): Test: mse loss: nan
+2024-12-08 20:44:24 (INFO): Test: mae metric: nan
+2024-12-08 20:44:24 (INFO): Test: mse loss: nan
+2024-12-08 20:44:24 (INFO): Test: mae metric: nan
+2024-12-08 20:44:24 (INFO): Test: mse loss: nan
+2024-12-08 20:44:24 (INFO): Test: mae metric: nan
+2024-12-08 20:44:24 (INFO): Test: mse loss: nan
+2024-12-08 20:44:24 (INFO): Test: mae metric: nan
+2024-12-08 20:44:24 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:24 (INFO): Epoch 3
+-------------------------------
+2024-12-08 20:44:24 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:24 (INFO): Epoch 3
+-------------------------------
+2024-12-08 20:44:24 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:24 (INFO): Epoch 3
+-------------------------------
+2024-12-08 20:44:24 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:24 (INFO): Epoch 3
+-------------------------------
+2024-12-08 20:44:24 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:24 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:25 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:25 (INFO): train loss: nan, time gap: 1.7172
+2024-12-08 20:44:25 (INFO): train loss: nan, time gap: 1.7152
+2024-12-08 20:44:25 (INFO): train loss: nan, time gap: 1.7171
+2024-12-08 20:44:25 (INFO): train loss: nan, time gap: 1.7151
+2024-12-08 20:44:26 (INFO): Test: mse loss: nan
+2024-12-08 20:44:26 (INFO): Test: mse loss: nan
+2024-12-08 20:44:26 (INFO): Test: mae metric: nan
+2024-12-08 20:44:26 (INFO): Test: mae metric: nan
+2024-12-08 20:44:26 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:26 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:26 (INFO): Epoch 4
+-------------------------------
+2024-12-08 20:44:26 (INFO): Epoch 4
+-------------------------------
+2024-12-08 20:44:26 (INFO): Test: mse loss: nan
+2024-12-08 20:44:26 (INFO): Test: mae metric: nan
+2024-12-08 20:44:26 (INFO): Test: mse loss: nan
+2024-12-08 20:44:26 (INFO): Test: mae metric: nan
+2024-12-08 20:44:26 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:26 (INFO): Epoch 4
+-------------------------------
+2024-12-08 20:44:26 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:26 (INFO): Epoch 4
+-------------------------------
+2024-12-08 20:44:26 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:26 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:27 (INFO): train loss: nan, time gap: 1.7180
+2024-12-08 20:44:27 (INFO): train loss: nan, time gap: 1.7133
+2024-12-08 20:44:27 (INFO): train loss: nan, time gap: 1.7180
+2024-12-08 20:44:27 (INFO): train loss: nan, time gap: 1.7126
+2024-12-08 20:44:27 (INFO): Test: mse loss: nan
+2024-12-08 20:44:27 (INFO): Test: mae metric: nan
+2024-12-08 20:44:27 (INFO): Test: mse loss: nan
+2024-12-08 20:44:27 (INFO): Test: mae metric: nan
+2024-12-08 20:44:27 (INFO): Test: mse loss: nan
+2024-12-08 20:44:27 (INFO): Test: mae metric: nan
+2024-12-08 20:44:27 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:27 (INFO): Test: mse loss: nan
+2024-12-08 20:44:27 (INFO): Epoch 5
+-------------------------------
+2024-12-08 20:44:27 (INFO): Test: mae metric: nan
+2024-12-08 20:44:27 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:27 (INFO): Epoch 5
+-------------------------------
+2024-12-08 20:44:27 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:27 (INFO): Epoch 5
+-------------------------------
+2024-12-08 20:44:27 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:27 (INFO): Epoch 5
+-------------------------------
+2024-12-08 20:44:27 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:27 (INFO): loss: nan  [  0/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 10/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:28 (INFO): loss: nan  [ 20/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 30/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:29 (INFO): loss: nan  [ 40/ 47]
+2024-12-08 20:44:29 (INFO): train loss: nan, time gap: 1.7074
+2024-12-08 20:44:29 (INFO): train loss: nan, time gap: 1.7073
+2024-12-08 20:44:29 (INFO): train loss: nan, time gap: 1.7055
+2024-12-08 20:44:29 (INFO): train loss: nan, time gap: 1.7067
+2024-12-08 20:44:29 (INFO): Test: mse loss: nan
+2024-12-08 20:44:29 (INFO): Test: mse loss: nan
+2024-12-08 20:44:29 (INFO): Test: mae metric: nan
+2024-12-08 20:44:29 (INFO): Test: mae metric: nan
+2024-12-08 20:44:29 (INFO): Test: mse loss: nan
+2024-12-08 20:44:29 (INFO): Test: mae metric: nan
+2024-12-08 20:44:29 (INFO): Test: mse loss: nan
+2024-12-08 20:44:29 (INFO): Test: mae metric: nan
+2024-12-08 20:44:29 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:29 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:29 (INFO): Done!
+2024-12-08 20:44:29 (INFO): Done!
+2024-12-08 20:44:29 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:29 (INFO): Done!
+2024-12-08 20:44:29 (INFO): lr: 0.0020000001
+
+2024-12-08 20:44:29 (INFO): Done!
+2024-12-08 20:49:57 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:49:57 (INFO): Loading data...                
+2024-12-08 20:49:58 (INFO): Initializing model...              
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:50:03 (INFO): Total parameters: 15108232
+2024-12-08 20:50:03 (INFO): Initializing train...         
+2024-12-08 20:50:03 (INFO): seed is: 123
+2024-12-08 20:50:03 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:51:14 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:51:14 (INFO): Loading data...                
+2024-12-08 20:51:14 (INFO): Initializing model...              
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:51:19 (INFO): Total parameters: 15108232
+2024-12-08 20:51:19 (INFO): Initializing train...         
+2024-12-08 20:51:19 (INFO): seed is: 123
+2024-12-08 20:51:19 (INFO): Epoch 1
+-------------------------------
+2024-12-08 20:54:34 (INFO): Dump config file to: /home/AI4Materials_EvaluationTool/ParallelEval/chemistry/allegro/test_allegro_output/log/6/input.yaml
+2024-12-08 20:54:34 (INFO): Loading data...                
+2024-12-08 20:54:34 (INFO): Initializing model...              
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.0.layers.0.weight, shape=(128, 16), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.0.layers.1.weight, shape=(256, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.0.layers.2.weight, shape=(512, 256), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.0.layers.3.weight, shape=(1024, 512), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.1.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.1.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.1.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.2.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.2.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.latents.2.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.env_embed_mlps.0.layers.0.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.env_embed_mlps.1.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.env_embed_mlps.2.layers.0.weight, shape=(512, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.linears.0.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.linears.1.linear_weights, shape=(557056,), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.linears.2.linear_weights, shape=(65536,), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.final_latent.layers.0.weight, shape=(1024, 1536), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.final_latent.layers.1.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=model.final_latent.layers.2.weight, shape=(1024, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=embedding.rbf_bessel.basis.bessel_weights, shape=(8,), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=edge_eng.layers.0.weight, shape=(128, 1024), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Parameter (name=edge_eng.layers.1.weight, shape=(1, 128), dtype=Float32, requires_grad=True)
+2024-12-08 20:54:40 (INFO): Total parameters: 15108232
+2024-12-08 20:54:40 (INFO): Initializing train...         
+2024-12-08 20:54:40 (INFO): seed is: 123
+2024-12-08 20:54:40 (INFO): Epoch 1
+-------------------------------
