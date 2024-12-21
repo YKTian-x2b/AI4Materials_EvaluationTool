@@ -188,3 +188,10 @@ pip install nvtx -i https://pypi.douban.com/simple/
 # CGCNN_paddle for GCN_paddle
 # SyMat for GCN_torch
 ~~~
+
+
+# jax
+~~~bash
+conda create -n jax python=3.8
+~~~
+
