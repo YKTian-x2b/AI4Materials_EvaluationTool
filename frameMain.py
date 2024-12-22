@@ -1,6 +1,7 @@
 import os
 import sys
 import argparse
+import subprocess
 
 
 def runModel(frameName, modelName):
@@ -49,4 +50,6 @@ if __name__ == '__main__':
         assert model_name in ["NequIP", "VGNN"], "[NequIP, VGNN] model only support frame [torch, mindspore]"
 
     runModel(frame_name, model_name)
+
+
     # python frameMain.py --modelName VGNN --frameName torch

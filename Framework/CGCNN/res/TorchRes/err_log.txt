@@ -1,2 +1,4 @@
 /home/yujixuan/.conda/envs/SyMat/lib/python3.8/site-packages/pymatgen/io/cif.py:1168: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
   warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
+/home/yujixuan/.conda/envs/SyMat/lib/python3.8/site-packages/pymatgen/io/cif.py:1168: UserWarning: Issues encountered while parsing CIF: Some fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  warnings.warn("Issues encountered while parsing CIF: " + "\n".join(self.warnings))
